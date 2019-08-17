@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DefaultContainer"
+    android:orientation="vertical">
+
+    <com.kyigames.feth.view.LabelWithBar
+        style="@style/DefaultListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="@string/growth" />
+
+    <TableLayout
+        style="@style/Table"
+        android:weightSum="2">
+
+        <TableRow
+            style="@style/TableRow"
+            android:id="@+id/growth_table_header"
+            android:background="@color/black"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/hp" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/strength" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/magic" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/dex" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/speed" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/luck" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/defense" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/resist" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/charisma" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/growth_table_value"
+            android:background="@color/black"
+            android:layout_width="match_parent">
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/hp" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/strength" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/magic" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/dex" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/speed" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/luck" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/defense" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/resist" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:background="@android:color/white"
+                android:text="@string/charisma" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

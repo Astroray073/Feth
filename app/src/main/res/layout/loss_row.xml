@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_overlay"
+    android:orientation="horizontal"
+    android:columnCount="2"
+    android:rowCount="1"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp">
+
+    <TextView
+        android:id="@+id/loss_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_margin="1dp"
+        android:textColor="@color/black"
+        android:text="loss_name" />
+
+    <TextView
+        android:id="@+id/loss_character"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_margin="1dp"
+        android:textColor="@color/black"
+        android:text="loss_character" />
+
+</GridLayout>

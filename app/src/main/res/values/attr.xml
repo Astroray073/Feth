@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabelWithBar">
+        <attr name="text" format="string" />
+        <attr name="bar_color" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="AbilityIconHeader">
+        <attr name="ability_name" format="reference|string" />
+        <attr name="ability_icon" format="reference|integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SquaredImageView">
+        <attr name="criteria" format="enum">
+            <enum name="width" value="0" />
+            <enum name="height" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

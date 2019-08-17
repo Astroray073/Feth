@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu_title">
+        <item>캐릭터</item>
+        <item>클래스</item>
+        <item>분실물</item>
+        <item>라이센스</item>
+    </string-array>
+
+    <string-array name="menu_color">
+        <item>#df5a55</item>
+        <item>#f9bb72</item>
+        <item>#76afcf</item>
+        <item>#dd6495</item>
+        <item>#72d3b4</item>
+    </string-array>
+
+    <integer-array name="menu_icon">
+        <item>@drawable/ic_character</item>
+        <item>@drawable/ic_class</item>
+        <item>@drawable/ic_item</item>
+        <item>@drawable/ic_license</item>
+    </integer-array>
+
+    <integer-array name="skill_icon">
+        <item>@drawable/ic_sword</item>
+        <item>@drawable/ic_lance</item>
+        <item>@drawable/ic_axe</item>
+        <item>@drawable/ic_bow</item>
+        <item>@drawable/ic_fighting</item>
+        <item>@drawable/ic_reason</item>
+        <item>@drawable/ic_faith</item>
+        <item>@drawable/ic_authority</item>
+        <item>@drawable/ic_heavy</item>
+        <item>@drawable/ic_riding</item>
+        <item>@drawable/ic_flying</item>
+    </integer-array>
+
+    <string-array name="stats">
+        <item>HP</item>
+        <item>힘</item>
+        <item>마력</item>
+        <item>기술</item>
+        <item>속도</item>
+        <item>행운</item>
+        <item>방어</item>
+        <item>마방</item>
+        <item>매력</item>
+    </string-array>
+
+    <string-array name="class_category_colors">
+        <item>#df5a55</item>
+        <item>#76afcf</item>
+        <item>#8BC34A</item>
+        <item>#f9bb72</item>
+        <item>#2196F3</item>
+    </string-array>
+</resources>

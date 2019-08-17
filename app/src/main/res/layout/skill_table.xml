@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DefaultContainer"
+    android:orientation="vertical">
+
+    <com.kyigames.feth.view.LabelWithBar
+        style="@style/DefaultListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="@string/skill" />
+
+    <TableLayout style="@style/Table">
+
+        <TableRow
+            android:id="@+id/skill_table_header"
+            style="@style/TableRow">
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_sword" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_lance" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_axe" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_bow" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_fighting" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_reason" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_faith" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_authority" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_heavy" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_riding" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_flying" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/skill_table_level"
+            style="@style/TableRow">
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/skill_table_proficiency"
+            style="@style/TableRow">
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_sword" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_lance" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_axe" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_bow" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_fighting" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_reason" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_faith" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_authority" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_heavy" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_riding" />
+
+            <com.kyigames.feth.view.SquaredImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_flying" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout style="@style/EndListItem">
+
+        <TextView
+            style="@style/Label"
+            android:padding="0dp"
+            android:text="@string/budding_talent" />
+
+        <TextView
+            android:id="@+id/budding_talent"
+            style="@style/ValueText"
+            android:text="character_crest" />
+    </LinearLayout>
+</LinearLayout>

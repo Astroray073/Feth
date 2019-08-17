@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/class_ability_list_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.kyigames.feth.view.LabelWithBar
+        android:id="@+id/class_ability_table_label"
+        style="@style/LabelWithBar"
+        app:text="@string/class_ability" />
+
+    <TextView
+        android:id="@+id/class_ability_none_text"
+        style="@style/Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/none" />
+
+    <LinearLayout
+        android:id="@+id/class_ability_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="8dp">
+
+        <com.kyigames.feth.view.ClassAbilityListItem
+            android:layout_width="match_parent"
+            android:layout_height="?android:listPreferredItemHeightSmall"
+            android:paddingTop="4dp" />
+
+        <com.kyigames.feth.view.ClassAbilityListItem
+            android:layout_width="match_parent"
+            android:layout_height="?android:listPreferredItemHeightSmall"
+            android:paddingTop="4dp" />
+
+        <com.kyigames.feth.view.ClassAbilityListItem
+            android:layout_width="match_parent"
+            android:layout_height="?android:listPreferredItemHeightSmall"
+            android:paddingTop="4dp" />
+    </LinearLayout>
+</LinearLayout>
