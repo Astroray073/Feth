@@ -82,6 +82,3 @@ lint/tmp/
 
 # extra
 /publish
-bfg.jar
-Feth.git/
-feth.git.bfg-report/
