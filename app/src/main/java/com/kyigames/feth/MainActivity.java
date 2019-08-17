@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.kyigames.feth.utils.ResourceUtils;
+
 import java.util.List;
 
 import devlight.io.library.ntb.NavigationTabBar;
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ResourceUtils.initialize(this);
         initUI();
     }
 

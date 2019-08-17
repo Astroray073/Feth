@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public class Database {
     private static final String TAG = Database.class.getSimpleName();
@@ -146,5 +147,17 @@ public class Database {
 
     public static int getPortrait(String characterName) {
         return m_portrait.get(characterName);
+    }
+
+    public static <T extends IDbEntity> T getEntityByKey(Class<T> type, final String key) {
+        return getTable(type).stream()
+                .filter(new Predicate<T>() {
+                    @Override
+                    public boolean test(T t) {
+                        return t.getKey().equals(key);
+                    }
+                })
+                .findAny()
+                .orElse(null);
     }
 }

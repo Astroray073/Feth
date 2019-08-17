@@ -3,8 +3,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white_overlay">
+    android:background="@android:color/white">
 
-    <include layout="@layout/class_ability_table" />
+    <include layout="@layout/class_ability_list" />
+
+    <include layout="@layout/growth_table" />
 
 </LinearLayout>

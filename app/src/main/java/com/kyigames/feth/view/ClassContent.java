@@ -1,13 +1,15 @@
 package com.kyigames.feth.view;
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.kyigames.feth.R;
+import com.kyigames.feth.model.Ability;
+import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.UnitClass;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,44 +21,40 @@ import eu.davidea.viewholders.FlexibleViewHolder;
 
 public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> {
     private static final String TAG = ClassContent.class.getSimpleName();
+    private static final int MAX_ABILITY_COUNT = 3;
 
     private UnitClass m_unitClass;
+    private List<Ability> m_abilities = new ArrayList<>();
 
     public ClassContent(UnitClass unitClass) {
         m_unitClass = unitClass;
+
+        if (m_unitClass.Abilities != null) {
+
+            for (String abilityName : m_unitClass.Abilities) {
+                m_abilities.add(Database.getEntityByKey(Ability.class, abilityName));
+            }
+        }
     }
 
     class ViewHolder extends FlexibleViewHolder {
         ViewGroup ClassAbilityContainer;
-        List<TextView> AbilityNames = null;
-        List<TextView> AbilityDescriptions = null;
-
+        TextView ClassAbilityNoneText;
+        ClassAbilityListItem[] ClassAbilities = new ClassAbilityListItem[MAX_ABILITY_COUNT];
+        // Growth
+        TableRow GrowthRate;
         ViewHolder(View view, FlexibleAdapter adapter) {
             super(view, adapter, false);
 
-            ClassAbilityContainer = view.findViewById(R.id.class_ability_table_container);
-            final LayoutInflater inflater = LayoutInflater.from(ClassAbilityContainer.getContext());
-            int viewType = ClassContent.this.getItemViewType();
+            ClassAbilityNoneText = view.findViewById(R.id.class_ability_none_text);
 
-            if (viewType == 0) {
-                final TextView noneTextView = new TextView(ClassAbilityContainer.getContext());
-                int padding_in_dp = 8;  // 6 dps
-                final float scale = ClassAbilityContainer.getContext().getResources().getDisplayMetrics().density;
-                int padding_in_px = (int) (padding_in_dp * scale + 0.5f);
-                noneTextView.setPadding(padding_in_px, padding_in_px, padding_in_px, padding_in_px);
-                noneTextView.setText("없음");
-                ClassAbilityContainer.addView(noneTextView);
-            } else {
-                AbilityNames = new ArrayList<>();
-                AbilityDescriptions = new ArrayList<>();
-
-                for (int i = 0; i < viewType; i++) {
-                    View abilityLayout = inflater.inflate(R.layout.class_ability_item, null, false);
-                    AbilityNames.add((TextView) abilityLayout.findViewById(R.id.class_ability_name));
-                    AbilityDescriptions.add((TextView) abilityLayout.findViewById(R.id.class_ability_desc));
-                    ClassAbilityContainer.addView(abilityLayout);
-                }
+            ClassAbilityContainer = view.findViewById(R.id.class_ability_list);
+            for (int i = 0; i < MAX_ABILITY_COUNT; ++i) {
+                ClassAbilities[i] = (ClassAbilityListItem) ClassAbilityContainer.getChildAt(i);
             }
+
+            // Growth
+            GrowthRate = view.findViewById(R.id.growth_table_value);
         }
     }
 
@@ -86,20 +84,51 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
 
     @Override
     public void bindViewHolder(FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads) {
-        bindClassAbility(holder, adapter.getItemViewType(position));
+        bindClassAbility(holder);
+        bindGrowthRate(holder);
     }
 
-    public void bindClassAbility(ViewHolder holder, int viewType) {
-        Log.d(TAG, "ViewType : " + viewType);
-        if (viewType > 0) {
-            for (int i = 0; i < viewType; i++) {
-                String ability = m_unitClass.Abilities.get(i);
-                TextView abilityName = holder.AbilityNames.get(i);
-                TextView abilityDesc = holder.AbilityDescriptions.get(i);
+    public void bindClassAbility(ViewHolder holder) {
 
-                abilityName.setText(ability);
-                abilityDesc.setText("DESC");
+        if (m_unitClass.Abilities == null) {
+            holder.ClassAbilityNoneText.setVisibility(View.VISIBLE);
+            for (int i = 0; i < MAX_ABILITY_COUNT; ++i) {
+                holder.ClassAbilities[i].setVisibility(View.GONE);
             }
+        } else {
+
+            holder.ClassAbilityNoneText.setVisibility(View.GONE);
+            for (int i = 0; i < MAX_ABILITY_COUNT; i++) {
+                if (i < m_unitClass.Abilities.size()) {
+                    String abilityName = m_unitClass.Abilities.get(i);
+                    Ability ability = Database.getEntityByKey(Ability.class, abilityName);
+
+                    holder.ClassAbilities[i].setVisibility(View.VISIBLE);
+                    holder.ClassAbilities[i].setAbilityIcon(ResourceUtils.getAbilityIconResId(ability));
+
+                    if (ability == null) {
+                        holder.ClassAbilities[i].setAbilityName(abilityName);
+                        holder.ClassAbilities[i].setAbilityDescription("missing");
+                    } else {
+                        holder.ClassAbilities[i].setAbilityName(ability.Name);
+                        holder.ClassAbilities[i].setAbilityDescription(ability.Description);
+                    }
+
+                } else {
+                    holder.ClassAbilities[i].setVisibility(View.GONE);
+                }
+            }
+        }
+    }
+
+    private void bindGrowthRate(ViewHolder holder) {
+        TableRow growthRate = holder.GrowthRate;
+        int count = growthRate.getVirtualChildCount();
+
+        for (int i = 0; i < count; i++) {
+            TextView valueText = (TextView) growthRate.getVirtualChildAt(i);
+
+            valueText.setText(m_unitClass.GrowthRate.get(i) + "%");
         }
     }
 }
