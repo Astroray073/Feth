@@ -6,10 +6,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.kyigames.feth.R;
+import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.Database;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractExpandableItem;
@@ -21,13 +25,26 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         implements ISectionable<CharacterHeader.ViewHolder, FactionHeader> {
     private static final String TAG = CharacterHeader.class.getSimpleName();
 
-    public String Name;
-
     private FactionHeader m_header;
 
-    public CharacterHeader(FactionHeader header, String name) {
+    private String m_characterName;
+    @Nullable
+    private String m_scoutCondition;
+
+    public CharacterHeader(FactionHeader header, Character character) {
         m_header = header;
-        Name = name;
+
+        m_characterName = character.Name;
+
+        if (character.Scout == null) {
+            m_scoutCondition = null;
+        } else {
+            StringJoiner joiner = new StringJoiner("/");
+            for (String condition : character.Scout) {
+                joiner.add(condition);
+            }
+            m_scoutCondition = joiner.toString();
+        }
     }
 
     @Override
@@ -41,17 +58,19 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
     }
 
     class ViewHolder extends ExpandableViewHolder {
-        public View ly_container;
-        public ImageView ic_character;
-        public TextView tv_name;
+        View Container;
+        ImageView CharacterPortrait;
+        TextView CharacterName;
+        TextView ScoutCondition;
 
-        public ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
+        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
             super(view, adapter, stickyHeader);
-            ly_container = view.findViewById(R.id.character_header_container);
-            ic_character = view.findViewById(R.id.character_icon);
-            tv_name = view.findViewById(R.id.character_name);
+            Container = view.findViewById(R.id.character_header_container);
+            CharacterPortrait = view.findViewById(R.id.character_header_character_portrait);
+            CharacterName = view.findViewById(R.id.character_header_character_name);
+            ScoutCondition = view.findViewById(R.id.character_header_scout_condition);
 
-            ly_container.setOnClickListener(new View.OnClickListener() {
+            Container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.d(TAG, "onClick: toggle expansion");
@@ -70,7 +89,7 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
     public boolean equals(Object o) {
         if (o instanceof CharacterHeader) {
             CharacterHeader characterHeader = (CharacterHeader) o;
-            return Name.equals(characterHeader.Name);
+            return m_characterName.equals(characterHeader.m_characterName);
         }
         return false;
     }
@@ -85,9 +104,23 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         return new ViewHolder(view, adapter, false);
     }
 
+    private int getPortraitResId(String characterName) {
+        return Database.getPortrait(characterName);
+    }
+
     @Override
     public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, final ViewHolder holder, final int position, List<Object> payloads) {
-        holder.ic_character.setImageResource(Database.getPortrait(Name));
-        holder.tv_name.setText(Name);
+        int portraitResId = getPortraitResId(m_characterName);
+        holder.CharacterPortrait.setImageResource(portraitResId);
+        holder.CharacterName.setText(m_characterName);
+
+        if (m_scoutCondition == null) {
+            holder.ScoutCondition.setVisibility(View.GONE);
+        } else {
+            holder.ScoutCondition.setVisibility(View.VISIBLE);
+            holder.ScoutCondition.setText(m_scoutCondition);
+        }
+
+        holder.Container.invalidate();
     }
 }

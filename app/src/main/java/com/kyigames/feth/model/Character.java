@@ -1,5 +1,7 @@
 package com.kyigames.feth.model;
 
+import androidx.annotation.Nullable;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.List;
@@ -9,8 +11,10 @@ public class Character {
     public String Name;
     public String Faction;
     public List<String> Crest;
+    // TODO: Add to view
     public String UniqueAbility;
     public String InitialClass;
+    @Nullable
     public List<String> Scout;
     public List<String> SkillLevel;
     public List<Integer> SkillProficiency;

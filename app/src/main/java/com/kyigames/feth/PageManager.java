@@ -152,7 +152,7 @@ class PageManager extends PagerAdapter {
             }
 
             CharacterContent characterContent = new CharacterContent(character);
-            CharacterHeader characterHeader = new CharacterHeader(faction, character.Name);
+            CharacterHeader characterHeader = new CharacterHeader(faction, character);
 
             characterHeader.addSubItem(characterContent);
             faction.addSubItem(characterHeader);
