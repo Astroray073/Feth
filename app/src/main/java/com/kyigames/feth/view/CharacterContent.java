@@ -6,16 +6,18 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.firebase.database.annotations.NotNull;
 import com.kyigames.feth.R;
+import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Present;
 import com.kyigames.feth.model.Tea;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
-import java.util.function.Predicate;
 
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractFlexibleItem;
@@ -31,41 +33,23 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
     private Character m_character;
     private Present m_present;
     private Tea m_tea;
+    private Ability m_uniqueAbility;
 
-    public CharacterContent(Character character) {
+    public CharacterContent(@NotNull Character character) {
         m_character = character;
-
-        m_present = Database.getTable(Present.class)
-                .stream()
-                .filter(new Predicate<Present>() {
-                    @Override
-                    public boolean test(Present present) {
-                        return present.Name.equals(m_character.Name);
-                    }
-                })
-                .findAny()
-                .orElse(null);
-
-        m_tea = Database.getTable(Tea.class)
-                .stream()
-                .filter(new Predicate<Tea>() {
-                    @Override
-                    public boolean test(Tea tea) {
-                        return tea.Name.equals(m_character.Name);
-                    }
-                })
-                .findAny()
-                .orElse(null);
+        m_present = Database.getEntityByKey(Present.class, m_character.Name);
+        m_tea = Database.getEntityByKey(Tea.class, m_character.Name);
+        m_uniqueAbility = Database.getEntityByKey(Ability.class, m_character.UniqueAbility);
     }
 
     class ViewHolder extends FlexibleViewHolder {
+        // Character info
         TextView CrestName;
         TextView InitialClass;
-
-        // Preferences
         TextView PreferredGifts;
         TextView NonPreferredGifts;
         TextView PreferredTeas;
+        ClassAbilityListItem UniqueAbility;
 
         // Skill
         TableRow SkillLevel;
@@ -80,14 +64,13 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
         ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
             super(view, adapter, stickyHeader);
+            // Character info
             CrestName = view.findViewById(R.id.character_crest);
             InitialClass = view.findViewById(R.id.character_initial_class);
-
-
-            // Preferences
             PreferredGifts = view.findViewById(R.id.preferred_gift);
             NonPreferredGifts = view.findViewById(R.id.non_preferred_gift);
             PreferredTeas = view.findViewById(R.id.preferred_tea);
+            UniqueAbility = view.findViewById(R.id.character_info_unique_ability);
 
             // Skill
             SkillLevel = view.findViewById(R.id.skill_table_level);
@@ -165,6 +148,10 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         holder.InitialClass.setText(m_character.InitialClass);
 
         bindPreference(holder);
+
+        holder.UniqueAbility.setAbilityIcon(ResourceUtils.getAbilityIconResId(m_uniqueAbility));
+        holder.UniqueAbility.setAbilityName(m_uniqueAbility.Name);
+        holder.UniqueAbility.setAbilityDescription(m_uniqueAbility.Description);
     }
 
     private void bindCharacterSkill(ViewHolder holder) {

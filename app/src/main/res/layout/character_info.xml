@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/DefaultContainer"
     android:orientation="vertical">
 
@@ -89,4 +90,15 @@
             android:paddingEnd="8dp" />
 
     </LinearLayout>
+
+    <com.kyigames.feth.view.LabelWithBar
+        style="@style/LabelWithBar"
+        android:padding="0dp"
+        app:text="@string/class_info_unique_ability" />
+
+    <com.kyigames.feth.view.ClassAbilityListItem
+        android:id="@+id/character_info_unique_ability"
+        android:layout_width="match_parent"
+        android:layout_height="?android:listPreferredItemHeightSmall"
+        android:paddingTop="4dp" />
 </LinearLayout>
