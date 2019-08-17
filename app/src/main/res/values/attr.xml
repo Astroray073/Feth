@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabelWithBar">
+        <attr name="text" format="string" />
+        <attr name="bar_color" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="AbilityIconHeader">
+        <attr name="ability_name" format="string" />
+        <attr name="ability_icon" format="integer" />
+    </declare-styleable>
+</resources>

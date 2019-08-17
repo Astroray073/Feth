@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DefaultContainer"
+    android:orientation="vertical">
+
+    <com.kyigames.feth.view.LabelWithBar
+        style="@style/DefaultListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="@string/growth" />
+
+    <TableLayout
+        style="@style/Table"
+        android:layout_height="wrap_content"
+        android:padding="1dip"
+        android:stretchColumns="*"
+        android:shrinkColumns="*"
+        android:weightSum="2">
+
+        <TableRow
+            android:id="@+id/growth_table_header"
+            android:background="@color/black"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/hp" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/strength" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/magic" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/dex" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/speed" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/luck" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/defense" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/resist" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/charisma" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/growth_table_value"
+            android:background="@color/black"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/hp" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/strength" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/magic" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/dex" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/speed" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/luck" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/defense" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/resist" />
+
+            <TextView
+                android:background="@android:color/white"
+                android:layout_margin="1dip"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/charisma" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

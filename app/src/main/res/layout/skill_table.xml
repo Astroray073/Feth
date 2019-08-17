@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DefaultContainer"
+    android:orientation="vertical">
+
+    <com.kyigames.feth.view.LabelWithBar
+        style="@style/DefaultListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="@string/skill" />
+
+    <TableLayout
+        style="@style/Table"
+        android:layout_height="120dp"
+        android:weightSum="3">
+
+        <TableRow
+            android:id="@+id/skill_table_header"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_sword" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_lance" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_axe" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_bow" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_fighting" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_reason" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_faith" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_authority" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_heavy" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_riding" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_flying" />
+
+        </TableRow>
+
+        <TableRow
+            style="@style/TableRow"
+            android:id="@+id/skill_table_level">
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+            <TextView
+                style="@style/TableTextItem"
+                android:text="E" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/skill_table_proficiency"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_sword" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_lance" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_axe" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_bow" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_fighting" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_reason" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_faith" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_authority" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_heavy" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_riding" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_flying" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout style="@style/EndListItem">
+
+        <TextView
+            style="@style/Label"
+            android:padding="0dp"
+            android:text="@string/budding_talent" />
+
+        <TextView
+            style="@style/ValueText"
+            android:id="@+id/budding_talent"
+            android:text="character_crest" />
+    </LinearLayout>
+</LinearLayout>

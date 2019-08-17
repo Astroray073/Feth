@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="red">#F23558</color>
+    <color name="blue">#0F5EBF</color>
+    <color name="yellow">#F2D06B</color>
+    <color name="white">#E6E4F2</color>
+    <color name="black">#0B0B0B</color>
+    <color name="primary">#3D2DA6</color>
+    <color name="white_overlay">#CDE6E4F2</color>
+
+    <color name="colorFactionNone">#3D2DA6</color>
+    <color name="colorFactionEagle">#F23558</color>
+    <color name="colorFactionLion">#0F5EBF</color>
+    <color name="colorFactionDeer">#F2D06B</color>
+    <color name="colorFactionChurch">#E6E4F2</color>
+    <color name="black_overlay">#CD292929</color>
+</resources>
