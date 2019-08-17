@@ -1,0 +1,49 @@
+<resources>
+    <!-- System -->
+    <string name="app_name">FETH</string>
+    <string name="app_title">파이어 엠블렘 가이드</string>
+    <string name="initializing">Initializing...</string>
+
+    <!-- General -->
+    <string name="none">없음</string>
+    <string name="name">이름</string>
+    <string name="character">캐릭터</string>
+    <string name="job">클래스</string>
+    <string name="item">아이템</string>
+    <string name="gift">선물</string>
+    <string name="loss">분실물</string>
+
+    <!-- Factions -->
+    <string name="faction_none">무소속</string>
+    <string name="faction_eagle">흑수리</string>
+    <string name="faction_lion">청사자</string>
+    <string name="faction_deer">금사슴</string>
+    <string name="faction_church">세이로스 교단</string>
+
+    <!-- Skill -->
+    <string name="skill">기술</string>
+    <string name="sword">검</string>
+    <string name="initial_class">초기 클래스</string>
+    <string name="crest">문장</string>
+    <string name="growth">성장률</string>
+    <string name="hp">HP</string>
+    <string name="strength">힘</string>
+    <string name="magic">마력</string>
+    <string name="dex">기술</string>
+    <string name="speed">속도</string>
+    <string name="luck">행운</string>
+    <string name="defense">수비</string>
+    <string name="resist">마방</string>
+    <string name="charisma">매력</string>
+    <string name="preferred_gifts">선호하는 선물</string>
+    <string name="non_preferred_gifts">싫어하는 선물</string>
+    <string name="wip">WIP</string>
+    <string name="class_ability">클래스 능력</string>
+    <string name="missing_content">MISSING</string>
+    <string name="preferred_tea">선호하는 차</string>
+    <string name="budding_talent">재능개화</string>
+    <string name="spell_acquisition">습득주문</string>
+    <string name="level">레벨</string>
+    <string name="master_skills">마스터스킬</string>
+    <string name="class_abilities">클래스 스킬</string>
+</resources>

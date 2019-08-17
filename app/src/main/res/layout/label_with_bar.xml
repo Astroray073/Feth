@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/label_container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        style="@style/Label"
+        android:id="@+id/label_text"
+        android:padding="0dp"
+        android:text="Title" />
+
+    <View
+        android:id="@+id/label_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginTop="2dp"
+        android:visibility="visible" />
+
+</LinearLayout>

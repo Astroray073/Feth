@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/DefaultContainer"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/DefaultListItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crest"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/character_crest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="character_crest" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/DefaultListItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/initial_class"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/character_initial_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="character_initial_class" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/DefaultListItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preferred_gifts"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/preferred_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/DefaultListItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/non_preferred_gifts"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/non_preferred_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/EndListItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preferred_tea"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/preferred_tea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="preferred_tea"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+    </LinearLayout>
+</LinearLayout>

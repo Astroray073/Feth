@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/DefaultContainer"
+    android:orientation="vertical">
+
+    <com.kyigames.feth.view.LabelWithBar
+        style="@style/DefaultListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="@string/spell_acquisition" />
+
+    <TableLayout
+        android:id="@+id/spell_table"
+        style="@style/Table"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:shrinkColumns="1"
+        android:stretchColumns="1,2">
+
+        <TableRow
+            android:id="@+id/spell_table_header"
+            style="@style/TableRow"
+            android:layout_height="14dp">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:padding="8dp" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_reason" />
+
+            <ImageView
+                style="@style/TableImageItem"
+                android:src="@drawable/ic_faith" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="D"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="D+"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="C"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="C+"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="B"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="B+"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="A"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="A+"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
