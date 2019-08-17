@@ -7,7 +7,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 import java.util.List;
 
 @IgnoreExtraProperties
-public class Character {
+public class Character implements IDbEntity {
     public String Name;
     public String Faction;
     public List<String> Crest;
@@ -27,4 +27,9 @@ public class Character {
     public List<String> AxeArts;
     public List<String> BowArts;
     public List<String> FistArts;
+
+    @Override
+    public String getKey() {
+        return Name;
+    }
 }

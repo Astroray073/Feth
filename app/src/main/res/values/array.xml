@@ -55,4 +55,51 @@
         <item>#f9bb72</item>
         <item>#2196F3</item>
     </string-array>
+
+    <string-array name="eagle_members">
+        <item>에델가르드</item>
+        <item>휴베르트</item>
+        <item>도로테아</item>
+        <item>페르디난트</item>
+        <item>베르나데타</item>
+        <item>카스파르</item>
+        <item>페트라</item>
+        <item>린하르트</item>
+    </string-array>
+
+    <string-array name="lion_members">
+        <item>디미트리</item>
+        <item>두두</item>
+        <item>펠릭스</item>
+        <item>메르세데스</item>
+        <item>애쉬</item>
+        <item>아네트</item>
+        <item>실뱅</item>
+        <item>잉그리트</item>
+    </string-array>
+
+    <string-array name="deer_members">
+        <item>클로드</item>
+        <item>로렌츠</item>
+        <item>힐다</item>
+        <item>라파엘</item>
+        <item>리시테아</item>
+        <item>이그나츠</item>
+        <item>마리안</item>
+        <item>레오니</item>
+    </string-array>
+
+    <string-array name="church_members">
+        <item>레아</item>
+        <item>마누엘라</item>
+        <item>한네만</item>
+        <item>세테스</item>
+        <item>흐렌</item>
+        <item>시릴</item>
+        <item>제랄트</item>
+        <item>카트린</item>
+        <item>알로이스</item>
+        <item>길베르트</item>
+        <item>샤미아</item>
+    </string-array>
 </resources>

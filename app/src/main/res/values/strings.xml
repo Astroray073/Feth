@@ -3,6 +3,7 @@
     <string name="app_name">FETH</string>
     <string name="app_title">파이어 엠블렘 가이드</string>
     <string name="initializing">Initializing...</string>
+    <string name="hero_name">주인공</string>
 
     <!-- General -->
     <string name="none">없음</string>

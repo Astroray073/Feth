@@ -136,27 +136,11 @@ class PageManager extends PagerAdapter {
         FactionHeader deer = new FactionHeader(m_context.getString(R.string.faction_deer), R.color.colorFactionDeer, R.drawable.ic_flag_deer);
         FactionHeader church = new FactionHeader(m_context.getString(R.string.faction_church), R.color.colorFactionChurch, R.drawable.ic_flag_church);
 
-        for (final Character character : characterList) {
-            FactionHeader faction;
-
-            if (character.Faction.equals(eagle.FactionName)) {
-                faction = eagle;
-            } else if (character.Faction.equals(lion.FactionName)) {
-                faction = lion;
-            } else if (character.Faction.equals(deer.FactionName)) {
-                faction = deer;
-            } else if (character.Faction.equals(church.FactionName)) {
-                faction = church;
-            } else {
-                faction = none;
-            }
-
-            CharacterContent characterContent = new CharacterContent(character);
-            CharacterHeader characterHeader = new CharacterHeader(faction, character);
-
-            characterHeader.addSubItem(characterContent);
-            faction.addSubItem(characterHeader);
-        }
+        addFactionMembers(none, new String[]{getResources().getString(R.string.hero_name)});
+        addFactionMembers(eagle, getResources().getStringArray(R.array.eagle_members));
+        addFactionMembers(lion, getResources().getStringArray(R.array.lion_members));
+        addFactionMembers(deer, getResources().getStringArray(R.array.deer_members));
+        addFactionMembers(church, getResources().getStringArray(R.array.church_members));
 
         List<IFlexible> factionHeaders = new ArrayList<>();
         factionHeaders.add(none);
@@ -172,6 +156,18 @@ class PageManager extends PagerAdapter {
 
         RecyclerView pg_character = view.findViewById(R.id.character_list_view);
         pg_character.setAdapter(adapter);
+    }
+
+    private void addFactionMembers(@NotNull FactionHeader factionHeader, @NotNull String[] memberNames) {
+        for (String memberName : memberNames) {
+            Character character = Database.getEntityByKey(Character.class, memberName);
+
+            CharacterContent characterContent = new CharacterContent(character);
+            CharacterHeader characterHeader = new CharacterHeader(factionHeader, character);
+
+            characterHeader.addSubItem(characterContent);
+            factionHeader.addSubItem(characterHeader);
+        }
     }
 
     private void initializeClassPage(@NotNull View view) {
