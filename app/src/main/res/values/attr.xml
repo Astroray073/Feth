@@ -6,8 +6,8 @@
     </declare-styleable>
 
     <declare-styleable name="AbilityIconHeader">
-        <attr name="ability_name" format="string" />
-        <attr name="ability_icon" format="integer" />
+        <attr name="ability_name" format="reference|string" />
+        <attr name="ability_icon" format="reference|integer" />
     </declare-styleable>
 
     <declare-styleable name="SquaredImageView">

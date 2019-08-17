@@ -3,7 +3,7 @@ package com.kyigames.feth.view;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
-import android.widget.TableRow;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.kyigames.feth.R;
@@ -26,12 +26,17 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
     private static final String TAG = ClassHeader.class.getSimpleName();
 
     private UnitClass m_unitClass;
-
     private ClassCategoryHeader m_header;
+
+    private boolean bIsMasterAbilityExists;
+    private boolean bIsMasterArtsExists;
 
     public ClassHeader(ClassCategoryHeader header, UnitClass unitClass) {
         m_header = header;
         m_unitClass = unitClass;
+
+        bIsMasterAbilityExists = m_unitClass.MasterAbility != null;
+        bIsMasterArtsExists = m_unitClass.MasterArts != null;
     }
 
     @Override
@@ -48,7 +53,8 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         View Container;
         TextView Name;
         TextView Condition;
-        AbilityIconHeader[] MasterSkills;
+        ViewGroup MasterSkillContainer;
+        AbilityIconHeader[] MasterSkills = new AbilityIconHeader[2];
 
         ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
             super(view, adapter, stickyHeader);
@@ -56,11 +62,10 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
             Name = view.findViewById(R.id.class_header_name);
             Condition = view.findViewById(R.id.class_header_condition);
 
-            MasterSkills = new AbilityIconHeader[2];
-            TableRow masterAbilityContainer = view.findViewById(R.id.class_header_master_ability_container);
+            MasterSkillContainer = view.findViewById(R.id.class_header_master_ability_container);
 
-            MasterSkills[0] = (AbilityIconHeader) masterAbilityContainer.getVirtualChildAt(0);
-            MasterSkills[1] = (AbilityIconHeader) masterAbilityContainer.getVirtualChildAt(1);
+            MasterSkills[0] = (AbilityIconHeader) MasterSkillContainer.getChildAt(0);
+            MasterSkills[1] = (AbilityIconHeader) MasterSkillContainer.getChildAt(1);
 
             Container.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -70,6 +75,17 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
                 }
             });
         }
+    }
+
+    private int getMasterSkillCount() {
+        int count = 0;
+        if (bIsMasterAbilityExists) {
+            ++count;
+        }
+        if (bIsMasterArtsExists) {
+            ++count;
+        }
+        return count;
     }
 
     @Override
@@ -130,33 +146,44 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
 
     @Override
     public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads) {
-        final Context context = holder.getContentView().getContext();
 
         holder.Name.setText(m_unitClass.Name);
         holder.Condition.setText(m_unitClass.Condition == null ? "없음" : m_unitClass.Condition);
 
-        // Master ability
-        if (m_unitClass.MasterAbility == null) {
-            holder.MasterSkills[0].setIcon(R.drawable.white_box);
-            holder.MasterSkills[0].setName("");
-        } else {
-            String abilityIconName = "ic_ability_" + getAbilityIconIndex(m_unitClass.MasterAbility);
-            int iconRes = context.getResources().getIdentifier(abilityIconName, "drawable", context.getPackageName());
+        holder.MasterSkills[0].setVisibility(View.VISIBLE);
+        holder.MasterSkills[1].setVisibility(View.VISIBLE);
 
-            holder.MasterSkills[0].setIcon(iconRes);
-            holder.MasterSkills[0].setName(m_unitClass.MasterAbility);
+        if (bIsMasterAbilityExists && bIsMasterArtsExists) {
+            bindMasterAbility(holder.MasterSkills[0]);
+            bindMasterArts(holder.MasterSkills[1]);
+        } else if (bIsMasterAbilityExists) {
+            bindMasterAbility(holder.MasterSkills[0]);
+            holder.MasterSkills[1].setVisibility(View.GONE);
+        } else if (bIsMasterArtsExists) {
+            bindMasterArts(holder.MasterSkills[0]);
+            holder.MasterSkills[1].setVisibility(View.GONE);
         }
 
-        // Master Arts
-        if (m_unitClass.MasterArts == null) {
-            holder.MasterSkills[1].setIcon(R.drawable.white_box);
-            holder.MasterSkills[1].setName("");
-        } else {
-            String artsIconName = "ic_arts_" + getArtsIconIndex(m_unitClass.MasterArts);
-            int iconRes = context.getResources().getIdentifier(artsIconName, "drawable", context.getPackageName());
+        holder.MasterSkillContainer.invalidate();
+    }
 
-            holder.MasterSkills[1].setIcon(iconRes);
-            holder.MasterSkills[1].setName(m_unitClass.MasterArts);
-        }
+    private void bindMasterAbility(AbilityIconHeader header) {
+        final Context context = header.getContext();
+
+        String abilityIconName = "ic_ability_" + getAbilityIconIndex(m_unitClass.MasterAbility);
+        int iconRes = context.getResources().getIdentifier(abilityIconName, "drawable", context.getPackageName());
+
+        header.setIcon(iconRes);
+        header.setName(m_unitClass.MasterAbility);
+    }
+
+    private void bindMasterArts(AbilityIconHeader header) {
+        final Context context = header.getContext();
+
+        String artsIconName = "ic_arts_" + getArtsIconIndex(m_unitClass.MasterArts);
+        int iconRes = context.getResources().getIdentifier(artsIconName, "drawable", context.getPackageName());
+
+        header.setIcon(iconRes);
+        header.setName(m_unitClass.MasterArts);
     }
 }

@@ -9,11 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="class_header_name"
+            android:text="class_name"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
@@ -68,36 +65,40 @@
         <TextView
             style="@style/Label"
             android:layout_gravity="center"
+            android:paddingBottom="8dp"
             android:text="@string/master_skills"
             android:textAlignment="center"
             android:textSize="12sp" />
 
-        <TableLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/class_header_master_ability_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="*"
-            android:weightSum="2">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
-            <TableRow android:id="@+id/class_header_master_ability_container">
+            <com.kyigames.feth.view.AbilityIconHeader
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                app:ability_icon="@drawable/ic_ability_missing"
+                app:ability_name="name" />
 
-                <com.kyigames.feth.view.AbilityIconHeader
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:ability_icon="@drawable/ic_ability_missing"
-                    android:layout_gravity="center"
-                    app:ability_name="master_0"
-                    android:layout_weight="1" />
-
-                <com.kyigames.feth.view.AbilityIconHeader
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:ability_icon="@drawable/ic_ability_missing"
-                    android:layout_gravity="center"
-                    app:ability_name="master_1"
-                    android:layout_weight="1" />
-            </TableRow>
-
-        </TableLayout>
+            <com.kyigames.feth.view.AbilityIconHeader
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                app:ability_icon="@drawable/ic_ability_missing"
+                app:ability_name="name" />
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
