@@ -1,9 +1,0 @@
-<toolSet name="External Tools">
-  <tool name="DatabaseJNI" description="Database JNI" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
-    <exec>
-      <option name="COMMAND" value="C:\Program Files\Java\jdk1.8.0_152\bin\javac.exe" />
-      <option name="PARAMETERS" value="-classpath &quot;$Classpath$&quot; -v -jni $FileClass$" />
-      <option name="WORKING_DIRECTORY" value="C:/Projects/FETH/app/src/main/cpp" />
-    </exec>
-  </tool>
-</toolSet>
