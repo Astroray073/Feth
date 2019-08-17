@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="licenses">
-        <item>Devlight Navigation Bab Bar</item>
+        <item>Devlight Navigation Tab Bar</item>
         <item>Flexible Adapter</item>
         <item>Daimajia Numberprogressbar</item>
         <item>Kimkevin Hangulparser:1.0.0</item>
