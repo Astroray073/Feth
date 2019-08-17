@@ -39,6 +39,47 @@
         <item name="android:layout_margin">8dp</item>
     </style>
 
+
+    <!-- List -->
+    <style name="DefaultListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">8dp</item>
+    </style>
+
+    <style name="EndListItem" parent="DefaultListItem">
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+    <!-- List -->
+
+    <!-- Table -->
+    <style name="Table">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:padding">1dip</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:stretchColumns">*</item>
+        <item name="android:shrinkColumns">*</item>
+    </style>
+
+    <style name="TableRow">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TableHeaderLabel" parent="TableValueText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TableValueText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+
     <style name="TableImageItem">
         <item name="android:layout_gravity">center</item>
         <item name="android:scaleType">centerInside</item>
@@ -49,40 +90,19 @@
         <item name="android:gravity">center</item>
         <item name="android:textAlignment">center</item>
     </style>
+    <!-- Table -->
 
-    <style name="DefaultListItem">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">8dp</item>
-    </style>
-
-    <style name="EndListItem" parent="DefaultListItem">
-        <item name="android:paddingBottom">8dp</item>
-    </style>
-
-    <style name="Table">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:padding">1dip</item>
-        <item name="android:background">@color/black</item>
-        <item name="android:shrinkColumns">*</item>
-    </style>
-
-    <style name="TableRow">
-        <item name="android:background">@android:color/white</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">1</item>
+    <!-- SPELL TABLE -->
+    <style name="SpellTableRow" parent="TableRow">
+        <item name="android:padding">1dp</item>
+        <item name="android:layout_marginTop">1dp</item>
     </style>
 
     <style name="SpellTableTextItem" parent="TableTextItem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/black</item>
     </style>
-
-    <style name="SpellTableRow" parent="TableRow">
-        <item name="android:padding">1dip</item>
-        <item name="android:layout_height">14dp</item>
-    </style>
+    <!-- SPELL TABLE -->
 </resources>

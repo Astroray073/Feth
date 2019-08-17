@@ -9,4 +9,11 @@
         <attr name="ability_name" format="string" />
         <attr name="ability_icon" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="SquaredImageView">
+        <attr name="criteria" format="enum">
+            <enum name="width" value="0" />
+            <enum name="height" value="1" />
+        </attr>
+    </declare-styleable>
 </resources>

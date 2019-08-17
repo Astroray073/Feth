@@ -10,33 +10,45 @@
         android:layout_height="wrap_content"
         app:text="@string/spell_acquisition" />
 
+
     <TableLayout
         android:id="@+id/spell_table"
         style="@style/Table"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:shrinkColumns="1"
+        android:shrinkColumns="*"
         android:stretchColumns="1,2">
 
         <TableRow
             android:id="@+id/spell_table_header"
-            style="@style/TableRow"
-            android:layout_height="14dp">
+            style="@style/TableRow">
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/level" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:text="@string/reason" />
+
+            <TextView
+                style="@style/TableHeaderLabel"
+                android:text="@string/faith" />
+        </TableRow>
+
+        <TableRow style="@style/SpellTableRow">
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:padding="8dp" />
+                android:text="@string/grade_d" />
 
-            <ImageView
-                style="@style/TableImageItem"
-                android:src="@drawable/ic_reason" />
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level" />
 
-            <ImageView
-                style="@style/TableImageItem"
-                android:src="@drawable/ic_faith" />
+            <TextView
+                style="@style/SpellTableTextItem"
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -44,21 +56,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="D"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_d_plus" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -66,21 +72,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="D+"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_c" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -88,21 +88,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="C"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_c_plus" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -110,21 +104,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="C+"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_b" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -132,21 +120,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="B"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_b_plus" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -154,21 +136,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="B+"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_a" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
 
@@ -176,43 +152,15 @@
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="A"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/grade_a_plus" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
             <TextView
                 style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-
-        </TableRow>
-
-        <TableRow style="@style/SpellTableRow">
-
-            <TextView
-                style="@style/SpellTableTextItem"
-                android:text="A+"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-
-            <TextView
-                style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
-
-            <TextView
-                style="@style/SpellTableTextItem"
-                android:text="@string/level"
-                android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:text="@string/level" />
 
         </TableRow>
     </TableLayout>
