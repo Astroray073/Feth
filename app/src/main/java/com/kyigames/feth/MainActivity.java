@@ -12,7 +12,7 @@ import java.util.List;
 import devlight.io.library.ntb.NavigationTabBar;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int StartPageIndex = 1;
+    private static final int StartPageIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
