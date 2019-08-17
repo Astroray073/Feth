@@ -253,12 +253,13 @@ class PageManager extends PagerAdapter {
 
     private void initializeLicensePage(@NotNull View view) {
         String[] licenses = getResources().getStringArray(R.array.licenses);
+        String[] license_types = getResources().getStringArray(R.array.license_types);
         String[] license_url = getResources().getStringArray(R.array.license_agreement_url);
 
         List<IFlexible> licenseItemList = new ArrayList<>();
 
         for (int i = 0; i < licenses.length; ++i) {
-            licenseItemList.add(new LicenseItem(licenses[i], license_url[i]));
+            licenseItemList.add(new LicenseItem(licenses[i], license_types[i], license_url[i]));
         }
 
         FlexibleAdapter<IFlexible> adapter = new FlexibleAdapter<>(licenseItemList);

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="licenses">
-        <item>devlight.io:navigationtabbar:1.2.5</item>
-        <item>eu.davidea:flexible-adapter:5.1.0</item>
-        <item>com.daimajia.numberprogressbar:library:1.4@aar</item>
-        <item>com.github.kimkevin:hangulparser:1.0.0</item>
+        <item>Devlight Navigation Bab Bar</item>
+        <item>Flexible Adapter</item>
+        <item>Daimajia Numberprogressbar</item>
+        <item>Kimkevin Hangulparser:1.0.0</item>
+    </string-array>
+
+    <string-array name="license_types">
+        <item>Apache v2.0</item>
+        <item>Apache v2.0</item>
+        <item>MIT</item>
+        <item>MIT</item>
     </string-array>
 
     <string-array name="license_agreement_url">

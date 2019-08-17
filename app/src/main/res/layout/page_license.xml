@@ -5,6 +5,14 @@
     android:orientation="vertical"
     style="@style/DefaultContainer">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?android:listPreferredItemHeightSmall"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="오픈소스 라이센스" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/license_list_view"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
