@@ -32,7 +32,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
         if (m_unitClass.Abilities != null) {
 
             for (String abilityName : m_unitClass.Abilities) {
-                m_abilities.add(Database.getEntityByKey(Ability.class, abilityName));
+                m_abilities.add(Database.findEntityByKey(Ability.class, abilityName));
             }
         }
     }
@@ -101,7 +101,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
             for (int i = 0; i < MAX_ABILITY_COUNT; i++) {
                 if (i < m_unitClass.Abilities.size()) {
                     String abilityName = m_unitClass.Abilities.get(i);
-                    Ability ability = Database.getEntityByKey(Ability.class, abilityName);
+                    Ability ability = Database.findEntityByKey(Ability.class, abilityName);
 
                     holder.ClassAbilities[i].setVisibility(View.VISIBLE);
                     holder.ClassAbilities[i].setAbilityIcon(ResourceUtils.getAbilityIconResId(ability));

@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.firebase.database.annotations.NotNull;
+import com.google.firebase.database.annotations.Nullable;
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.CombatArts;
@@ -27,23 +28,21 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
 
     private ClassCategoryHeader m_header;
 
+    @NotNull
     private String m_name;
+    @NotNull
     private String m_condition;
+    @Nullable
     private Ability m_masterAbility;
+    @Nullable
     private CombatArts m_masterArts;
-
-    private boolean bIsMasterAbilityExists;
-    private boolean bIsMasterArtsExists;
 
     public ClassHeader(@NotNull ClassCategoryHeader header, @NotNull UnitClass unitClass) {
         m_header = header;
         m_name = unitClass.Name;
         m_condition = unitClass.Condition;
-        m_masterAbility = Database.getEntityByKey(Ability.class, unitClass.MasterAbility);
-        m_masterArts = Database.getEntityByKey(CombatArts.class, unitClass.MasterArts);
-
-        bIsMasterAbilityExists = m_masterAbility != null;
-        bIsMasterArtsExists = m_masterArts != null;
+        m_masterAbility = Database.findEntityByKey(Ability.class, unitClass.MasterAbility);
+        m_masterArts = Database.findEntityByKey(CombatArts.class, unitClass.MasterArts);
     }
 
     @Override
@@ -112,7 +111,7 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
     public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads) {
 
         holder.Name.setText(m_name);
-        holder.Condition.setText(m_condition == null ? "없음" : m_condition);
+        holder.Condition.setText(m_condition);
 
         if (m_masterAbility == null) {
             holder.MasterSkills[0].setVisibility(View.GONE);
@@ -133,13 +132,4 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         holder.MasterSkillContainer.invalidate();
     }
 
-    private void bindMasterAbility(AbilityIconHeader header) {
-        header.setIcon(m_masterAbility.getIcon());
-        header.setName(m_masterAbility.Name);
-    }
-
-    private void bindMasterArts(AbilityIconHeader header) {
-        header.setIcon(m_masterArts.getIcon());
-        header.setName(m_masterArts.Name);
-    }
 }

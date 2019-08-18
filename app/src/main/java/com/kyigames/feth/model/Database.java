@@ -111,7 +111,7 @@ public class Database {
         return m_portrait.get(characterName);
     }
 
-    public static <T extends IDbEntity> T getEntityByKey(Class<T> type, final String key) {
+    public static <T extends IDbEntity> T findEntityByKey(Class<T> type, final String key) {
         return getTable(type).stream()
                 .filter(new Predicate<T>() {
                     @Override

@@ -10,6 +10,7 @@ import java.util.List;
 
 @IgnoreExtraProperties
 public class Character implements IDbEntity {
+
     @NotNull
     public String Name;
     @NotNull

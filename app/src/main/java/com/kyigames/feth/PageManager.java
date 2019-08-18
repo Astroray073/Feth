@@ -161,7 +161,7 @@ class PageManager extends PagerAdapter {
 
     private void addFactionMembers(@NotNull FactionHeader factionHeader, @NotNull String[] memberNames) {
         for (String memberName : memberNames) {
-            Character character = Database.getEntityByKey(Character.class, memberName);
+            Character character = Database.findEntityByKey(Character.class, memberName);
             CharacterContent characterContent = new CharacterContent(character);
             CharacterHeader characterHeader = new CharacterHeader(factionHeader, character);
 

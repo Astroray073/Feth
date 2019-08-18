@@ -37,9 +37,9 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
     public CharacterContent(@NotNull Character character) {
         m_character = character;
-        m_present = Database.getEntityByKey(Present.class, m_character.Name);
-        m_tea = Database.getEntityByKey(Tea.class, m_character.Name);
-        m_uniqueAbility = Database.getEntityByKey(Ability.class, m_character.UniqueAbility);
+        m_present = Database.findEntityByKey(Present.class, m_character.Name);
+        m_tea = Database.findEntityByKey(Tea.class, m_character.Name);
+        m_uniqueAbility = Database.findEntityByKey(Ability.class, m_character.UniqueAbility);
     }
 
     class ViewHolder extends FlexibleViewHolder {
