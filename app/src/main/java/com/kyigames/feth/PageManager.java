@@ -19,7 +19,6 @@ import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.ClassCategory;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Loss;
-import com.kyigames.feth.model.Present;
 import com.kyigames.feth.model.UnitClass;
 import com.kyigames.feth.view.CharacterContent;
 import com.kyigames.feth.view.CharacterHeader;
@@ -48,7 +47,7 @@ class PageManager extends PagerAdapter {
     // Extra
     private FastScroller m_fastScroller;
 
-    public PageManager(@NotNull Context context) {
+    PageManager(@NotNull Context context) {
         super();
         m_context = context;
         m_inflater = LayoutInflater.from(context);
@@ -58,7 +57,7 @@ class PageManager extends PagerAdapter {
         return m_context.getResources();
     }
 
-    public List<NavigationTabBar.Model> buildTabMenus() {
+    List<NavigationTabBar.Model> buildTabMenus() {
         final String[] titles = getResources().getStringArray(R.array.menu_title);
         final String[] colors = getResources().getStringArray(R.array.menu_color);
         final TypedArray icons = getResources().obtainTypedArray(R.array.menu_icon);
@@ -101,35 +100,39 @@ class PageManager extends PagerAdapter {
 
     @Override
     public Object instantiateItem(final ViewGroup container, final int position) {
-        View view = null;
-        Log.d("Main", "Init view " + position);
+        View page = createPage(position);
+        container.addView(page);
+        return page;
+    }
+
+    private View createPage(int position) {
+        View page;
+        Log.d(TAG, "Create page view " + position);
 
         if (position == 0) // Character
         {
-            view = m_inflater.inflate(R.layout.page_character, null, false);
-            initializeCharacterPage(view);
+            page = m_inflater.inflate(R.layout.page_character, null, false);
+            initializeCharacterPage(page);
         } else if (position == 1) // Class
         {
-            view = m_inflater.inflate(R.layout.page_class, null, false);
-            initializeClassPage(view);
+            page = m_inflater.inflate(R.layout.page_class, null, false);
+            initializeClassPage(page);
         } else if (position == 2) // Loss
         {
-            view = m_inflater.inflate(R.layout.page_loss, null, false);
-            initializeLossPage(view);
+            page = m_inflater.inflate(R.layout.page_loss, null, false);
+            initializeLossPage(page);
         } else if (position == 3) // License
         {
-            view = m_inflater.inflate(R.layout.page_license, null, false);
-            initializeLicensePage(view);
+            page = m_inflater.inflate(R.layout.page_license, null, false);
+            initializeLicensePage(page);
         } else {
-            view = m_inflater.inflate(R.layout.page_wip, null, false);
+            page = m_inflater.inflate(R.layout.page_wip, null, false);
         }
-        container.addView(view);
-        return view;
+
+        return page;
     }
 
     private void initializeCharacterPage(@NotNull View view) {
-        List<Character> characterList = Database.getTable(Character.class);
-        List<Present> presentList = Database.getTable(Present.class);
 
         FactionHeader none = new FactionHeader(m_context.getString(R.string.faction_none), R.color.colorFactionNone, R.drawable.ic_character);
         FactionHeader eagle = new FactionHeader(m_context.getString(R.string.faction_eagle), R.color.colorFactionEagle, R.drawable.ic_flag_eagle);
