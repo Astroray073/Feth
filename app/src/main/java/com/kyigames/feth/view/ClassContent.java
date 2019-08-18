@@ -87,7 +87,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
         bindGrowthRate(holder);
     }
 
-    public void bindClassAbility(ViewHolder holder) {
+    private void bindClassAbility(ViewHolder holder) {
 
         if (m_unitClass.Abilities == null) {
             holder.ClassAbilityNoneText.setVisibility(View.VISIBLE);

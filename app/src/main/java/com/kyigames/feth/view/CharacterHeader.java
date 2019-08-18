@@ -10,10 +10,9 @@ import androidx.annotation.Nullable;
 
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Character;
-import com.kyigames.feth.model.Database;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.List;
-import java.util.StringJoiner;
 
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractExpandableItem;
@@ -41,11 +40,7 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         if (character.Scout == null) {
             m_scoutCondition = null;
         } else {
-            StringJoiner joiner = new StringJoiner("/");
-            for (String condition : character.Scout) {
-                joiner.add(condition);
-            }
-            m_scoutCondition = joiner.toString();
+            m_scoutCondition = ResourceUtils.getListItemText(character.Scout, "/");
         }
     }
 
@@ -104,10 +99,6 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
     @Override
     public ViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter) {
         return new ViewHolder(view, adapter, false);
-    }
-
-    private int getPortraitResId(String characterName) {
-        return Database.getPortrait(characterName);
     }
 
     @Override

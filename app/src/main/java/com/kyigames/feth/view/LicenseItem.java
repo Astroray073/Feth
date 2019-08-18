@@ -32,7 +32,7 @@ public class LicenseItem extends AbstractFlexibleItem<LicenseItem.ViewHolder> {
         TextView LicenseName;
         TextView LicenseType;
 
-        public ViewHolder(View view, FlexibleAdapter adapter) {
+        ViewHolder(View view, FlexibleAdapter adapter) {
             super(view, adapter);
             LicenseItemContainer = view.findViewById(R.id.license_item_container);
             LicenseName = view.findViewById(R.id.license_name);

@@ -25,11 +25,11 @@ public class LossContent extends AbstractFlexibleItem<LossContent.ViewHolder> {
         this.m_loss = loss;
     }
 
-    public class ViewHolder extends FlexibleViewHolder {
-        public TextView tv_name;
-        public TextView tv_character;
+    class ViewHolder extends FlexibleViewHolder {
+        TextView tv_name;
+        TextView tv_character;
 
-        public ViewHolder(View view, FlexibleAdapter adapter) {
+        ViewHolder(View view, FlexibleAdapter adapter) {
             super(view, adapter);
             tv_name = view.findViewById(R.id.loss_name);
             tv_character = view.findViewById(R.id.loss_character);
@@ -59,7 +59,6 @@ public class LossContent extends AbstractFlexibleItem<LossContent.ViewHolder> {
             }
         }
     }
-
 
     @Override
     public boolean equals(Object o) {

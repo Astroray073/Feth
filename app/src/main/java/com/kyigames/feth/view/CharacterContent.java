@@ -13,6 +13,7 @@ import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Present;
 import com.kyigames.feth.model.Tea;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +25,7 @@ import eu.davidea.flexibleadapter.items.IFlexible;
 import eu.davidea.viewholders.FlexibleViewHolder;
 
 public class CharacterContent extends AbstractFlexibleItem<CharacterContent.ViewHolder> {
-    private static final String[] SpellLevels =
-            {
-                    "D", "D+", "C", "C+", "B", "B+", "A", "A+"
-            };
+    private static final int SpellLevelCount = 8; // "D", "D+", "C", "C+", "B", "B+", "A", "A+"
 
     private Character m_character;
     private Present m_present;
@@ -42,6 +40,7 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
     }
 
     class ViewHolder extends FlexibleViewHolder {
+
         // Character info
         TextView CrestName;
         TextView InitialClass;
@@ -63,6 +62,7 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
         ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
             super(view, adapter, stickyHeader);
+
             // Character info
             CrestName = view.findViewById(R.id.character_crest);
             InitialClass = view.findViewById(R.id.character_initial_class);
@@ -81,7 +81,7 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
             // Spell
             TableLayout spellTableLayout = view.findViewById(R.id.spell_table);
-            for (int i = 0; i < SpellLevels.length; ++i) {
+            for (int i = 0; i < SpellLevelCount; ++i) {
                 SpellTableRows.add((TableRow) spellTableLayout.getChildAt(i + 1));
             }
         }
@@ -132,18 +132,19 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         bindSpellAcquisition(holder);
     }
 
-    private void bindCharacterInfo(ViewHolder holder) {
-        TextView crest = holder.CrestName;
-
+    private String getCrestText() {
         if (m_character.Crest == null) {
-            crest.setText("없음");
-        } else if (m_character.Crest.size() == 2) {
-            String text = String.format("%s의 문장, %s의 문장", m_character.Crest.get(0), m_character.Crest.get(1));
-            crest.setText(text);
-        } else {
-            crest.setText(m_character.Crest.get(0) + "의 문장");
+            return "없음";
         }
+        StringJoiner joiner = new StringJoiner(", ");
+        for (String crest : m_character.Crest) {
+            joiner.add(crest);
+        }
+        return joiner.toString();
+    }
 
+    private void bindCharacterInfo(ViewHolder holder) {
+        holder.CrestName.setText(getCrestText());
         holder.InitialClass.setText(m_character.InitialClass);
 
         bindPreference(holder);
@@ -189,36 +190,26 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         if (m_present == null || m_present.PreferredGifts == null) {
             holder.PreferredGifts.setText("없음");
         } else {
-            StringJoiner listString = new StringJoiner(", ");
-
-            for (String gift : m_present.PreferredGifts) {
-                listString.add(gift);
-            }
-
-            holder.PreferredGifts.setText(listString.toString());
+            String text = ResourceUtils.getListItemText(m_present.PreferredGifts);
+            holder.PreferredGifts.setText(text);
         }
+        holder.PreferredGifts.invalidate();
 
         if (m_present == null || m_present.NonpreferredGifts == null) {
             holder.NonPreferredGifts.setText("없음");
         } else {
-            StringJoiner listString = new StringJoiner(", ");
-
-            for (String gift : m_present.NonpreferredGifts) {
-                listString.add(gift);
-            }
-
-            holder.NonPreferredGifts.setText(listString.toString());
+            String text = ResourceUtils.getListItemText(m_present.NonpreferredGifts);
+            holder.NonPreferredGifts.setText(text);
         }
+        holder.NonPreferredGifts.invalidate();
 
         if (m_tea == null || m_tea.PreferredTeas == null) {
             holder.PreferredTeas.setText("없음");
         } else {
-            StringJoiner listString = new StringJoiner(", ");
-            for (String tea : m_tea.PreferredTeas) {
-                listString.add(tea);
-            }
-            holder.PreferredTeas.setText(listString.toString());
+            String text = ResourceUtils.getListItemText(m_tea.PreferredTeas);
+            holder.PreferredTeas.setText(text);
         }
+        holder.PreferredTeas.invalidate();
     }
 
     private void bindSpellAcquisition(ViewHolder holder) {

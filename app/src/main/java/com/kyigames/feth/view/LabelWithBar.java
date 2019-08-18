@@ -34,9 +34,7 @@ public class LabelWithBar extends LinearLayout {
     }
 
     private void initView() {
-        String infService = Context.LAYOUT_INFLATER_SERVICE;
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(infService);
-        View v = inflater.inflate(R.layout.label_with_bar, this, false);
+        View v = LayoutInflater.from(getContext()).inflate(R.layout.label_with_bar, this, false);
         addView(v);
 
         m_container = findViewById(R.id.label_container);

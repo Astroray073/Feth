@@ -26,12 +26,12 @@ public class SquaredImageView extends AppCompatImageView {
     }
 
     private void getAttrs(AttributeSet attrs) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.LabelWithBar);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.SquaredImageView);
         setAttrs(typedArray);
     }
 
     private void getAttrs(AttributeSet attrs, int defStyle) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.LabelWithBar, defStyle, 0);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.SquaredImageView, defStyle, 0);
         setAttrs(typedArray);
     }
 

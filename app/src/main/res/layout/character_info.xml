@@ -50,7 +50,7 @@
             android:id="@+id/preferred_gift"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
+            android:text="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
             android:paddingStart="8dp"
             android:paddingEnd="8dp" />
     </LinearLayout>
@@ -67,7 +67,7 @@
             android:id="@+id/non_preferred_gift"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
+            android:text="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
             android:paddingStart="8dp"
             android:paddingEnd="8dp" />
 
@@ -85,7 +85,7 @@
             android:id="@+id/preferred_tea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="preferred_tea"
+            android:text="preferred_tea"
             android:paddingStart="8dp"
             android:paddingEnd="8dp" />
 

@@ -17,30 +17,30 @@ import eu.davidea.viewholders.ExpandableViewHolder;
 public class FactionHeader extends AbstractExpandableHeaderItem<FactionHeader.ViewHolder, CharacterHeader> {
     private static String TAG = FactionHeader.class.getSimpleName();
 
-    public String FactionName;
-    public int FactionColorRes;
-    public int FlagRes;
+    private String m_factionName;
+    private int m_factionColorResId;
+    private int m_flagIconId;
 
-    public FactionHeader(String factionName, int factionColorRes, int flagRes) {
+    public FactionHeader(String factionName, int factionColorResId, int flagResId) {
         super();
         setEnabled(true);
-        FactionName = factionName;
-        FactionColorRes = factionColorRes;
-        FlagRes = flagRes;
+        m_factionName = factionName;
+        m_factionColorResId = factionColorResId;
+        m_flagIconId = flagResId;
     }
 
     class ViewHolder extends ExpandableViewHolder {
-        public View ly_headerContainer;
-        public ImageView ic_faction;
-        public TextView tv_faction;
+        View Container;
+        ImageView FactionIcon;
+        TextView FactionName;
 
-        public ViewHolder(View view, final FlexibleAdapter adapter, boolean stickyHeader) {
+        ViewHolder(View view, final FlexibleAdapter adapter, boolean stickyHeader) {
             super(view, adapter, stickyHeader);
-            ly_headerContainer = view.findViewById(R.id.faction_header_container);
-            ic_faction = view.findViewById(R.id.character_faction_icon);
-            tv_faction = view.findViewById(R.id.character_faction_name);
+            Container = view.findViewById(R.id.faction_header_container);
+            FactionIcon = view.findViewById(R.id.character_faction_icon);
+            FactionName = view.findViewById(R.id.character_faction_name);
 
-            ly_headerContainer.setOnClickListener(new View.OnClickListener() {
+            Container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.d(TAG, "onClick: toggle expansion");
@@ -59,7 +59,7 @@ public class FactionHeader extends AbstractExpandableHeaderItem<FactionHeader.Vi
     public boolean equals(Object o) {
         if (o instanceof FactionHeader) {
             FactionHeader factionHeader = (FactionHeader) o;
-            return FactionName.equals(factionHeader.FactionName);
+            return m_factionName.equals(factionHeader.m_factionName);
         }
         return false;
     }
@@ -76,8 +76,8 @@ public class FactionHeader extends AbstractExpandableHeaderItem<FactionHeader.Vi
 
     @Override
     public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, final int position, List<Object> payloads) {
-        holder.ly_headerContainer.setBackgroundResource(FactionColorRes);
-        holder.ic_faction.setImageResource(FlagRes);
-        holder.tv_faction.setText(FactionName);
+        holder.Container.setBackgroundResource(m_factionColorResId);
+        holder.FactionIcon.setImageResource(m_flagIconId);
+        holder.FactionName.setText(m_factionName);
     }
 }

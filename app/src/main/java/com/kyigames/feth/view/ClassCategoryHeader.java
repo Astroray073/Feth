@@ -27,10 +27,10 @@ public class ClassCategoryHeader extends AbstractExpandableHeaderItem<ClassCateg
     }
 
     class ViewHolder extends ExpandableViewHolder {
-        public View Container;
-        public TextView CategoryName;
+        View Container;
+        TextView CategoryName;
 
-        public ViewHolder(View view, FlexibleAdapter adapter) {
+        ViewHolder(View view, FlexibleAdapter adapter) {
             super(view, adapter, true);
             Container = view.findViewById(R.id.class_category_container);
             CategoryName = view.findViewById(R.id.class_category_name);

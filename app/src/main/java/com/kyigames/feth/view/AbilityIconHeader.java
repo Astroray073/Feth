@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.kyigames.feth.R;
 
 public class AbilityIconHeader extends LinearLayout {
-    private LinearLayout m_container;
     private ImageView m_icon;
     private TextView m_text;
 
