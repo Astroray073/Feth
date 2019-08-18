@@ -1,11 +1,11 @@
 package com.kyigames.feth.view;
 
-import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.annotations.NotNull;
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.CombatArts;
@@ -13,7 +13,6 @@ import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.UnitClass;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractExpandableItem;
@@ -25,18 +24,26 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         implements ISectionable<ClassHeader.ViewHolder, ClassCategoryHeader> {
     private static final String TAG = ClassHeader.class.getSimpleName();
 
-    private UnitClass m_unitClass;
+
     private ClassCategoryHeader m_header;
+
+    private String m_name;
+    private String m_condition;
+    private Ability m_masterAbility;
+    private CombatArts m_masterArts;
 
     private boolean bIsMasterAbilityExists;
     private boolean bIsMasterArtsExists;
 
-    public ClassHeader(ClassCategoryHeader header, UnitClass unitClass) {
+    public ClassHeader(@NotNull ClassCategoryHeader header, @NotNull UnitClass unitClass) {
         m_header = header;
-        m_unitClass = unitClass;
+        m_name = unitClass.Name;
+        m_condition = unitClass.Condition;
+        m_masterAbility = Database.getEntityByKey(Ability.class, unitClass.MasterAbility);
+        m_masterArts = Database.getEntityByKey(CombatArts.class, unitClass.MasterArts);
 
-        bIsMasterAbilityExists = m_unitClass.MasterAbility != null;
-        bIsMasterArtsExists = m_unitClass.MasterArts != null;
+        bIsMasterAbilityExists = m_masterAbility != null;
+        bIsMasterArtsExists = m_masterArts != null;
     }
 
     @Override
@@ -77,17 +84,6 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         }
     }
 
-    private int getMasterSkillCount() {
-        int count = 0;
-        if (bIsMasterAbilityExists) {
-            ++count;
-        }
-        if (bIsMasterArtsExists) {
-            ++count;
-        }
-        return count;
-    }
-
     @Override
     public int getExpansionLevel() {
         return 1;
@@ -97,7 +93,7 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
     public boolean equals(Object o) {
         if (o instanceof ClassHeader) {
             ClassHeader characterHeader = (ClassHeader) o;
-            return m_unitClass.Name.equals(characterHeader.m_unitClass.Name);
+            return m_name.equals(characterHeader.m_name);
         }
         return false;
     }
@@ -112,78 +108,38 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         return new ViewHolder(view, adapter, false);
     }
 
-    private String getAbilityIconIndex(final String abilityName) {
-        final List<Ability> abilities = Database.getTable(Ability.class);
-
-        Ability found = abilities.stream()
-                .filter(new Predicate<Ability>() {
-                    @Override
-                    public boolean test(Ability ability) {
-                        return abilityName.equals(ability.Name);
-                    }
-                })
-                .findAny()
-                .orElse(null);
-
-        return found == null ? "missing" : Integer.toString(found.IconResId);
-    }
-
-    private String getArtsIconIndex(final String combarArtsName) {
-        final List<CombatArts> abilities = Database.getTable(CombatArts.class);
-
-        CombatArts found = abilities.stream()
-                .filter(new Predicate<CombatArts>() {
-                    @Override
-                    public boolean test(CombatArts combatArts) {
-                        return combarArtsName.equals(combatArts.Name);
-                    }
-                })
-                .findAny()
-                .orElse(null);
-
-        return found == null ? "missing" : Integer.toString(found.IconResId);
-    }
-
     @Override
     public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads) {
 
-        holder.Name.setText(m_unitClass.Name);
-        holder.Condition.setText(m_unitClass.Condition == null ? "없음" : m_unitClass.Condition);
+        holder.Name.setText(m_name);
+        holder.Condition.setText(m_condition == null ? "없음" : m_condition);
 
-        holder.MasterSkills[0].setVisibility(View.VISIBLE);
-        holder.MasterSkills[1].setVisibility(View.VISIBLE);
+        if (m_masterAbility == null) {
+            holder.MasterSkills[0].setVisibility(View.GONE);
+        } else {
+            holder.MasterSkills[0].setVisibility(View.VISIBLE);
+            holder.MasterSkills[0].setIcon(m_masterAbility.getIcon());
+            holder.MasterSkills[0].setName(m_masterAbility.Name);
+        }
 
-        if (bIsMasterAbilityExists && bIsMasterArtsExists) {
-            bindMasterAbility(holder.MasterSkills[0]);
-            bindMasterArts(holder.MasterSkills[1]);
-        } else if (bIsMasterAbilityExists) {
-            bindMasterAbility(holder.MasterSkills[0]);
+        if (m_masterArts == null) {
             holder.MasterSkills[1].setVisibility(View.GONE);
-        } else if (bIsMasterArtsExists) {
-            bindMasterArts(holder.MasterSkills[0]);
-            holder.MasterSkills[1].setVisibility(View.GONE);
+        } else {
+            holder.MasterSkills[1].setVisibility(View.VISIBLE);
+            holder.MasterSkills[1].setIcon(m_masterArts.getIcon());
+            holder.MasterSkills[1].setName(m_masterArts.Name);
         }
 
         holder.MasterSkillContainer.invalidate();
     }
 
     private void bindMasterAbility(AbilityIconHeader header) {
-        final Context context = header.getContext();
-
-        String abilityIconName = "ic_ability_" + getAbilityIconIndex(m_unitClass.MasterAbility);
-        int iconRes = context.getResources().getIdentifier(abilityIconName, "drawable", context.getPackageName());
-
-        header.setIcon(iconRes);
-        header.setName(m_unitClass.MasterAbility);
+        header.setIcon(m_masterAbility.getIcon());
+        header.setName(m_masterAbility.Name);
     }
 
     private void bindMasterArts(AbilityIconHeader header) {
-        final Context context = header.getContext();
-
-        String artsIconName = "ic_arts_" + getArtsIconIndex(m_unitClass.MasterArts);
-        int iconRes = context.getResources().getIdentifier(artsIconName, "drawable", context.getPackageName());
-
-        header.setIcon(iconRes);
-        header.setName(m_unitClass.MasterArts);
+        header.setIcon(m_masterArts.getIcon());
+        header.setName(m_masterArts.Name);
     }
 }

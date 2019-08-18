@@ -10,7 +10,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kyigames.feth.OnProgressChangeListener;
-import com.kyigames.feth.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,49 +43,8 @@ public class Database {
         registerTable(Loss.class);
         registerTable(Present.class);
         registerTable(Spell.class);
-        registerTable(UnitClass.class);
         registerTable(Tea.class);
-
-        // Portrait mapping
-        m_portrait.put("주인공", R.drawable.byleth);
-
-        m_portrait.put("에델가르드", R.drawable.edelgard);
-        m_portrait.put("휴베르트", R.drawable.hubert);
-        m_portrait.put("도로테아", R.drawable.dorothea);
-        m_portrait.put("페르디난트", R.drawable.ferdinand);
-        m_portrait.put("베르나데타", R.drawable.bernadetta);
-        m_portrait.put("카스파르", R.drawable.caspar);
-        m_portrait.put("페트라", R.drawable.petra);
-        m_portrait.put("린하르트", R.drawable.linhardt);
-
-        m_portrait.put("디미트리", R.drawable.dimitri);
-        m_portrait.put("두두", R.drawable.doudou);
-        m_portrait.put("펠릭스", R.drawable.felix);
-        m_portrait.put("메르세데스", R.drawable.mercedes);
-        m_portrait.put("애쉬", R.drawable.ashe);
-        m_portrait.put("아네트", R.drawable.anette);
-        m_portrait.put("실뱅", R.drawable.sylvain);
-        m_portrait.put("잉그리트", R.drawable.ingrid);
-
-        m_portrait.put("클로드", R.drawable.claude);
-        m_portrait.put("로렌츠", R.drawable.lorentz);
-        m_portrait.put("힐다", R.drawable.hilda);
-        m_portrait.put("라파엘", R.drawable.raphael);
-        m_portrait.put("리시테아", R.drawable.lysithea);
-        m_portrait.put("이그나츠", R.drawable.ignace);
-        m_portrait.put("마리안", R.drawable.marianne);
-        m_portrait.put("레오니", R.drawable.leonie);
-        m_portrait.put("레아", R.drawable.rhea);
-        m_portrait.put("마누엘라", R.drawable.manuela);
-        m_portrait.put("한네만", R.drawable.hanneman);
-        m_portrait.put("세테스", R.drawable.seteth);
-        m_portrait.put("흐렌", R.drawable.flayn);
-        m_portrait.put("시릴", R.drawable.cyril);
-        m_portrait.put("제랄트", R.drawable.jeralt);
-        m_portrait.put("카트린", R.drawable.catherine);
-        m_portrait.put("알로이스", R.drawable.alois);
-        m_portrait.put("길베르트", R.drawable.gilbert);
-        m_portrait.put("샤미아", R.drawable.shamir);
+        registerTable(UnitClass.class);
     }
 
     public static int tableCount() {
@@ -94,7 +52,7 @@ public class Database {
     }
 
     public static void loadAll(@Nullable final OnProgressChangeListener progressChangeListener) {
-        m_database.getReference().addValueEventListener(new ValueEventListener() {
+        m_database.getReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int currentProgress = 0;
@@ -141,7 +99,11 @@ public class Database {
         Class<T> tableType = getTableType(tableName);
 
         for (DataSnapshot row : dataSnapshot.getChildren()) {
-            container.add(row.getValue(tableType));
+            try {
+                container.add(row.getValue(tableType));
+            } catch (Exception e) {
+                Log.d(TAG, "Failed to get data of type : " + tableType.getSimpleName());
+            }
         }
     }
 

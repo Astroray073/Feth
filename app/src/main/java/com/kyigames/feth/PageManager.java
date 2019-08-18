@@ -41,6 +41,7 @@ import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
 class PageManager extends PagerAdapter {
+    private static String TAG = PageManager.class.getSimpleName();
     private Context m_context;
     private LayoutInflater m_inflater;
 
@@ -161,7 +162,6 @@ class PageManager extends PagerAdapter {
     private void addFactionMembers(@NotNull FactionHeader factionHeader, @NotNull String[] memberNames) {
         for (String memberName : memberNames) {
             Character character = Database.getEntityByKey(Character.class, memberName);
-
             CharacterContent characterContent = new CharacterContent(character);
             CharacterHeader characterHeader = new CharacterHeader(factionHeader, character);
 
@@ -186,8 +186,7 @@ class PageManager extends PagerAdapter {
         List<IFlexible> categoryHeaders = new ArrayList<>();
         for (int i = 0; i < classCategoryList.size(); i++) {
             ClassCategory classCategory = classCategoryList.get(i);
-            ClassCategoryHeader categoryHeader = new ClassCategoryHeader(classCategory,
-                    categoryColors[i]);
+            ClassCategoryHeader categoryHeader = new ClassCategoryHeader(classCategory, categoryColors[i]);
 
             for (UnitClass unitClass : unitClassList) {
                 if (unitClass.Category.equals(classCategory.Name)) {

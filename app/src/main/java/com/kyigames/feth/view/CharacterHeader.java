@@ -28,6 +28,7 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
     private FactionHeader m_header;
 
     private String m_characterName;
+    private int m_portraitResId;
     @Nullable
     private String m_scoutCondition;
 
@@ -35,6 +36,7 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         m_header = header;
 
         m_characterName = character.Name;
+        m_portraitResId = character.getPortraitIcon();
 
         if (character.Scout == null) {
             m_scoutCondition = null;
@@ -110,8 +112,7 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
 
     @Override
     public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, final ViewHolder holder, final int position, List<Object> payloads) {
-        int portraitResId = getPortraitResId(m_characterName);
-        holder.CharacterPortrait.setImageResource(portraitResId);
+        holder.CharacterPortrait.setImageResource(m_portraitResId);
         holder.CharacterName.setText(m_characterName);
 
         if (m_scoutCondition == null) {

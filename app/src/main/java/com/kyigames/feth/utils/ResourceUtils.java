@@ -43,7 +43,7 @@ public class ResourceUtils {
             return getIconRes(missingIconName);
         }
 
-        String iconName = prefix + combatArts.IconResId;
+        String iconName = prefix + combatArts.Weapon;
         return getIconRes(iconName);
     }
 }
