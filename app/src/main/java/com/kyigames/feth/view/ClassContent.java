@@ -42,6 +42,8 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
         ClassAbilityListItem[] ClassAbilities = new ClassAbilityListItem[MAX_ABILITY_COUNT];
         // Growth
         TableRow GrowthRate;
+
+        TableRow SkillBonus;
         ViewHolder(View view, FlexibleAdapter adapter) {
             super(view, adapter, false);
 
@@ -54,6 +56,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
 
             // Growth
             GrowthRate = view.findViewById(R.id.growth_table_value);
+            SkillBonus = view.findViewById(R.id.class_skill_bonus_value);
         }
     }
 
@@ -85,7 +88,9 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
     public void bindViewHolder(FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads) {
         bindClassAbility(holder);
         bindGrowthRate(holder);
+        bindSkillBonus(holder);
     }
+
 
     private void bindClassAbility(ViewHolder holder) {
 
@@ -129,6 +134,16 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
             TextView valueText = (TextView) growthRate.getVirtualChildAt(i);
 
             valueText.setText(m_unitClass.GrowthRate.get(i) + "%");
+        }
+    }
+
+    private void bindSkillBonus(ViewHolder holder) {
+        for (int i = 0; i < m_unitClass.SkillBonus.size(); ++i) {
+            int bonus = m_unitClass.SkillBonus.get(i);
+            TextView valueText = (TextView) holder.SkillBonus.getVirtualChildAt(i);
+            String text = bonus > 0 ? "+" + bonus : Integer.toString(bonus);
+
+            valueText.setText(text);
         }
     }
 }

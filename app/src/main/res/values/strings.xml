@@ -64,4 +64,5 @@
     <string name="grade_s">S</string>
     <string name="grade_s_plus">S+</string>
     <string name="class_info_unique_ability">고유능력</string>
+    <string name="skill_bonus">스킬 보너스</string>
 </resources>

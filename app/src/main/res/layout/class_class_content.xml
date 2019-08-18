@@ -9,4 +9,6 @@
 
     <include layout="@layout/growth_table" />
 
+    <include layout="@layout/class_skill_bonus_table" />
+
 </LinearLayout>
