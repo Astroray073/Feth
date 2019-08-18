@@ -9,7 +9,6 @@ import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.UnitClass;
-import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,13 +103,14 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder> 
                     Ability ability = Database.findEntityByKey(Ability.class, abilityName);
 
                     holder.ClassAbilities[i].setVisibility(View.VISIBLE);
-                    holder.ClassAbilities[i].setAbilityIcon(ResourceUtils.getAbilityIconResId(ability));
 
                     if (ability == null) {
                         holder.ClassAbilities[i].setAbilityName(abilityName);
+                        holder.ClassAbilities[i].setAbilityIcon(R.drawable.ic_missing_content);
                         holder.ClassAbilities[i].setAbilityDescription("missing");
                     } else {
                         holder.ClassAbilities[i].setAbilityName(ability.Name);
+                        holder.ClassAbilities[i].setAbilityIcon(ability.getIcon());
                         holder.ClassAbilities[i].setAbilityDescription(ability.Description);
                     }
 

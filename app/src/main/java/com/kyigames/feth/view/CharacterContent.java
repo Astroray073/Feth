@@ -13,7 +13,6 @@ import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Present;
 import com.kyigames.feth.model.Tea;
-import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -149,7 +148,7 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
         bindPreference(holder);
 
-        holder.UniqueAbility.setAbilityIcon(ResourceUtils.getAbilityIconResId(m_uniqueAbility));
+        holder.UniqueAbility.setAbilityIcon(m_uniqueAbility.getIcon());
         holder.UniqueAbility.setAbilityName(m_uniqueAbility.Name);
         holder.UniqueAbility.setAbilityDescription(m_uniqueAbility.Description);
     }
