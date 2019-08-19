@@ -10,6 +10,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kyigames.feth.OnProgressChangeListener;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,36 +49,88 @@ public class Database {
     }
 
     public static void loadAll(@Nullable final OnProgressChangeListener progressChangeListener) {
-        m_database.getReference().addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int currentProgress = 0;
+        loadAll_redirection(progressChangeListener);
+    }
 
-                for (DataSnapshot table : dataSnapshot.getChildren()) {
-                    String tableName = table.getKey();
+    private static void loadAll_redirection(@Nullable final OnProgressChangeListener progressChangeListener) {
+        int versionCode = ResourceUtils.getVersionCode();
 
-                    if (!hasTable(tableName)) {
-                        continue;
+        if (versionCode < 5) {
+            loadAll_3(progressChangeListener);
+        } else {
+            loadAll_5(progressChangeListener);
+        }
+    }
+
+    private static void loadAll_3(@Nullable final OnProgressChangeListener progressChangeListener) {
+        m_database.getReference()
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        int currentProgress = 0;
+
+                        for (DataSnapshot table : dataSnapshot.getChildren()) {
+                            String tableName = table.getKey();
+
+                            if (!hasTable(tableName)) {
+                                continue;
+                            }
+
+                            retrieveData(tableName, table);
+
+                            ++currentProgress;
+                            if (progressChangeListener != null) {
+                                progressChangeListener.onProgressChanged(currentProgress);
+                            }
+                        }
+
+                        if (progressChangeListener != null) {
+                            progressChangeListener.onComplete();
+                        }
                     }
 
-                    retrieveData(tableName, table);
-
-                    ++currentProgress;
-                    if (progressChangeListener != null) {
-                        progressChangeListener.onProgressChanged(currentProgress);
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.d(TAG, "Loading canceled.");
                     }
-                }
+                });
+    }
 
-                if (progressChangeListener != null) {
-                    progressChangeListener.onComplete();
-                }
-            }
+    // TODO: At version code 5, create firebase root table starting with version code.
+    private static void loadAll_5(@Nullable final OnProgressChangeListener progressChangeListener) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d(TAG, "Loading canceled.");
-            }
-        });
+        m_database
+                .getReference(Integer.toString(ResourceUtils.getVersionCode()))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        int currentProgress = 0;
+
+                        for (DataSnapshot table : dataSnapshot.getChildren()) {
+                            String tableName = table.getKey();
+
+                            if (!hasTable(tableName)) {
+                                continue;
+                            }
+
+                            retrieveData(tableName, table);
+
+                            ++currentProgress;
+                            if (progressChangeListener != null) {
+                                progressChangeListener.onProgressChanged(currentProgress);
+                            }
+                        }
+
+                        if (progressChangeListener != null) {
+                            progressChangeListener.onComplete();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.d(TAG, "Loading canceled.");
+                    }
+                });
     }
 
     private static boolean hasTable(String tableName) {

@@ -2,8 +2,8 @@ package com.kyigames.feth;
 
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
@@ -14,8 +14,7 @@ import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.kyigames.feth.model.Database;
-
-import java.util.Objects;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import static com.google.android.play.core.install.model.AppUpdateType.IMMEDIATE;
 
@@ -54,6 +53,11 @@ public class InitializeActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+        try {
+            ResourceUtils.initialize(this);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
         // Creates instance of the manager.
         m_updateManager = AppUpdateManagerFactory.create(this);
@@ -75,7 +79,6 @@ public class InitializeActivity extends AppCompatActivity {
                                     UPDATE_REQUEST_CODE);
                         } catch (IntentSender.SendIntentException e) {
                             e.printStackTrace();
-                            Log.e(TAG, Objects.requireNonNull(e.getMessage()));
                         }
                     } else {
                         initialize();

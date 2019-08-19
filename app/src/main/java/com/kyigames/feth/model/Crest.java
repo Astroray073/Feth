@@ -11,11 +11,13 @@ public class Crest implements IDbEntity {
     @NotNull
     public String Name;
     @Nullable
-    public List<String> MajorBearer;
+    public List<String> Bearer;
     @Nullable
-    public List<String> MinorBearer;
+    public String Memento;
     @NotNull
     public String Description;
+    @NotNull
+    public String Effect;
 
     @Override
     public String getKey() {
