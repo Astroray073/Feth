@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
 
 public class Database {
     private static final String TAG = Database.class.getSimpleName();
@@ -23,9 +22,6 @@ public class Database {
     private static FirebaseDatabase m_database = FirebaseDatabase.getInstance();
     private static Map<String, Object> m_tables = new HashMap<>();
     private static Map<String, Class> m_tableTypes = new HashMap<>();
-
-    // Image resources
-    private static Map<String, Integer> m_portrait = new HashMap<>();
 
     private static <T> void registerTable(Class<T> tableType) {
         m_tables.put(tableType.getSimpleName(), new ArrayList<T>());
@@ -60,6 +56,10 @@ public class Database {
                 for (DataSnapshot table : dataSnapshot.getChildren()) {
                     String tableName = table.getKey();
 
+                    if (!hasTable(tableName)) {
+                        continue;
+                    }
+
                     retrieveData(tableName, table);
 
                     ++currentProgress;
@@ -80,7 +80,11 @@ public class Database {
         });
     }
 
-    public static <T> List<T> getTable(String tableName) {
+    private static boolean hasTable(String tableName) {
+        return m_tables.containsKey(tableName);
+    }
+
+    private static <T> List<T> getTable(String tableName) {
         return (List<T>) m_tables.get(tableName);
     }
 
@@ -88,15 +92,15 @@ public class Database {
         return getTable(tableType.getSimpleName());
     }
 
-    public static Class getTableType(String tableName) {
+    private static Class getTableType(String tableName) {
         return m_tableTypes.get(tableName);
     }
 
     private static <T> void retrieveData(String tableName, DataSnapshot dataSnapshot) {
         Log.d(TAG, "retrieveData " + tableName);
 
-        List<T> container = getTable(tableName);
         Class<T> tableType = getTableType(tableName);
+        List<T> container = getTable(tableName);
 
         for (DataSnapshot row : dataSnapshot.getChildren()) {
             try {
@@ -107,18 +111,9 @@ public class Database {
         }
     }
 
-    public static int getPortrait(String characterName) {
-        return m_portrait.get(characterName);
-    }
-
     public static <T extends IDbEntity> T findEntityByKey(Class<T> type, final String key) {
         return getTable(type).stream()
-                .filter(new Predicate<T>() {
-                    @Override
-                    public boolean test(T t) {
-                        return t.getKey().equals(key);
-                    }
-                })
+                .filter(entity -> entity.getKey().equals(key))
                 .findAny()
                 .orElse(null);
     }

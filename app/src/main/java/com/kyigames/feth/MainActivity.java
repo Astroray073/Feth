@@ -1,5 +1,6 @@
 package com.kyigames.feth;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ResourceUtils.initialize(this);
+        try {
+            ResourceUtils.initialize(this);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
         initUI();
     }
 
