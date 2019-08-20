@@ -48,6 +48,30 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         }
     }
 
+
+    class ViewHolder extends ExpandableViewHolder
+    {
+        View Container;
+        ImageView CharacterPortrait;
+        TextView CharacterName;
+        TextView ScoutCondition;
+
+        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
+        {
+            super(view, adapter, stickyHeader);
+            Container = view.findViewById(R.id.character_header_container);
+            CharacterPortrait = view.findViewById(R.id.character_header_character_portrait);
+            CharacterName = view.findViewById(R.id.character_header_character_name);
+            ScoutCondition = view.findViewById(R.id.character_header_scout_condition);
+
+            Container.setOnClickListener(clickedView ->
+            {
+                Log.d(TAG, "onClick: toggle expansion");
+                toggleExpansion();
+            });
+        }
+    }
+
     @Override
     public FactionHeader getHeader()
     {
@@ -107,30 +131,4 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         holder.Container.invalidate();
     }
 
-    class ViewHolder extends ExpandableViewHolder
-    {
-        View Container;
-        ImageView CharacterPortrait;
-        TextView CharacterName;
-        TextView ScoutCondition;
-
-        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
-        {
-            super(view, adapter, stickyHeader);
-            Container = view.findViewById(R.id.character_header_container);
-            CharacterPortrait = view.findViewById(R.id.character_header_character_portrait);
-            CharacterName = view.findViewById(R.id.character_header_character_name);
-            ScoutCondition = view.findViewById(R.id.character_header_scout_condition);
-
-            Container.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Log.d(TAG, "onClick: toggle expansion");
-                    toggleExpansion();
-                }
-            });
-        }
-    }
 }

@@ -1,6 +1,7 @@
 package com.kyigames.feth.view;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.Character;
+import com.kyigames.feth.model.Crest;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Present;
 import com.kyigames.feth.model.TeaParty;
@@ -26,8 +28,11 @@ import eu.davidea.viewholders.FlexibleViewHolder;
 public class CharacterContent extends AbstractFlexibleItem<CharacterContent.ViewHolder>
 {
     private static final int SpellLevelCount = 8; // "D", "D+", "C", "C+", "B", "B+", "A", "A+"
+    private static final int MAX_CREST_COUNT = 2;
 
     private Character m_character;
+    private List<Crest> m_crests = new ArrayList<>();
+    private Ability m_buddingTalent;
     private Present m_present;
     private TeaParty m_teaParty;
     private Ability m_uniqueAbility;
@@ -35,9 +40,77 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
     public CharacterContent(Character character)
     {
         m_character = character;
-        m_present = Database.findEntityByKey(Present.class, m_character.Name);
-        m_teaParty = Database.findEntityByKey(TeaParty.class, m_character.Name);
-        m_uniqueAbility = Database.findEntityByKey(Ability.class, m_character.UniqueAbility);
+        m_buddingTalent = Database.findEntityByKey(Ability.class, character.BuddingTalent);
+        m_present = Database.findEntityByKey(Present.class, character.Name);
+        m_teaParty = Database.findEntityByKey(TeaParty.class, character.Name);
+        m_uniqueAbility = Database.findEntityByKey(Ability.class, character.UniqueAbility);
+
+        if (m_character.Crest != null)
+        {
+            for (String crestName : m_character.Crest)
+            {
+                m_crests.add(Database.findEntityByKey(Crest.class, crestName));
+            }
+        }
+    }
+
+    class ViewHolder extends FlexibleViewHolder
+    {
+        // Character info
+        TextView CrestNoneText;
+        ClassAbilityListItem[] Crests = new ClassAbilityListItem[MAX_CREST_COUNT];
+        TextView InitialClass;
+        TextView PreferredGifts;
+        TextView NonPreferredGifts;
+        TextView PreferredTeas;
+        ClassAbilityListItem UniqueAbility;
+
+        // Skill
+        TableRow SkillLevel;
+        TableRow SkillProficiency;
+        TextView BuddingTalentNoneText;
+        ClassAbilityListItem BuddingTalent;
+
+        // Growth
+        TableRow GrowthRate;
+
+        // Spell
+        List<TableRow> SpellTableRows = new ArrayList<>();
+
+        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
+        {
+            super(view, adapter, stickyHeader);
+
+            // Character info
+            CrestNoneText = view.findViewById(R.id.character_crest_none_text);
+            ViewGroup crestList = view.findViewById(R.id.character_crest_list);
+            for (int i = 0; i < MAX_CREST_COUNT; ++i)
+            {
+                Crests[i] = (ClassAbilityListItem) crestList.getChildAt(i);
+            }
+
+            InitialClass = view.findViewById(R.id.character_initial_class);
+            PreferredGifts = view.findViewById(R.id.preferred_gift);
+            NonPreferredGifts = view.findViewById(R.id.non_preferred_gift);
+            PreferredTeas = view.findViewById(R.id.preferred_tea);
+            UniqueAbility = view.findViewById(R.id.character_info_unique_ability);
+
+            // Skill
+            SkillLevel = view.findViewById(R.id.skill_table_level);
+            SkillProficiency = view.findViewById(R.id.skill_table_proficiency);
+            BuddingTalentNoneText = view.findViewById(R.id.character_budding_talent_none_text);
+            BuddingTalent = view.findViewById(R.id.character_budding_talent);
+
+            // Growth
+            GrowthRate = view.findViewById(R.id.growth_table_value);
+
+            // Spell
+            TableLayout spellTableLayout = view.findViewById(R.id.spell_table);
+            for (int i = 0; i < SpellLevelCount; ++i)
+            {
+                SpellTableRows.add((TableRow) spellTableLayout.getChildAt(i + 1));
+            }
+        }
     }
 
     @Override
@@ -111,7 +184,34 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
     private void bindCharacterInfo(ViewHolder holder)
     {
-        holder.CrestName.setText(getCrestText());
+        if (m_crests.size() == 0)
+        {
+            holder.CrestNoneText.setVisibility(View.VISIBLE);
+            for (int i = 0; i < MAX_CREST_COUNT; ++i)
+            {
+                holder.Crests[i].setVisibility(View.GONE);
+            }
+        } else
+        {
+            holder.CrestNoneText.setVisibility(View.GONE);
+
+            for (int i = 0; i < MAX_CREST_COUNT; ++i)
+            {
+                if (i < m_crests.size())
+                {
+                    holder.Crests[i].setVisibility(View.VISIBLE);
+
+                    Crest crest = m_crests.get(i);
+                    holder.Crests[i].setAbilityName(crest.Name);
+                    holder.Crests[i].setAbilityIcon(crest.getIcon());
+                    holder.Crests[i].setAbilityDescription(crest.Effect);
+                } else
+                {
+                    holder.Crests[i].setVisibility(View.GONE);
+                }
+            }
+        }
+
         holder.InitialClass.setText(m_character.InitialClass);
 
         bindPreference(holder);
@@ -137,12 +237,16 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
             proficiencyView.setImageResource(getSkillValueRes(m_character.SkillProficiency.get(i)));
         }
 
-        if (m_character.BuddingTalent == null)
+        if (m_buddingTalent == null)
         {
-            holder.BuddingTalent.setText("없음");
+            holder.BuddingTalentNoneText.setVisibility(View.VISIBLE);
+            holder.BuddingTalent.setVisibility(View.GONE);
         } else
         {
-            holder.BuddingTalent.setText(m_character.BuddingTalent);
+            holder.BuddingTalentNoneText.setVisibility(View.GONE);
+            holder.BuddingTalent.setAbilityName(m_buddingTalent.Name);
+            holder.BuddingTalent.setAbilityIcon(m_buddingTalent.getIcon());
+            holder.BuddingTalent.setAbilityDescription(m_buddingTalent.Description);
         }
     }
 
@@ -208,54 +312,4 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         }
     }
 
-    class ViewHolder extends FlexibleViewHolder
-    {
-
-        // Character info
-        TextView CrestName;
-        TextView InitialClass;
-        TextView PreferredGifts;
-        TextView NonPreferredGifts;
-        TextView PreferredTeas;
-        ClassAbilityListItem UniqueAbility;
-
-        // Skill
-        TableRow SkillLevel;
-        TableRow SkillProficiency;
-        TextView BuddingTalent;
-
-        // Growth
-        TableRow GrowthRate;
-
-        // Spell
-        List<TableRow> SpellTableRows = new ArrayList<>();
-
-        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
-        {
-            super(view, adapter, stickyHeader);
-
-            // Character info
-            CrestName = view.findViewById(R.id.character_crest);
-            InitialClass = view.findViewById(R.id.character_initial_class);
-            PreferredGifts = view.findViewById(R.id.preferred_gift);
-            NonPreferredGifts = view.findViewById(R.id.non_preferred_gift);
-            PreferredTeas = view.findViewById(R.id.preferred_tea);
-            UniqueAbility = view.findViewById(R.id.character_info_unique_ability);
-
-            // Skill
-            SkillLevel = view.findViewById(R.id.skill_table_level);
-            SkillProficiency = view.findViewById(R.id.skill_table_proficiency);
-            BuddingTalent = view.findViewById(R.id.budding_talent);
-
-            // Growth
-            GrowthRate = view.findViewById(R.id.growth_table_value);
-
-            // Spell
-            TableLayout spellTableLayout = view.findViewById(R.id.spell_table);
-            for (int i = 0; i < SpellLevelCount; ++i)
-            {
-                SpellTableRows.add((TableRow) spellTableLayout.getChildAt(i + 1));
-            }
-        }
-    }
 }

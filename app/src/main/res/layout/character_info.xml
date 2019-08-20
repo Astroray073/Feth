@@ -4,21 +4,44 @@
     style="@style/DefaultContainer"
     android:orientation="vertical">
 
-    <LinearLayout style="@style/DefaultListItem">
+    <LinearLayout
+        style="@style/DefaultListItem"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.kyigames.feth.view.LabelWithBar
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/crest"
-            android:textColor="@color/black" />
+            app:text="@string/crest" />
 
-        <TextView
-            android:id="@+id/character_crest"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:text="character_crest" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/character_crest_none_text"
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/none" />
+
+            <LinearLayout
+                android:id="@+id/character_crest_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.kyigames.feth.view.ClassAbilityListItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.kyigames.feth.view.ClassAbilityListItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout style="@style/DefaultListItem">
@@ -50,9 +73,9 @@
             android:id="@+id/preferred_gift"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
+            android:paddingEnd="8dp"
+            android:text="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game" />
     </LinearLayout>
 
     <LinearLayout style="@style/DefaultListItem">
@@ -67,9 +90,9 @@
             android:id="@+id/non_preferred_gift"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
+            android:paddingEnd="8dp"
+            android:text="Carnation/Armored Bear Stuffy/Monarch Studies Book/Board Game" />
 
     </LinearLayout>
 
@@ -85,9 +108,9 @@
             android:id="@+id/preferred_tea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="preferred_tea"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
+            android:paddingEnd="8dp"
+            android:text="preferred_tea" />
 
     </LinearLayout>
 

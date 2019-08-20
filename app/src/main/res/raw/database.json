@@ -1046,7 +1046,9 @@
       "Name": "린하르트",
       "PortraitResId": "linhardt",
       "Faction": "흑수리",
-      "Crest": [],
+      "Crest": [
+        "세스린의 소문장"
+      ],
       "UniqueAbility": "졸기",
       "InitialClass": "귀족",
       "Scout": [

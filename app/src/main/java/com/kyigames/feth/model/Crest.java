@@ -2,6 +2,8 @@ package com.kyigames.feth.model;
 
 import androidx.annotation.Nullable;
 
+import com.kyigames.feth.R;
+
 import java.util.List;
 
 public class Crest implements IDbEntity
@@ -19,5 +21,10 @@ public class Crest implements IDbEntity
     public String getKey()
     {
         return Name;
+    }
+
+    public int getIcon()
+    {
+        return R.drawable.ic_missing_content;
     }
 }

@@ -162,16 +162,27 @@
         </TableRow>
     </TableLayout>
 
-    <LinearLayout style="@style/EndListItem">
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/EndListItem">
+
+        <com.kyigames.feth.view.LabelWithBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text="@string/budding_talent" />
 
         <TextView
+            android:id="@+id/character_budding_talent_none_text"
             style="@style/Label"
-            android:padding="0dp"
-            android:text="@string/budding_talent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/none" />
 
-        <TextView
-            android:id="@+id/budding_talent"
-            style="@style/ValueText"
-            android:text="character_crest" />
+        <com.kyigames.feth.view.ClassAbilityListItem
+            android:id="@+id/character_budding_talent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 </LinearLayout>

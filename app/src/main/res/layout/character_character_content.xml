@@ -8,7 +8,7 @@
 
     <include layout="@layout/character_info" />
 
-    <include layout="@layout/skill_table" />
+    <include layout="@layout/character_skill_table" />
 
     <include layout="@layout/growth_table" />
 
