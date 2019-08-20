@@ -165,7 +165,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
 
     private void bindClassMasterSkill(ViewHolder holder)
     {
-        if (m_masterAbility == null || m_masterArts == null)
+        if (m_masterAbility == null && m_masterArts == null)
         {
             holder.ClassMasterSkillNoneText.setVisibility(View.VISIBLE);
             for (int i = 0; i < MAX_MASTER_SKILL_COUNT; ++i)

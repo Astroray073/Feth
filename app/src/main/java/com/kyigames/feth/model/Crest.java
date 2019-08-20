@@ -2,7 +2,7 @@ package com.kyigames.feth.model;
 
 import androidx.annotation.Nullable;
 
-import com.kyigames.feth.R;
+import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ public class Crest implements IDbEntity
 {
 
     public String Name;
+    public int IconResId;
     @Nullable
     public List<String> Bearer;
     @Nullable
@@ -25,6 +26,6 @@ public class Crest implements IDbEntity
 
     public int getIcon()
     {
-        return R.drawable.ic_missing_content;
+        return ResourceUtils.getIconRes("ic_crest_" + IconResId);
     }
 }

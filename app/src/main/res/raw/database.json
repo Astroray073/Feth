@@ -7688,6 +7688,7 @@
   "Crest": [
     {
       "Name": "에르네스트의 문장",
+      "IconResId": 0,
       "Bearer": [],
       "Memento": "극룡의 증표",
       "Description": "오래전부터 잊혀진 문장.",
@@ -7695,6 +7696,7 @@
     },
     {
       "Name": "마쿠일의 문장",
+      "IconResId": 1,
       "Bearer": [
         "The Wind Caller"
       ],
@@ -7704,6 +7706,7 @@
     },
     {
       "Name": "세이로스의 문장",
+      "IconResId": 2,
       "Bearer": [
         "레아",
         "제랄트"
@@ -7714,6 +7717,7 @@
     },
     {
       "Name": "세이로스의 소문장",
+      "IconResId": 2,
       "Bearer": [
         "에델가르트"
       ],
@@ -7723,6 +7727,7 @@
     },
     {
       "Name": "도미닉의 문장",
+      "IconResId": 3,
       "Bearer": [],
       "Memento": "쇄룡의 증표",
       "Description": "포드라 10걸 도미닉으로부터, 왕국 귀족 도미닉 가문에 전해지는 문장.",
@@ -7730,6 +7735,7 @@
     },
     {
       "Name": "도미닉의 소문장",
+      "IconResId": 3,
       "Bearer": [
         "아네트"
       ],
@@ -7739,6 +7745,7 @@
     },
     {
       "Name": "프랄다리우스의 문장",
+      "IconResId": 4,
       "Bearer": [
         "펠릭스"
       ],
@@ -7748,6 +7755,7 @@
     },
     {
       "Name": "프랄다리우스의 소문장",
+      "IconResId": 4,
       "Bearer": [
         "로드릭"
       ],
@@ -7757,6 +7765,7 @@
     },
     {
       "Name": "노아의 문장",
+      "IconResId": 5,
       "Bearer": [],
       "Memento": "맹룡의 증표",
       "Description": "오래전부터 잊혀진 문장.",
@@ -7764,6 +7773,7 @@
     },
     {
       "Name": "세스린의 문장",
+      "IconResId": 6,
       "Bearer": [
         "흐렌"
       ],
@@ -7773,6 +7783,7 @@
     },
     {
       "Name": "세스린의 소문장",
+      "IconResId": 6,
       "Bearer": [
         "린하르트"
       ],
@@ -7782,6 +7793,7 @@
     },
     {
       "Name": "다프넬의 문장",
+      "IconResId": 7,
       "Bearer": [],
       "Memento": "염룡의 증표",
       "Description": "포드라 10걸 다프넬로부터, 다프넬 가문과 갈라테아 가문에 전해지는 문장.",
@@ -7789,6 +7801,7 @@
     },
     {
       "Name": "다프넬의 소문장",
+      "IconResId": 7,
       "Bearer": [
         "잉그리트"
       ],
@@ -7798,6 +7811,7 @@
     },
     {
       "Name": "블레다드의 문장",
+      "IconResId": 8,
       "Bearer": [],
       "Memento": "참룡의 증표",
       "Description": "포드라 10걸 블레다드로부터, 왕국 귀족 블레다드 가문에 전해지는 문장.",
@@ -7805,6 +7819,7 @@
     },
     {
       "Name": "블레다드의 소문장",
+      "IconResId": 8,
       "Bearer": [
         "디미트리"
       ],
@@ -7814,6 +7829,7 @@
     },
     {
       "Name": "글로스터의 문장",
+      "IconResId": 9,
       "Bearer": [
         "리시테아"
       ],
@@ -7823,6 +7839,7 @@
     },
     {
       "Name": "글로스터의 소문장",
+      "IconResId": 9,
       "Bearer": [
         "로렌츠"
       ],
@@ -7832,6 +7849,7 @@
     },
     {
       "Name": "고네릴의 문장",
+      "IconResId": 10,
       "Bearer": [],
       "Memento": "겁룡의 증표",
       "Description": "포드라 10걸 고네릴로부터, 동맹 귀족 고네릴 가문에 전해지는 문장.",
@@ -7839,6 +7857,7 @@
     },
     {
       "Name": "고네릴의 소문장",
+      "IconResId": 10,
       "Bearer": [
         "힐다"
       ],
@@ -7848,6 +7867,7 @@
     },
     {
       "Name": "키홀의 문장",
+      "IconResId": 11,
       "Bearer": [
         "세테스"
       ],
@@ -7857,6 +7877,7 @@
     },
     {
       "Name": "키홀의 소문장",
+      "IconResId": 11,
       "Bearer": [
         "페르디난트 폰 에기르"
       ],
@@ -7866,6 +7887,7 @@
     },
     {
       "Name": "오반의 문장",
+      "IconResId": 12,
       "Bearer": [],
       "Memento": null,
       "Description": "오래전부터 잊혀진 문장.",
@@ -7873,6 +7895,7 @@
     },
     {
       "Name": "고티에의 문장",
+      "IconResId": 13,
       "Bearer": [],
       "Memento": "열룡의 증표",
       "Description": "포드라 10걸 고티에로부터, 왕국 귀족 고티에 가문에 전해지는 문장.",
@@ -7880,6 +7903,7 @@
     },
     {
       "Name": "고티에의 소문장",
+      "IconResId": 13,
       "Bearer": [
         "실뱅"
       ],
@@ -7889,6 +7913,7 @@
     },
     {
       "Name": "인데히의 문장",
+      "IconResId": 14,
       "Bearer": [
         "The Immovable"
       ],
@@ -7898,6 +7923,7 @@
     },
     {
       "Name": "인데히의 소문장",
+      "IconResId": 14,
       "Bearer": [
         "베르다네타",
         "한네만"
@@ -7908,6 +7934,7 @@
     },
     {
       "Name": "야수의 문장",
+      "IconResId": 15,
       "Bearer": [
         "Wandering Beast"
       ],
@@ -7916,7 +7943,8 @@
       "Effect": "무기 공격시, 간혹 위력이 상승한다."
     },
     {
-      "Name": "짐승의 소문장",
+      "Name": "야수의 소문장",
+      "IconResId": 15,
       "Bearer": [
         "마리안"
       ],
@@ -7926,6 +7954,7 @@
     },
     {
       "Name": "카론의 문장",
+      "IconResId": 16,
       "Bearer": [
         "카트린"
       ],
@@ -7935,6 +7964,7 @@
     },
     {
       "Name": "카론의 소문장",
+      "IconResId": 16,
       "Bearer": [
         "리시테아"
       ],
@@ -7944,6 +7974,7 @@
     },
     {
       "Name": "티모테의 문장",
+      "IconResId": 17,
       "Bearer": [],
       "Memento": "암룡의 증표",
       "Description": "오래전부터 잊혀진 문장.",
@@ -7951,6 +7982,7 @@
     },
     {
       "Name": "리건의 문장",
+      "IconResId": 18,
       "Bearer": [],
       "Memento": "성룡의 증표",
       "Description": "포드라 10걸 리건의 문장.",
@@ -7958,6 +7990,7 @@
     },
     {
       "Name": "리건의 소문장",
+      "IconResId": 18,
       "Bearer": [
         "클로드"
       ],
@@ -7967,6 +8000,7 @@
     },
     {
       "Name": "슈발리에의 문장",
+      "IconResId": 19,
       "Bearer": [],
       "Memento": "설룡의 증표",
       "Description": "오래전부터 잊혀진 문장.",
@@ -7974,6 +8008,7 @@
     },
     {
       "Name": "라민의 문장",
+      "IconResId": 20,
       "Bearer": [],
       "Memento": "호룡의 증표",
       "Description": "포드라 10걸 라민으로부터 전해지는 문장.",
@@ -7981,6 +8016,7 @@
     },
     {
       "Name": "라민의 소문장",
+      "IconResId": 20,
       "Bearer": [
         "메르세데스",
         "예리차"
@@ -7991,6 +8027,7 @@
     },
     {
       "Name": "불꽃의 문장",
+      "IconResId": 21,
       "Bearer": [
         "주인공",
         "에델가르트"
@@ -8636,7 +8673,7 @@
     {
       "Name": "공격 진형",
       "IconResId": 114,
-      "Description": "Grants Mt +5 and 명중 +20 with gambits.",
+      "Description": "계략의 위력 +5, 명중 +20.",
       "Acquisition": "Raise Authority skill level to S+"
     },
     {
@@ -8654,7 +8691,7 @@
     {
       "Name": "귀신의 일격",
       "IconResId": 72,
-      "Description": "If unit initiates combat, grants 힘 +6 during combat.",
+      "Description": "공격을 개시할 때 힘 +6.",
       "Acquisition": "마스터 스킬: Brigand"
     },
     {
@@ -8666,7 +8703,7 @@
     {
       "Name": "금강의 일격",
       "IconResId": 75,
-      "Description": "If unit initiates combat, grants Def +6 during combat",
+      "Description": "공격을 개시할 때 수비 +6.",
       "Acquisition": "마스터 스킬: Armored Knight"
     },
     {
@@ -8702,7 +8739,7 @@
     {
       "Name": "대마법 갑옷",
       "IconResId": -1,
-      "Description": "Nullifies damage from magic attacks.",
+      "Description": "마법 공격을 무효화한다.",
       "Acquisition": "마수"
     },
     {
@@ -8714,7 +8751,7 @@
     {
       "Name": "도끼 킬러",
       "IconResId": 108,
-      "Description": "Grants 명중/회피 +20 when using a sword against axe users.",
+      "Description": "검 장비를 착용하고 도끼를 든 적을 상대할 때 명중/회피 +20.",
       "Acquisition": "Raise Sword skill level to B"
     },
     {
@@ -8804,7 +8841,7 @@
     {
       "Name": "마력의 각성",
       "IconResId": 62,
-      "Description": "Grants 마력 +8 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 마력 +8.",
       "Acquisition": "마스터 스킬: Gremory"
     },
     {
@@ -8828,7 +8865,7 @@
     {
       "Name": "마방의 각성",
       "IconResId": 65,
-      "Description": "Grants Res +8 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 마방 +8.",
       "Acquisition": "마스터 스킬: Holy Knight"
     },
     {
@@ -8840,19 +8877,19 @@
     {
       "Name": "마법 봉인",
       "IconResId": 170,
-      "Description": "If unit lands a hit, targeted foe is unable to use magic for 1 turn.",
+      "Description": "공격이 명중하면 대상은 1턴간 마법을 사용할 수 없다.",
       "Acquisition": null
     },
     {
       "Name": "마법 킬러",
       "IconResId": 111,
-      "Description": "Grants 명중/회피 +20 when brawling against magic users.",
+      "Description": "격투 장비를 착용하고 마법을 든 적을 상대할 때 명중/회피 +20.",
       "Acquisition": "Raise Brawling skill level to B"
     },
     {
       "Name": "마신의 일격",
       "IconResId": 73,
-      "Description": "If unit initiates combat, grants 마력 +6 during combat",
+      "Description": "공격을 개시할 때 마력 +6.",
       "Acquisition": "Class: Dark Bishop, Class mastered: Mage"
     },
     {
@@ -8888,19 +8925,19 @@
     {
       "Name": "맹주의 혈통+",
       "IconResId": 218,
-      "Description": "Allows unit to pass through spaces occupied by foes. Multiplies experience earned by 1.2.",
+      "Description": "적군을 통과하여 지나갈 수 있다. 입수 EXP가 1.2배가 된다.",
       "Acquisition": "클로드 2부"
     },
     {
       "Name": "멸살",
       "IconResId": 127,
-      "Description": "Chance to instantly kill a foe when dealing damage. Trigger % = 0.25×기술.",
+      "Description": "적군에게 대미지를 주었을 때 0.25 * 기술% 확률로 즉사.",
       "Acquisition": "마스터 스킬: Assassin"
     },
     {
       "Name": "명경의 일격",
       "IconResId": 76,
-      "Description": "If unit initiates combat, grants Res +6 during combat",
+      "Description": "공격을 개시할 때 마방 +6.",
       "Acquisition": "마스터 스킬: Mortal Savant"
     },
     {
@@ -8948,13 +8985,13 @@
     {
       "Name": "받아치기",
       "IconResId": 141,
-      "Description": "If foe initiates combat while unit’s HP is ≥ 50%, unit makes guaranteed follow-up attack.",
+      "Description": "HP가 50% 이상일 때 반드시 추격이 발생한다.",
       "Acquisition": "마스터 스킬: War Master"
     },
     {
       "Name": "백마법 사정 +1",
       "IconResId": 155,
-      "Description": "Increases white magic range by 1 for attacks that damage foes.",
+      "Description": "대미지를 주는 백마법의 사정거리가 1 상승한다.",
       "Acquisition": "Raise Faith skill level to S"
     },
     {
@@ -8984,7 +9021,7 @@
     {
       "Name": "백마법 횟수 Up+",
       "IconResId": 209,
-      "Description": "Quadruples the number of uses for white magic.",
+      "Description": "백마법 사용 횟수가 4배로 증가한다.",
       "Acquisition": null
     },
     {
@@ -9002,7 +9039,7 @@
     {
       "Name": "뱀독",
       "IconResId": 123,
-      "Description": "If unit initiates combat and lands a hit, targeted foe loses up to 20% of max HP after combat.",
+      "Description": "공격 명중 시 전투 후 대상은 최대 HP의 20%를 잃는다.",
       "Acquisition": "마스터 스킬: Dark Mage"
     },
     {
@@ -9026,19 +9063,19 @@
     {
       "Name": "분노",
       "IconResId": 142,
-      "Description": "If foe initiates combat while unit’s HP is ≤ 50%, grants 필살 +50.",
+      "Description": "HP가 50%이하일 때 공격을 받을 시 필살 +50.",
       "Acquisition": "마스터 스킬: Warrior"
     },
     {
       "Name": "분노의 진형",
       "IconResId": 205,
-      "Description": "If foe initiates combat while unit’s battalion endurance is ≤ 1/3, grants 필살 +50.",
+      "Description": "기사단 전력이 1/3이하일 때 공격을 받을 시 필살 +50.",
       "Acquisition": "Raise Authority skill level to C for Hubert, Bernadetta, Caspar, Petra, Dimitri, Dedue, Hilda, Raphael, Seteth, Alois or Gibert. Raise to A for Annette or Claude."
     },
     {
       "Name": "비연의 일격",
       "IconResId": 74,
-      "Description": "If unit initiates combat, grants AS +6 during combat",
+      "Description": "공격을 개시할 때 속도 +6.",
       "Acquisition": "마스터 스킬: Pegasus Knight"
     },
     {
@@ -9062,7 +9099,7 @@
     {
       "Name": "생명흡수",
       "IconResId": 125,
-      "Description": "Unit recovers HP equal to 50% of damage dealt after defeating a foe.",
+      "Description": "적에게 준 대미지의 50%만큼 회복한다.",
       "Acquisition": "마스터 스킬: Dark Bishop"
     },
     {
@@ -9104,7 +9141,7 @@
     {
       "Name": "속도의 각성",
       "IconResId": 63,
-      "Description": "Grants Spd +8 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 속도 +8.",
       "Acquisition": "마스터 스킬: Bow Knight"
     },
     {
@@ -9128,7 +9165,7 @@
     {
       "Name": "수비의 각성",
       "IconResId": 64,
-      "Description": "Grants Def +8 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 수비 +8.",
       "Acquisition": "마스터 스킬: Great Knight"
     },
     {
@@ -9230,7 +9267,7 @@
     {
       "Name": "암흑마법 횟수 x4",
       "IconResId": 208,
-      "Description": "Quadruples the number of uses for dark magic.",
+      "Description": "암흑마법 사용 횟수가 4배로 증가한다.",
       "Acquisition": null
     },
     {
@@ -9266,7 +9303,7 @@
     {
       "Name": "연속공격",
       "IconResId": 130,
-      "Description": "If unit initiates combat with HP ≤ 50%, unit’s follow-up attack (if possible) occurs before foe’s counterattack.",
+      "Description": "HP가 50% 이하이고 공격을 개시할 때 적군의 반격보다 먼저 추격한다. (가능할 시)",
       "Acquisition": "마스터 스킬: Cavalier"
     },
     {
@@ -9296,7 +9333,7 @@
     {
       "Name": "위풍당당",
       "IconResId": 54,
-      "Description": "Grants Lck/Cha +4.",
+      "Description": "행운/매력이 4 상승한다.",
       "Acquisition": "마스터 스킬: Armored Lord, High Lord or Wyvern Master"
     },
     {
@@ -9476,7 +9513,7 @@
     {
       "Name": "창 킬러",
       "IconResId": 107,
-      "Description": "Grants 명중/회피 +20 when using an axe against lance users.",
+      "Description": "도끼 장비를 착용하고 창을 든 적을 상대할 때 명중/회피 +20.",
       "Acquisition": "Raise Axe skill level to B"
     },
     {
@@ -9560,7 +9597,7 @@
     {
       "Name": "통과",
       "IconResId": 148,
-      "Description": "Allows unit to pass through spaces occupied by foes.",
+      "Description": "적군을 통과하여 지나갈 수 있다.",
       "Acquisition": "재능개화 베르나테타"
     },
     {
@@ -9602,7 +9639,7 @@
     {
       "Name": "필살의 각성",
       "IconResId": 67,
-      "Description": "Grants 필살 +50 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 필살 +50.",
       "Acquisition": "마스터 스킬: Wyvern Lord"
     },
     {
@@ -9644,7 +9681,7 @@
     {
       "Name": "활 킬러",
       "IconResId": 109,
-      "Description": "Grants 명중/회피 +20 when using magic against bow users.",
+      "Description": "마법을 장비하고 활을 든 적을 상대할 때 명중/회피 +20.",
       "Acquisition": "Raise Reason skill level to B"
     },
     {
@@ -9716,7 +9753,7 @@
     {
       "Name": "회복의 진형",
       "IconResId": 206,
-      "Description": "Unit recovers up to 30% of max HP at the start of each turn while battalion endurance is ≤ 1/3.",
+      "Description": "기사단의 전력이 1/3이하 일 때 턴 개시 시 최대 HP의 30%만큼 회복한다.",
       "Acquisition": "Raise Authority skill level to C for Linhardt, Mercedes, Annette, Marianne, Manuela or Flayn. Raise to A for Edelgard."
     },
     {
@@ -9728,7 +9765,7 @@
     {
       "Name": "회피의 각성",
       "IconResId": 66,
-      "Description": "Grants 회피 +30 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 회피 +30.",
       "Acquisition": "마스터 스킬: Falcon Knight"
     },
     {
@@ -9758,7 +9795,7 @@
     {
       "Name": "흑마법 횟수 Up+",
       "IconResId": 207,
-      "Description": "Quadruples the number of uses for black magic.",
+      "Description": "흑마법 사용 횟수가 4배로 증가한다.",
       "Acquisition": null
     },
     {
@@ -9788,7 +9825,7 @@
     {
       "Name": "힘의 각성",
       "IconResId": 61,
-      "Description": "Grants 힘 +8 when HP is ≤ 25%.",
+      "Description": "HP가 25% 이하일 때 힘 +8.",
       "Acquisition": "마스터 스킬: Hero"
     },
     {
@@ -9836,19 +9873,19 @@
     {
       "Name": "Murderous Intent",
       "IconResId": 105,
-      "Description": "If unit initiates combat, grants 명중 +20 during combat.",
+      "Description": "공격을 개시할 때 명중 +20.",
       "Acquisition": null
     },
     {
       "Name": "Noncombatant",
       "IconResId": 184,
-      "Description": "Unit cannot be targeted by foes.",
+      "Description": "대상이 될 수 없다.",
       "Acquisition": null
     },
     {
       "Name": "Paragon",
       "IconResId": 134,
-      "Description": "Doubles experience earned.",
+      "Description": "입수 EXP가 2배가 된다.",
       "Acquisition": null
     },
     {
