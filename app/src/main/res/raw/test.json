@@ -1,0 +1,11 @@
+{
+  "IntValue": 42,
+  "BoolValue": true,
+  "StringValue": "StringValue",
+  "ArrayValue": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

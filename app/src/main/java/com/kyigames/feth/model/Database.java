@@ -1,35 +1,55 @@
 package com.kyigames.feth.model;
 
-import android.util.Log;
+import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.kyigames.feth.OnProgressChangeListener;
-import com.kyigames.feth.utils.ResourceUtils;
+import com.kyigames.feth.R;
 
+import org.json.JSONException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.StringJoiner;
 
-public class Database {
+public class Database
+{
     private static final String TAG = Database.class.getSimpleName();
+    private static final String CHAR_SET = "UTF-8";
 
-    private static FirebaseDatabase m_database = FirebaseDatabase.getInstance();
-    private static Map<String, Object> m_tables = new HashMap<>();
-    private static Map<String, Class> m_tableTypes = new HashMap<>();
+    private static Map<String, DbTable> m_tables = new HashMap<>();
 
-    private static <T> void registerTable(Class<T> tableType) {
-        m_tables.put(tableType.getSimpleName(), new ArrayList<T>());
-        m_tableTypes.put(tableType.getSimpleName(), tableType);
+    static class DbTable
+    {
+        String Name;
+        Class RowType;
+        Object Rows;
     }
 
-    static {
+    private static <T> void registerTable(Class<T> rowType)
+    {
+        DbTable table = new DbTable();
+        table.Name = rowType.getSimpleName();
+        table.RowType = rowType;
+        m_tables.put(table.Name, table);
+    }
+
+    static
+    {
         // Register table types
         registerTable(Ability.class);
         registerTable(Character.class);
@@ -40,132 +60,121 @@ public class Database {
         registerTable(Loss.class);
         registerTable(Present.class);
         registerTable(Spell.class);
-        registerTable(Tea.class);
+        registerTable(TeaParty.class);
         registerTable(UnitClass.class);
     }
 
-    public static int tableCount() {
+    public static int tableCount()
+    {
         return m_tables.size();
     }
 
-    public static void loadAll(@Nullable final OnProgressChangeListener progressChangeListener) {
-        loadAll_redirection(progressChangeListener);
-    }
+    private static String readJsonString(Context context) throws IOException
+    {
+        try (InputStream inputStream = context.getResources().openRawResource(R.raw.database))
+        {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, CHAR_SET));
+            StringJoiner joiner = new StringJoiner("\n");
+            String line;
+            while ((line = reader.readLine()) != null)
+            {
+                joiner.add(line);
+            }
 
-    private static void loadAll_redirection(@Nullable final OnProgressChangeListener progressChangeListener) {
-        int versionCode = ResourceUtils.getVersionCode();
-
-        if (versionCode < 5) {
-            loadAll_3(progressChangeListener);
-        } else {
-            loadAll_5(progressChangeListener);
+            return joiner.toString();
         }
     }
 
-    private static void loadAll_3(@Nullable final OnProgressChangeListener progressChangeListener) {
-        m_database.getReference()
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int currentProgress = 0;
+    private static Gson m_gson = new Gson();
 
-                        for (DataSnapshot table : dataSnapshot.getChildren()) {
-                            String tableName = table.getKey();
+    public static void loadAll(Context context, @Nullable final OnProgressChangeListener progressChangeListener) throws IOException, JSONException
+    {
+        int currentProgress = 0;
 
-                            if (!hasTable(tableName)) {
-                                continue;
-                            }
+        String jsonString = readJsonString(context);
+        JsonParser jsonParser = new JsonParser();
+        JsonObject jsonObject = jsonParser.parse(jsonString).getAsJsonObject();
 
-                            retrieveData(tableName, table);
+        Set<Map.Entry<String, JsonElement>> entrySet = jsonObject.entrySet();
+        for (Map.Entry<String, JsonElement> entry : entrySet)
+        {
+            if (!tableExists(entry.getKey()))
+            {
+                continue;
+            }
 
-                            ++currentProgress;
-                            if (progressChangeListener != null) {
-                                progressChangeListener.onProgressChanged(currentProgress);
-                            }
-                        }
+            DbTable table = getTable(entry.getKey());
+            Class<?> rowType = table.RowType;
+            table.Rows = retrieveData(entry.getValue().getAsJsonArray(), rowType);
 
-                        if (progressChangeListener != null) {
-                            progressChangeListener.onComplete();
-                        }
-                    }
+            ++currentProgress;
+            if (progressChangeListener != null)
+            {
+                progressChangeListener.onProgressChanged(currentProgress);
+            }
+        }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.d(TAG, "Loading canceled.");
-                    }
-                });
+        if (progressChangeListener != null)
+        {
+            progressChangeListener.onComplete();
+        }
     }
 
-    // TODO: At version code 5, create firebase root table starting with version code.
-    private static void loadAll_5(@Nullable final OnProgressChangeListener progressChangeListener) {
+    private static <T> List<T> retrieveData(JsonArray jsonTable, Class<T> rowType)
+    {
+        List<T> rows = new ArrayList<>();
 
-        m_database
-                .getReference(Integer.toString(ResourceUtils.getVersionCode()))
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        int currentProgress = 0;
+        for (int i = 0; i < jsonTable.size(); ++i)
+        {
+            JsonElement jsonRow = jsonTable.get(i);
+            T row = m_gson.fromJson(jsonRow, rowType);
+            rows.add(row);
+        }
 
-                        for (DataSnapshot table : dataSnapshot.getChildren()) {
-                            String tableName = table.getKey();
-
-                            if (!hasTable(tableName)) {
-                                continue;
-                            }
-
-                            retrieveData(tableName, table);
-
-                            ++currentProgress;
-                            if (progressChangeListener != null) {
-                                progressChangeListener.onProgressChanged(currentProgress);
-                            }
-                        }
-
-                        if (progressChangeListener != null) {
-                            progressChangeListener.onComplete();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.d(TAG, "Loading canceled.");
-                    }
-                });
+        return rows;
     }
 
-    private static boolean hasTable(String tableName) {
+    public static <T> List<T> getTable(Class<T> rowType)
+    {
+        List<T> table = (List<T>) m_tables.get(rowType.getSimpleName()).Rows;
+        if (table == null)
+        {
+            throw new NullPointerException(rowType.getSimpleName());
+        }
+        return table;
+    }
+
+    public static DbTable getTable(String tableName)
+    {
+        return m_tables.get(tableName);
+    }
+
+    public static <T> List<T> getTableRow(Class<T> rowType)
+    {
+        if (!m_tables.containsKey(rowType.getSimpleName()))
+        {
+            return null;
+        }
+
+        return (List<T>) m_tables.get(rowType.getSimpleName()).Rows;
+    }
+
+
+    public static boolean tableExists(String tableName)
+    {
         return m_tables.containsKey(tableName);
     }
 
-    private static <T> List<T> getTable(String tableName) {
-        return (List<T>) m_tables.get(tableName);
-    }
 
-    public static <T> List<T> getTable(Class<T> tableType) {
-        return getTable(tableType.getSimpleName());
-    }
-
-    private static Class getTableType(String tableName) {
-        return m_tableTypes.get(tableName);
-    }
-
-    private static <T> void retrieveData(String tableName, DataSnapshot dataSnapshot) {
-        Log.d(TAG, "retrieveData " + tableName);
-
-        Class<T> tableType = getTableType(tableName);
-        List<T> container = getTable(tableName);
-
-        for (DataSnapshot row : dataSnapshot.getChildren()) {
-            try {
-                container.add(row.getValue(tableType));
-            } catch (Exception e) {
-                Log.d(TAG, "Failed to get data of type : " + tableType.getSimpleName());
-            }
+    public static <T extends IDbEntity> T findEntityByKey(Class<T> rowType, final String key)
+    {
+        if (!tableExists(rowType.getSimpleName()))
+        {
+            return null;
         }
-    }
 
-    public static <T extends IDbEntity> T findEntityByKey(Class<T> type, final String key) {
-        return getTable(type).stream()
+        return Objects.requireNonNull(getTableRow(rowType))
+                .stream()
                 .filter(entity -> entity.getKey().equals(key))
                 .findAny()
                 .orElse(null);

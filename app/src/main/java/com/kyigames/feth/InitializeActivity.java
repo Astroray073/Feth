@@ -1,7 +1,6 @@
 package com.kyigames.feth;
 
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +9,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.daimajia.numberprogressbar.NumberProgressBar;
-import com.google.android.play.core.appupdate.AppUpdateManager;
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.install.model.UpdateAvailability;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.utils.ResourceUtils;
 
-import static com.google.android.play.core.install.model.AppUpdateType.IMMEDIATE;
+import org.json.JSONException;
+
+import java.io.IOException;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -24,9 +22,6 @@ import static com.google.android.play.core.install.model.AppUpdateType.IMMEDIATE
  */
 public class InitializeActivity extends AppCompatActivity {
     private static final String TAG = InitializeActivity.class.getSimpleName();
-    private static final int UPDATE_REQUEST_CODE = 0;
-
-    private AppUpdateManager m_updateManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,45 +48,33 @@ public class InitializeActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        try {
+        try
+        {
             ResourceUtils.initialize(this);
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException e)
+        {
             e.printStackTrace();
         }
-
-        // Creates instance of the manager.
-        m_updateManager = AppUpdateManagerFactory.create(this);
-
-        m_updateManager
-                .getAppUpdateInfo()
-                .addOnSuccessListener(appUpdateInfo -> {
-                    if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                            && appUpdateInfo.isUpdateTypeAllowed(IMMEDIATE)) {
-                        try {
-                            m_updateManager.startUpdateFlowForResult(
-                                    // Pass the intent that is returned by 'getAppUpdateInfo()'.
-                                    appUpdateInfo,
-                                    // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
-                                    IMMEDIATE,
-                                    // The current activity making the update request.
-                                    this,
-                                    // Include a request code to later monitor this update request.
-                                    UPDATE_REQUEST_CODE);
-                        } catch (IntentSender.SendIntentException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        initialize();
-                    }
-                });
+        try
+        {
+            initialize();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        } catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    private void initialize() {
+    private void initialize() throws IOException, JSONException
+    {
         final NumberProgressBar progressBar = findViewById(R.id.number_progress_bar);
         progressBar.setProgress(0);
         progressBar.setMax(Database.tableCount());
 
-        Database.loadAll(new OnProgressChangeListener() {
+        Database.loadAll(this, new OnProgressChangeListener()
+        {
             @Override
             public void onProgressChanged(int progress) {
                 progressBar.setProgress(progress);

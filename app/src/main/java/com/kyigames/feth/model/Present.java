@@ -1,12 +1,11 @@
 package com.kyigames.feth.model;
 
-import com.google.firebase.database.annotations.NotNull;
-import com.google.firebase.database.annotations.Nullable;
+import androidx.annotation.Nullable;
 
 import java.util.List;
 
 public class Present implements IDbEntity {
-    @NotNull
+
     public String Name;
     @Nullable
     public List<String> PreferredGifts;

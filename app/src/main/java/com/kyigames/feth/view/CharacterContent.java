@@ -6,13 +6,12 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.google.firebase.database.annotations.NotNull;
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Present;
-import com.kyigames.feth.model.Tea;
+import com.kyigames.feth.model.TeaParty;
 import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
@@ -29,13 +28,14 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
     private Character m_character;
     private Present m_present;
-    private Tea m_tea;
+    private TeaParty m_teaParty;
     private Ability m_uniqueAbility;
 
-    public CharacterContent(@NotNull Character character) {
+    public CharacterContent(Character character)
+    {
         m_character = character;
         m_present = Database.findEntityByKey(Present.class, m_character.Name);
-        m_tea = Database.findEntityByKey(Tea.class, m_character.Name);
+        m_teaParty = Database.findEntityByKey(TeaParty.class, m_character.Name);
         m_uniqueAbility = Database.findEntityByKey(Ability.class, m_character.UniqueAbility);
     }
 
@@ -203,10 +203,11 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         }
         holder.NonPreferredGifts.invalidate();
 
-        if (m_tea == null || m_tea.PreferredTeas == null) {
+        if (m_teaParty == null || m_teaParty.PreferredTeas == null)
+        {
             holder.PreferredTeas.setText("없음");
         } else {
-            String text = ResourceUtils.getListItemText(m_tea.PreferredTeas);
+            String text = ResourceUtils.getListItemText(m_teaParty.PreferredTeas);
             holder.PreferredTeas.setText(text);
         }
         holder.PreferredTeas.invalidate();

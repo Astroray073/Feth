@@ -1,10 +1,11 @@
 package com.kyigames.feth.model;
 
-public class Gift implements IDbEntity
+import java.util.List;
+
+public class TeaParty implements IDbEntity
 {
     public String Name;
-    public int Grade;
-    public String Cost;
+    public List<String> PreferredTeas;
 
     @Override
     public String getKey()

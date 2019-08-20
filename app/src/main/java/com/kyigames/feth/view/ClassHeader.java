@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.firebase.database.annotations.NotNull;
-import com.google.firebase.database.annotations.Nullable;
+import androidx.annotation.Nullable;
+
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.CombatArts;
@@ -22,22 +22,21 @@ import eu.davidea.flexibleadapter.items.ISectionable;
 import eu.davidea.viewholders.ExpandableViewHolder;
 
 public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, ClassContent>
-        implements ISectionable<ClassHeader.ViewHolder, ClassCategoryHeader> {
+        implements ISectionable<ClassHeader.ViewHolder, ClassCategoryHeader>
+{
     private static final String TAG = ClassHeader.class.getSimpleName();
-
 
     private ClassCategoryHeader m_header;
 
-    @NotNull
     private String m_name;
-    @NotNull
     private String m_condition;
     @Nullable
     private Ability m_masterAbility;
     @Nullable
     private CombatArts m_masterArts;
 
-    public ClassHeader(@NotNull ClassCategoryHeader header, @NotNull UnitClass unitClass) {
+    public ClassHeader(ClassCategoryHeader header, UnitClass unitClass)
+    {
         m_header = header;
         m_name = unitClass.Name;
         m_condition = unitClass.Condition;
@@ -46,23 +45,27 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
     }
 
     @Override
-    public ClassCategoryHeader getHeader() {
+    public ClassCategoryHeader getHeader()
+    {
         return m_header;
     }
 
     @Override
-    public void setHeader(ClassCategoryHeader header) {
+    public void setHeader(ClassCategoryHeader header)
+    {
         m_header = header;
     }
 
-    class ViewHolder extends ExpandableViewHolder {
+    class ViewHolder extends ExpandableViewHolder
+    {
         View Container;
         TextView Name;
         TextView Condition;
         ViewGroup MasterSkillContainer;
         AbilityIconHeader[] MasterSkills = new AbilityIconHeader[2];
 
-        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
+        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
+        {
             super(view, adapter, stickyHeader);
             Container = view.findViewById(R.id.class_header_container);
             Name = view.findViewById(R.id.class_header_name);
@@ -73,9 +76,11 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
             MasterSkills[0] = (AbilityIconHeader) MasterSkillContainer.getChildAt(0);
             MasterSkills[1] = (AbilityIconHeader) MasterSkillContainer.getChildAt(1);
 
-            Container.setOnClickListener(new View.OnClickListener() {
+            Container.setOnClickListener(new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View view) {
+                public void onClick(View view)
+                {
                     Log.d(TAG, "onClick: toggle expansion");
                     toggleExpansion();
                 }
@@ -84,13 +89,16 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
     }
 
     @Override
-    public int getExpansionLevel() {
+    public int getExpansionLevel()
+    {
         return 1;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o instanceof ClassHeader) {
+    public boolean equals(Object o)
+    {
+        if (o instanceof ClassHeader)
+        {
             ClassHeader characterHeader = (ClassHeader) o;
             return m_name.equals(characterHeader.m_name);
         }
@@ -98,32 +106,39 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
     }
 
     @Override
-    public int getLayoutRes() {
+    public int getLayoutRes()
+    {
         return R.layout.class_class_header;
     }
 
     @Override
-    public ViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter) {
+    public ViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter)
+    {
         return new ViewHolder(view, adapter, false);
     }
 
     @Override
-    public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads) {
+    public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads)
+    {
 
         holder.Name.setText(m_name);
         holder.Condition.setText(m_condition);
 
-        if (m_masterAbility == null) {
+        if (m_masterAbility == null)
+        {
             holder.MasterSkills[0].setVisibility(View.GONE);
-        } else {
+        } else
+        {
             holder.MasterSkills[0].setVisibility(View.VISIBLE);
             holder.MasterSkills[0].setIcon(m_masterAbility.getIcon());
             holder.MasterSkills[0].setName(m_masterAbility.Name);
         }
 
-        if (m_masterArts == null) {
+        if (m_masterArts == null)
+        {
             holder.MasterSkills[1].setVisibility(View.GONE);
-        } else {
+        } else
+        {
             holder.MasterSkills[1].setVisibility(View.VISIBLE);
             holder.MasterSkills[1].setIcon(m_masterArts.getIcon());
             holder.MasterSkills[1].setName(m_masterArts.Name);

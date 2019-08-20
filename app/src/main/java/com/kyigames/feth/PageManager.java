@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.google.firebase.database.annotations.NotNull;
 import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.ClassCategory;
 import com.kyigames.feth.model.Database;
@@ -31,7 +30,6 @@ import com.kyigames.feth.view.LossContent;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import devlight.io.library.ntb.NavigationTabBar;
@@ -47,7 +45,8 @@ class PageManager extends PagerAdapter {
     // Extra
     private FastScroller m_fastScroller;
 
-    PageManager(@NotNull Context context) {
+    PageManager(Context context)
+    {
         super();
         m_context = context;
         m_inflater = LayoutInflater.from(context);
@@ -132,7 +131,8 @@ class PageManager extends PagerAdapter {
         return page;
     }
 
-    private void initializeCharacterPage(@NotNull View view) {
+    private void initializeCharacterPage(View view)
+    {
 
         FactionHeader none = new FactionHeader(m_context.getString(R.string.faction_none), R.color.colorFactionNone, R.drawable.ic_character);
         FactionHeader eagle = new FactionHeader(m_context.getString(R.string.faction_eagle), R.color.colorFactionEagle, R.drawable.ic_flag_eagle);
@@ -162,7 +162,8 @@ class PageManager extends PagerAdapter {
         pg_character.setAdapter(adapter);
     }
 
-    private void addFactionMembers(@NotNull FactionHeader factionHeader, @NotNull String[] memberNames) {
+    private void addFactionMembers(FactionHeader factionHeader, String[] memberNames)
+    {
         for (String memberName : memberNames) {
             Character character = Database.findEntityByKey(Character.class, memberName);
             CharacterContent characterContent = new CharacterContent(character);
@@ -173,18 +174,14 @@ class PageManager extends PagerAdapter {
         }
     }
 
-    private void initializeClassPage(@NotNull View view) {
+    private void initializeClassPage(View view)
+    {
         final String[] categoryColors = m_context.getResources().getStringArray(R.array.class_category_colors);
 
         List<ClassCategory> classCategoryList = Database.getTable(ClassCategory.class);
         List<UnitClass> unitClassList = Database.getTable(UnitClass.class);
 
-        Collections.sort(classCategoryList, new Comparator<ClassCategory>() {
-            @Override
-            public int compare(ClassCategory classCategory, ClassCategory t1) {
-                return classCategory.MinLevel - t1.MinLevel;
-            }
-        });
+        Collections.sort(classCategoryList, (classCategory, t1) -> classCategory.MinLevel - t1.MinLevel);
 
         List<IFlexible> categoryHeaders = new ArrayList<>();
         for (int i = 0; i < classCategoryList.size(); i++) {
@@ -213,7 +210,8 @@ class PageManager extends PagerAdapter {
         page_class.setAdapter(adapter);
     }
 
-    private void initializeLossPage(@NotNull View view) {
+    private void initializeLossPage(View view)
+    {
         // Get table from db.
         List<Loss> table = Database.getTable(Loss.class);
         Collections.sort(table);
@@ -249,7 +247,8 @@ class PageManager extends PagerAdapter {
         adapter.setFastScroller(m_fastScroller);
     }
 
-    private void initializeLicensePage(@NotNull View view) {
+    private void initializeLicensePage(View view)
+    {
         String[] licenses = getResources().getStringArray(R.array.licenses);
         String[] license_types = getResources().getStringArray(R.array.license_types);
         String[] license_url = getResources().getStringArray(R.array.license_agreement_url);

@@ -49,11 +49,13 @@
     </string-array>
 
     <string-array name="class_category_colors">
-        <item>#df5a55</item>
+        <item>#558CDF</item>
         <item>#76afcf</item>
         <item>#8BC34A</item>
         <item>#f9bb72</item>
         <item>#2196F3</item>
+        <item>#df5a55</item>
+        <item>#ABCAD3</item>
     </string-array>
 
     <string-array name="eagle_members">
