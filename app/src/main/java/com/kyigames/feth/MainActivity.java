@@ -12,23 +12,28 @@ import java.util.List;
 
 import devlight.io.library.ntb.NavigationTabBar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     private static final int StartPageIndex = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
+        try
+        {
             ResourceUtils.initialize(this);
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException e)
+        {
             e.printStackTrace();
         }
         initUI();
     }
 
-    private void initUI() {
+    private void initUI()
+    {
         final ViewPager viewPager = findViewById(R.id.view_pager);
         final PageManager pageManager = new PageManager(this);
 

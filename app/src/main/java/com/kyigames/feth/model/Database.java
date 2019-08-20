@@ -32,21 +32,7 @@ public class Database
     private static final String CHAR_SET = "UTF-8";
 
     private static Map<String, DbTable> m_tables = new HashMap<>();
-
-    static class DbTable
-    {
-        String Name;
-        Class RowType;
-        Object Rows;
-    }
-
-    private static <T> void registerTable(Class<T> rowType)
-    {
-        DbTable table = new DbTable();
-        table.Name = rowType.getSimpleName();
-        table.RowType = rowType;
-        m_tables.put(table.Name, table);
-    }
+    private static Gson m_gson = new Gson();
 
     static
     {
@@ -62,6 +48,14 @@ public class Database
         registerTable(Spell.class);
         registerTable(TeaParty.class);
         registerTable(UnitClass.class);
+    }
+
+    private static <T> void registerTable(Class<T> rowType)
+    {
+        DbTable table = new DbTable();
+        table.Name = rowType.getSimpleName();
+        table.RowType = rowType;
+        m_tables.put(table.Name, table);
     }
 
     public static int tableCount()
@@ -84,8 +78,6 @@ public class Database
             return joiner.toString();
         }
     }
-
-    private static Gson m_gson = new Gson();
 
     public static void loadAll(Context context, @Nullable final OnProgressChangeListener progressChangeListener) throws IOException, JSONException
     {
@@ -159,12 +151,10 @@ public class Database
         return (List<T>) m_tables.get(rowType.getSimpleName()).Rows;
     }
 
-
     public static boolean tableExists(String tableName)
     {
         return m_tables.containsKey(tableName);
     }
-
 
     public static <T extends IDbEntity> T findEntityByKey(Class<T> rowType, final String key)
     {
@@ -178,5 +168,12 @@ public class Database
                 .filter(entity -> entity.getKey().equals(key))
                 .findAny()
                 .orElse(null);
+    }
+
+    static class DbTable
+    {
+        String Name;
+        Class RowType;
+        Object Rows;
     }
 }

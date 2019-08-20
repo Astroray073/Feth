@@ -21,7 +21,8 @@ import eu.davidea.flexibleadapter.items.ISectionable;
 import eu.davidea.viewholders.ExpandableViewHolder;
 
 public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.ViewHolder, CharacterContent>
-        implements ISectionable<CharacterHeader.ViewHolder, FactionHeader> {
+        implements ISectionable<CharacterHeader.ViewHolder, FactionHeader>
+{
     private static final String TAG = CharacterHeader.class.getSimpleName();
 
     private FactionHeader m_header;
@@ -31,60 +32,45 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
     @Nullable
     private String m_scoutCondition;
 
-    public CharacterHeader(FactionHeader header, Character character) {
+    public CharacterHeader(FactionHeader header, Character character)
+    {
         m_header = header;
 
         m_characterName = character.Name;
         m_portraitResId = character.getPortraitIcon();
 
-        if (character.Scout == null) {
+        if (character.Scout == null)
+        {
             m_scoutCondition = null;
-        } else {
+        } else
+        {
             m_scoutCondition = ResourceUtils.getListItemText(character.Scout, "/");
         }
     }
 
     @Override
-    public FactionHeader getHeader() {
+    public FactionHeader getHeader()
+    {
         return m_header;
     }
 
     @Override
-    public void setHeader(FactionHeader header) {
+    public void setHeader(FactionHeader header)
+    {
         m_header = header;
     }
 
-    class ViewHolder extends ExpandableViewHolder {
-        View Container;
-        ImageView CharacterPortrait;
-        TextView CharacterName;
-        TextView ScoutCondition;
-
-        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader) {
-            super(view, adapter, stickyHeader);
-            Container = view.findViewById(R.id.character_header_container);
-            CharacterPortrait = view.findViewById(R.id.character_header_character_portrait);
-            CharacterName = view.findViewById(R.id.character_header_character_name);
-            ScoutCondition = view.findViewById(R.id.character_header_scout_condition);
-
-            Container.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d(TAG, "onClick: toggle expansion");
-                    toggleExpansion();
-                }
-            });
-        }
-    }
-
     @Override
-    public int getExpansionLevel() {
+    public int getExpansionLevel()
+    {
         return 1;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o instanceof CharacterHeader) {
+    public boolean equals(Object o)
+    {
+        if (o instanceof CharacterHeader)
+        {
             CharacterHeader characterHeader = (CharacterHeader) o;
             return m_characterName.equals(characterHeader.m_characterName);
         }
@@ -92,27 +78,59 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
     }
 
     @Override
-    public int getLayoutRes() {
+    public int getLayoutRes()
+    {
         return R.layout.character_character_header;
     }
 
     @Override
-    public ViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter) {
+    public ViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter)
+    {
         return new ViewHolder(view, adapter, false);
     }
 
     @Override
-    public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, final ViewHolder holder, final int position, List<Object> payloads) {
+    public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, final ViewHolder holder, final int position, List<Object> payloads)
+    {
         holder.CharacterPortrait.setImageResource(m_portraitResId);
         holder.CharacterName.setText(m_characterName);
 
-        if (m_scoutCondition == null) {
+        if (m_scoutCondition == null)
+        {
             holder.ScoutCondition.setVisibility(View.GONE);
-        } else {
+        } else
+        {
             holder.ScoutCondition.setVisibility(View.VISIBLE);
             holder.ScoutCondition.setText(m_scoutCondition);
         }
 
         holder.Container.invalidate();
+    }
+
+    class ViewHolder extends ExpandableViewHolder
+    {
+        View Container;
+        ImageView CharacterPortrait;
+        TextView CharacterName;
+        TextView ScoutCondition;
+
+        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
+        {
+            super(view, adapter, stickyHeader);
+            Container = view.findViewById(R.id.character_header_container);
+            CharacterPortrait = view.findViewById(R.id.character_header_character_portrait);
+            CharacterName = view.findViewById(R.id.character_header_character_name);
+            ScoutCondition = view.findViewById(R.id.character_header_scout_condition);
+
+            Container.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Log.d(TAG, "onClick: toggle expansion");
+                    toggleExpansion();
+                }
+            });
+        }
     }
 }

@@ -4,7 +4,8 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class UnitClass implements IDbEntity {
+public class UnitClass implements IDbEntity
+{
 
     public String Name;
 
@@ -24,7 +25,8 @@ public class UnitClass implements IDbEntity {
     public String MasterArts;
 
     @Override
-    public String getKey() {
+    public String getKey()
+    {
         return Name;
     }
 }

@@ -37,7 +37,8 @@ import eu.davidea.fastscroller.FastScroller;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
-class PageManager extends PagerAdapter {
+class PageManager extends PagerAdapter
+{
     private static String TAG = PageManager.class.getSimpleName();
     private Context m_context;
     private LayoutInflater m_inflater;
@@ -52,18 +53,21 @@ class PageManager extends PagerAdapter {
         m_inflater = LayoutInflater.from(context);
     }
 
-    private Resources getResources() {
+    private Resources getResources()
+    {
         return m_context.getResources();
     }
 
-    List<NavigationTabBar.Model> buildTabMenus() {
+    List<NavigationTabBar.Model> buildTabMenus()
+    {
         final String[] titles = getResources().getStringArray(R.array.menu_title);
         final String[] colors = getResources().getStringArray(R.array.menu_color);
         final TypedArray icons = getResources().obtainTypedArray(R.array.menu_icon);
 
         ArrayList<NavigationTabBar.Model> models = new ArrayList<>();
 
-        for (int i = 0; i < titles.length; ++i) {
+        for (int i = 0; i < titles.length; ++i)
+        {
             Drawable iconRes = m_context.getDrawable(icons.getResourceId(i, 0));
             int colorRes = Color.parseColor(colors[i]);
             String title = titles[i];
@@ -83,28 +87,33 @@ class PageManager extends PagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return 4;
     }
 
     @Override
-    public boolean isViewFromObject(final View view, final Object object) {
+    public boolean isViewFromObject(final View view, final Object object)
+    {
         return view.equals(object);
     }
 
     @Override
-    public void destroyItem(final View container, final int position, final Object object) {
+    public void destroyItem(final View container, final int position, final Object object)
+    {
         ((ViewPager) container).removeView((View) object);
     }
 
     @Override
-    public Object instantiateItem(final ViewGroup container, final int position) {
+    public Object instantiateItem(final ViewGroup container, final int position)
+    {
         View page = createPage(position);
         container.addView(page);
         return page;
     }
 
-    private View createPage(int position) {
+    private View createPage(int position)
+    {
         View page;
         Log.d(TAG, "Create page view " + position);
 
@@ -124,7 +133,8 @@ class PageManager extends PagerAdapter {
         {
             page = m_inflater.inflate(R.layout.page_license, null, false);
             initializeLicensePage(page);
-        } else {
+        } else
+        {
             page = m_inflater.inflate(R.layout.page_wip, null, false);
         }
 
@@ -133,7 +143,6 @@ class PageManager extends PagerAdapter {
 
     private void initializeCharacterPage(View view)
     {
-
         FactionHeader none = new FactionHeader(m_context.getString(R.string.faction_none), R.color.colorFactionNone, R.drawable.ic_character);
         FactionHeader eagle = new FactionHeader(m_context.getString(R.string.faction_eagle), R.color.colorFactionEagle, R.drawable.ic_flag_eagle);
         FactionHeader lion = new FactionHeader(m_context.getString(R.string.faction_lion), R.color.colorFactionLion, R.drawable.ic_flag_lion);
@@ -164,7 +173,8 @@ class PageManager extends PagerAdapter {
 
     private void addFactionMembers(FactionHeader factionHeader, String[] memberNames)
     {
-        for (String memberName : memberNames) {
+        for (String memberName : memberNames)
+        {
             Character character = Database.findEntityByKey(Character.class, memberName);
             CharacterContent characterContent = new CharacterContent(character);
             CharacterHeader characterHeader = new CharacterHeader(factionHeader, character);
@@ -181,15 +191,16 @@ class PageManager extends PagerAdapter {
         List<ClassCategory> classCategoryList = Database.getTable(ClassCategory.class);
         List<UnitClass> unitClassList = Database.getTable(UnitClass.class);
 
-        Collections.sort(classCategoryList, (classCategory, t1) -> classCategory.MinLevel - t1.MinLevel);
-
         List<IFlexible> categoryHeaders = new ArrayList<>();
-        for (int i = 0; i < classCategoryList.size(); i++) {
+        for (int i = 0; i < classCategoryList.size(); i++)
+        {
             ClassCategory classCategory = classCategoryList.get(i);
             ClassCategoryHeader categoryHeader = new ClassCategoryHeader(classCategory, categoryColors[i]);
 
-            for (UnitClass unitClass : unitClassList) {
-                if (unitClass.Category.equals(classCategory.Name)) {
+            for (UnitClass unitClass : unitClassList)
+            {
+                if (unitClass.Category.equals(classCategory.Name))
+                {
                     ClassHeader classHeader = new ClassHeader(categoryHeader, unitClass);
                     categoryHeader.addSubItem(classHeader);
 
@@ -205,6 +216,7 @@ class PageManager extends PagerAdapter {
         adapter.setDisplayHeadersAtStartUp(true);
         adapter.setStickyHeaders(true);
         adapter.expandItemsAtStartUp();
+        adapter.collapseAll();
 
         RecyclerView page_class = view.findViewById(R.id.class_list_view);
         page_class.setAdapter(adapter);
@@ -217,7 +229,8 @@ class PageManager extends PagerAdapter {
         Collections.sort(table);
 
         List<IFlexible> model = new ArrayList<>();
-        for (Loss loss : table) {
+        for (Loss loss : table)
+        {
             model.add(new LossContent(loss));
         }
 
@@ -255,7 +268,8 @@ class PageManager extends PagerAdapter {
 
         List<IFlexible> licenseItemList = new ArrayList<>();
 
-        for (int i = 0; i < licenses.length; ++i) {
+        for (int i = 0; i < licenses.length; ++i)
+        {
             licenseItemList.add(new LicenseItem(licenses[i], license_types[i], license_url[i]));
         }
 

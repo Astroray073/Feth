@@ -20,19 +20,23 @@ import java.io.IOException;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class InitializeActivity extends AppCompatActivity {
+public class InitializeActivity extends AppCompatActivity
+{
     private static final String TAG = InitializeActivity.class.getSimpleName();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initialize);
         setViewAsFullScreen();
     }
 
-    private void setViewAsFullScreen() {
+    private void setViewAsFullScreen()
+    {
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        if (actionBar != null)
+        {
             actionBar.hide();
         }
 
@@ -46,7 +50,8 @@ public class InitializeActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
+    protected void onPostCreate(Bundle savedInstanceState)
+    {
         super.onPostCreate(savedInstanceState);
         try
         {
@@ -76,12 +81,14 @@ public class InitializeActivity extends AppCompatActivity {
         Database.loadAll(this, new OnProgressChangeListener()
         {
             @Override
-            public void onProgressChanged(int progress) {
+            public void onProgressChanged(int progress)
+            {
                 progressBar.setProgress(progress);
             }
 
             @Override
-            public void onComplete() {
+            public void onComplete()
+            {
                 Intent intent = new Intent(InitializeActivity.this, MainActivity.class);
                 startActivity(intent);
             }

@@ -56,38 +56,6 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         m_header = header;
     }
 
-    class ViewHolder extends ExpandableViewHolder
-    {
-        View Container;
-        TextView Name;
-        TextView Condition;
-        ViewGroup MasterSkillContainer;
-        AbilityIconHeader[] MasterSkills = new AbilityIconHeader[2];
-
-        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
-        {
-            super(view, adapter, stickyHeader);
-            Container = view.findViewById(R.id.class_header_container);
-            Name = view.findViewById(R.id.class_header_name);
-            Condition = view.findViewById(R.id.class_header_condition);
-
-            MasterSkillContainer = view.findViewById(R.id.class_header_master_ability_container);
-
-            MasterSkills[0] = (AbilityIconHeader) MasterSkillContainer.getChildAt(0);
-            MasterSkills[1] = (AbilityIconHeader) MasterSkillContainer.getChildAt(1);
-
-            Container.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Log.d(TAG, "onClick: toggle expansion");
-                    toggleExpansion();
-                }
-            });
-        }
-    }
-
     @Override
     public int getExpansionLevel()
     {
@@ -145,6 +113,38 @@ public class ClassHeader extends AbstractExpandableItem<ClassHeader.ViewHolder, 
         }
 
         holder.MasterSkillContainer.invalidate();
+    }
+
+    class ViewHolder extends ExpandableViewHolder
+    {
+        View Container;
+        TextView Name;
+        TextView Condition;
+        ViewGroup MasterSkillContainer;
+        AbilityIconHeader[] MasterSkills = new AbilityIconHeader[2];
+
+        ViewHolder(View view, FlexibleAdapter adapter, boolean stickyHeader)
+        {
+            super(view, adapter, stickyHeader);
+            Container = view.findViewById(R.id.class_header_container);
+            Name = view.findViewById(R.id.class_header_name);
+            Condition = view.findViewById(R.id.class_header_condition);
+
+            MasterSkillContainer = view.findViewById(R.id.class_header_master_ability_container);
+
+            MasterSkills[0] = (AbilityIconHeader) MasterSkillContainer.getChildAt(0);
+            MasterSkills[1] = (AbilityIconHeader) MasterSkillContainer.getChildAt(1);
+
+            Container.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Log.d(TAG, "onClick: toggle expansion");
+                    toggleExpansion();
+                }
+            });
+        }
     }
 
 }

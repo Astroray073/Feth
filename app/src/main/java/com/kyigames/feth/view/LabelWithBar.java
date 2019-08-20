@@ -11,29 +11,34 @@ import android.widget.TextView;
 
 import com.kyigames.feth.R;
 
-public class LabelWithBar extends LinearLayout {
+public class LabelWithBar extends LinearLayout
+{
     private LinearLayout m_container;
     private TextView m_text;
     private View m_divider;
 
-    public LabelWithBar(Context context) {
+    public LabelWithBar(Context context)
+    {
         super(context);
         initView();
     }
 
-    public LabelWithBar(Context context, AttributeSet attrs) {
+    public LabelWithBar(Context context, AttributeSet attrs)
+    {
         super(context, attrs);
         initView();
         getAttrs(attrs);
     }
 
-    public LabelWithBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LabelWithBar(Context context, AttributeSet attrs, int defStyleAttr)
+    {
         super(context, attrs, defStyleAttr);
         initView();
         getAttrs(attrs, defStyleAttr);
     }
 
-    private void initView() {
+    private void initView()
+    {
         View v = LayoutInflater.from(getContext()).inflate(R.layout.label_with_bar, this, false);
         addView(v);
 
@@ -42,17 +47,20 @@ public class LabelWithBar extends LinearLayout {
         m_divider = findViewById(R.id.label_divider);
     }
 
-    private void getAttrs(AttributeSet attrs) {
+    private void getAttrs(AttributeSet attrs)
+    {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.LabelWithBar);
         setAttrs(typedArray);
     }
 
-    private void getAttrs(AttributeSet attrs, int defStyle) {
+    private void getAttrs(AttributeSet attrs, int defStyle)
+    {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.LabelWithBar, defStyle, 0);
         setAttrs(typedArray);
     }
 
-    private void setAttrs(TypedArray attr) {
+    private void setAttrs(TypedArray attr)
+    {
         String textString = attr.getString(R.styleable.LabelWithBar_text);
         m_text.setText(textString);
 

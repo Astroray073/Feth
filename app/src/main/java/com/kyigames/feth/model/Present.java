@@ -4,7 +4,8 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class Present implements IDbEntity {
+public class Present implements IDbEntity
+{
 
     public String Name;
     @Nullable
@@ -13,7 +14,8 @@ public class Present implements IDbEntity {
     public List<String> NonpreferredGifts;
 
     @Override
-    public String getKey() {
+    public String getKey()
+    {
         return Name;
     }
 }

@@ -1,7 +1,8 @@
 package com.kyigames.feth.model;
 
 import androidx.annotation.Nullable;
-public class Spell implements IDbEntity {
+public class Spell implements IDbEntity
+{
 
     public String Name;
 
@@ -24,7 +25,8 @@ public class Spell implements IDbEntity {
     public String Description;
 
     @Override
-    public String getKey() {
+    public String getKey()
+    {
         return Name;
     }
 }

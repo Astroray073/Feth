@@ -4,7 +4,8 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class Crest implements IDbEntity {
+public class Crest implements IDbEntity
+{
 
     public String Name;
     @Nullable
@@ -15,7 +16,8 @@ public class Crest implements IDbEntity {
     public String Effect;
 
     @Override
-    public String getKey() {
+    public String getKey()
+    {
         return Name;
     }
 }
