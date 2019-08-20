@@ -6328,83 +6328,6 @@
       ],
       "MasterAbility": null,
       "MasterArts": "풍신"
-    },
-    {
-      "Name": "대사교",
-      "Category": "NPC",
-      "Condition": "레아",
-      "Abilities": [
-        "카리스마",
-        "대장성",
-        "지형 내성"
-      ],
-      "GrowthRate": [],
-      "SkillBonus": [],
-      "MasterAbility": null,
-      "MasterArts": null
-    },
-    {
-      "Name": "사신기사",
-      "Category": "NPC",
-      "Condition": "사신기사",
-      "Abilities": [
-        "재이동",
-        "창의 달인"
-      ],
-      "GrowthRate": [],
-      "SkillBonus": [],
-      "MasterAbility": "주박",
-      "MasterArts": null
-    },
-    {
-      "Name": "염제",
-      "Category": "NPC",
-      "Condition": "염제",
-      "Abilities": [
-        "카리스마",
-        "도끼의 달인"
-      ],
-      "GrowthRate": [],
-      "SkillBonus": [],
-      "MasterAbility": null,
-      "MasterArts": null
-    },
-    {
-      "Name": "아가스티아",
-      "Category": "NPC",
-      "Condition": "탈레스",
-      "Abilities": [
-        "힘 봉인",
-        "마력 봉인"
-      ],
-      "GrowthRate": [],
-      "SkillBonus": [],
-      "MasterAbility": null,
-      "MasterArts": null
-    },
-    {
-      "Name": "성인",
-      "Category": "NPC",
-      "Condition": "성인",
-      "Abilities": [
-        "카리스마",
-        "대장성",
-        "지형 내성"
-      ],
-      "GrowthRate": [],
-      "SkillBonus": [],
-      "MasterAbility": null,
-      "MasterArts": null
-    },
-    {
-      "Name": "해방왕",
-      "Category": "NPC",
-      "Condition": "네메시스",
-      "Abilities": [],
-      "GrowthRate": [],
-      "SkillBonus": [],
-      "MasterAbility": null,
-      "MasterArts": null
     }
   ],
   "ClassCategory": [
@@ -6436,11 +6359,6 @@
     {
       "Id": 5,
       "Name": "특수",
-      "MinLevel": 0
-    },
-    {
-      "Id": 6,
-      "Name": "NPC",
       "MinLevel": 0
     }
   ],

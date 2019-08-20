@@ -216,7 +216,6 @@ class PageManager extends PagerAdapter
         adapter.setDisplayHeadersAtStartUp(true);
         adapter.setStickyHeaders(true);
         adapter.expandItemsAtStartUp();
-        adapter.collapseAll();
 
         RecyclerView page_class = view.findViewById(R.id.class_list_view);
         page_class.setAdapter(adapter);

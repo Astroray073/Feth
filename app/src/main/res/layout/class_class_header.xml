@@ -67,7 +67,7 @@
             style="@style/Label"
             android:layout_gravity="center"
             android:paddingBottom="8dp"
-            android:text="@string/master_skills"
+            android:text="@string/class_master_skill"
             android:textAlignment="center"
             android:textSize="12sp" />
 

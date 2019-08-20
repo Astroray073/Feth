@@ -7,6 +7,8 @@
 
     <include layout="@layout/class_ability_list" />
 
+    <include layout="@layout/class_master_skill_list" />
+
     <include layout="@layout/growth_table" />
 
     <include layout="@layout/class_skill_bonus_table" />
