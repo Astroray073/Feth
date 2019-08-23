@@ -10,6 +10,6 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/class_category_header" />
+        tools:listitem="@layout/section_header_without_icon" />
 
 </FrameLayout>

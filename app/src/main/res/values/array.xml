@@ -3,6 +3,7 @@
     <string-array name="menu_title">
         <item>캐릭터</item>
         <item>클래스</item>
+        <item>외전</item>
         <item>분실물</item>
         <item>라이센스</item>
     </string-array>
@@ -18,6 +19,7 @@
     <integer-array name="menu_icon">
         <item>@drawable/ic_character</item>
         <item>@drawable/ic_class</item>
+        <item>@drawable/ic_side_story</item>
         <item>@drawable/ic_item</item>
         <item>@drawable/ic_license</item>
     </integer-array>
@@ -103,5 +105,15 @@
         <item>알로이스</item>
         <item>길베르트</item>
         <item>샤미아</item>
+    </string-array>
+
+    <string-array name="side_story_sections">
+        <item>1부</item>
+        <item>2부</item>
+    </string-array>
+
+    <string-array name="side_story_section_colors">
+        <item>#2196F3</item>
+        <item>#df5a55</item>
     </string-array>
 </resources>

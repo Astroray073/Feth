@@ -31,6 +31,7 @@ public class FactionHeader extends AbstractExpandableHeaderItem<FactionHeader.Vi
         m_flagIconId = flagResId;
     }
 
+
     @Override
     public int getExpansionLevel()
     {
@@ -51,21 +52,13 @@ public class FactionHeader extends AbstractExpandableHeaderItem<FactionHeader.Vi
     @Override
     public int getLayoutRes()
     {
-        return R.layout.character_faction_header;
+        return R.layout.section_header_with_icon;
     }
 
     @Override
     public ViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter)
     {
         return new ViewHolder(view, adapter, true);
-    }
-
-    @Override
-    public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, final int position, List<Object> payloads)
-    {
-        holder.Container.setBackgroundResource(m_factionColorResId);
-        holder.FactionIcon.setImageResource(m_flagIconId);
-        holder.FactionName.setText(m_factionName);
     }
 
     class ViewHolder extends ExpandableViewHolder
@@ -77,19 +70,24 @@ public class FactionHeader extends AbstractExpandableHeaderItem<FactionHeader.Vi
         ViewHolder(View view, final FlexibleAdapter adapter, boolean stickyHeader)
         {
             super(view, adapter, stickyHeader);
-            Container = view.findViewById(R.id.faction_header_container);
-            FactionIcon = view.findViewById(R.id.character_faction_icon);
-            FactionName = view.findViewById(R.id.character_faction_name);
+            Container = view.findViewById(R.id.section_header_with_icon_container);
+            FactionIcon = view.findViewById(R.id.section_header_with_icon_icon);
+            FactionName = view.findViewById(R.id.section_header_with_icon_name);
 
-            Container.setOnClickListener(new View.OnClickListener()
+            Container.setOnClickListener(view1 ->
             {
-                @Override
-                public void onClick(View view)
-                {
-                    Log.d(TAG, "onClick: toggle expansion");
-                    toggleExpansion();
-                }
+                Log.d(TAG, "onClick: toggle expansion");
+                toggleExpansion();
             });
         }
     }
+
+    @Override
+    public void bindViewHolder(final FlexibleAdapter<IFlexible> adapter, ViewHolder holder, final int position, List<Object> payloads)
+    {
+        holder.Container.setBackgroundResource(m_factionColorResId);
+        holder.FactionIcon.setImageResource(m_flagIconId);
+        holder.FactionName.setText(m_factionName);
+    }
+
 }

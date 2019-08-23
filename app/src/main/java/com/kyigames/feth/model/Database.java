@@ -48,6 +48,7 @@ public class Database
         registerTable(Spell.class);
         registerTable(TeaParty.class);
         registerTable(UnitClass.class);
+        registerTable(SideStory.class);
     }
 
     private static <T> void registerTable(Class<T> rowType)
@@ -128,12 +129,13 @@ public class Database
 
     public static <T> List<T> getTable(Class<T> rowType)
     {
-        List<T> table = (List<T>) m_tables.get(rowType.getSimpleName()).Rows;
+        DbTable table = getTable(rowType.getSimpleName());
+
         if (table == null)
         {
             throw new NullPointerException(rowType.getSimpleName());
         }
-        return table;
+        return (List<T>) table.Rows;
     }
 
     public static DbTable getTable(String tableName)

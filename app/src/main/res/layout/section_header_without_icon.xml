@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/class_category_container"
+    android:id="@+id/section_header_without_icon_container"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeightSmall"
     android:background="#dd7e57c2"
@@ -20,13 +20,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/class_category_name"
+            android:id="@+id/section_header_without_icon_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:gravity="center"
             android:singleLine="true"
-            android:text="category_name"
+            android:text="section_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse" />
 
     </LinearLayout>

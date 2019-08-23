@@ -28,6 +28,25 @@ public class ClassCategoryHeader extends AbstractExpandableHeaderItem<ClassCateg
         m_categoryColor = categoryColor;
     }
 
+    class ViewHolder extends ExpandableViewHolder
+    {
+        View Container;
+        TextView CategoryName;
+
+        ViewHolder(View view, FlexibleAdapter adapter)
+        {
+            super(view, adapter, true);
+            Container = view.findViewById(R.id.section_header_without_icon_container);
+            CategoryName = view.findViewById(R.id.section_header_without_icon_name);
+
+            Container.setOnClickListener(view1 ->
+            {
+                Log.d(TAG, "toggle expansion :" + m_classCategory.Name);
+                toggleExpansion();
+            });
+        }
+    }
+
     @Override
     public int getExpansionLevel()
     {
@@ -48,7 +67,7 @@ public class ClassCategoryHeader extends AbstractExpandableHeaderItem<ClassCateg
     @Override
     public int getLayoutRes()
     {
-        return R.layout.class_category_header;
+        return R.layout.section_header_without_icon;
     }
 
     @Override
@@ -73,26 +92,5 @@ public class ClassCategoryHeader extends AbstractExpandableHeaderItem<ClassCateg
         holder.CategoryName.setText(text);
     }
 
-    class ViewHolder extends ExpandableViewHolder
-    {
-        View Container;
-        TextView CategoryName;
 
-        ViewHolder(View view, FlexibleAdapter adapter)
-        {
-            super(view, adapter, true);
-            Container = view.findViewById(R.id.class_category_container);
-            CategoryName = view.findViewById(R.id.class_category_name);
-
-            Container.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Log.d(TAG, "toggle expansion :" + m_classCategory.Name);
-                    toggleExpansion();
-                }
-            });
-        }
-    }
 }

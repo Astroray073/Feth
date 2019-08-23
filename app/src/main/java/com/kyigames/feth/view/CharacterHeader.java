@@ -37,7 +37,7 @@ public class CharacterHeader extends AbstractExpandableItem<CharacterHeader.View
         m_header = header;
 
         m_characterName = character.Name;
-        m_portraitResId = character.getPortraitIcon();
+        m_portraitResId = character.getIcon();
 
         if (character.Scout == null)
         {

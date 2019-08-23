@@ -65,5 +65,8 @@
     <string name="grade_a_plus">A+</string>
     <string name="grade_s">S</string>
     <string name="grade_s_plus">S+</string>
+    <string name="clear_reward">클리어 보상</string>
+    <string name="knights_reward">획득 기사단</string>
+    <string name="mission_reward">미션 보수</string>
 
 </resources>

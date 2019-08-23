@@ -35,7 +35,7 @@ public class Character implements IDbEntity
         return Name;
     }
 
-    public int getPortraitIcon()
+    public int getIcon()
     {
         return ResourceUtils.getIconRes(PortraitResId);
     }

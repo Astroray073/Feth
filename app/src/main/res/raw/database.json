@@ -130,6 +130,26 @@
       ]
     },
     {
+      "Name": "소티스",
+      "PortraitResId": "sothis",
+      "Faction": "없음",
+      "Crest": [],
+      "UniqueAbility": null,
+      "InitialClass": null,
+      "Scout": [],
+      "SkillLevel": [],
+      "SkillProficiency": [],
+      "StatGrowth": [],
+      "BuddingTalent": null,
+      "ReasonSpells": [],
+      "FaithSpells": [],
+      "SwordArts": [],
+      "LanceArts": [],
+      "AxeArts": [],
+      "BowArts": [],
+      "FistArts": []
+    },
+    {
       "Name": "에델가르트",
       "PortraitResId": "edelgard",
       "Faction": "흑수리",
@@ -7601,6 +7621,10 @@
       "Character": "클로드"
     },
     {
+      "Name": "보드게임의 말",
+      "Character": "클로드"
+    },
+    {
       "Name": "농산 및 조세 보고서",
       "Character": "페르디난트"
     },
@@ -7761,7 +7785,7 @@
       ],
       "Memento": null,
       "Description": "포드라 10걸 프랄다리우스로부터, 왕국 귀족 프랄다리우스 가문에 전해진다.",
-      "Effect": "무기 공격시, 간혹 위력이 상승한다."
+      "Effect": "무기 공격시, 드물게 위력이 상승한다."
     },
     {
       "Name": "노아의 문장",
@@ -8497,58 +8521,34 @@
   ],
   "Ability": [
     {
-      "Name": "10걸",
-      "IconResId": 211,
-      "Description": "Grants power to the Mighty King of Legend.",
+      "Name": "근거리 반격",
+      "IconResId": 214,
+      "Description": "1칸 떨어진 곳에서 공격받았을 때 반격할 수 있다.",
+      "Acquisition": "Raise Bow skill level to C"
+    },
+    {
+      "Name": "쌍문장",
+      "IconResId": 189,
+      "Description": "1턴에 2회 행동한다.",
+      "Acquisition": "패해 에델가르트"
+    },
+    {
+      "Name": "예민한 감각",
+      "IconResId": 193,
+      "Description": "2칸 이상 떨어진 상대와의 전투 시 회피 +30.",
+      "Acquisition": null
+    },
+    {
+      "Name": "응격",
+      "IconResId": 188,
+      "Description": "거리와 상관없이 반격한다.",
       "Acquisition": "적군"
     },
     {
-      "Name": "가련한 꽃",
-      "IconResId": 83,
-      "Description": "인접한 아군 전투시 적에게 받는 대미지 -3",
-      "Acquisition": "흐렌"
-    },
-    {
-      "Name": "가희",
-      "IconResId": 121,
-      "Description": "턴 개시시 인접한 아군을 최대 HP의 10%만큼 회복시킨다.",
-      "Acquisition": "도로테아"
-    },
-    {
-      "Name": "거대한 날개",
-      "IconResId": -1,
-      "Description": "Grants 회피 +30 against sword, lance, or axe users.",
-      "Acquisition": "마수"
-    },
-    {
-      "Name": "거대한 방패",
-      "IconResId": 129,
-      "Description": "검/창/도끼/격투 대미지를 아래 확률로 반감시킨다. (기술%)",
-      "Acquisition": "마스터 스킬: Fortress Knight"
-    },
-    {
-      "Name": "검 킬러",
-      "IconResId": 106,
-      "Description": "자신이 창을 장비하고 검을 든 적과 싸울 때 명중/회피 +20.",
-      "Acquisition": "Raise Lance skill level to B"
-    },
-    {
-      "Name": "검 킬러+",
-      "IconResId": 106,
-      "Description": "자신이 창을 장비하고 검을 든 적과 싸울 때 명중/회피 +30.",
-      "Acquisition": null
-    },
-    {
-      "Name": "검 필살 +10",
-      "IconResId": 33,
-      "Description": "검 장비 시 필살 +10.",
-      "Acquisition": "Raise Sword skill level to S, Class: Swordmaster"
-    },
-    {
-      "Name": "검 회피 +20",
-      "IconResId": 41,
-      "Description": "검 장비 시 회피 +20.",
-      "Acquisition": null
+      "Name": "검술 Lv 5",
+      "IconResId": 222,
+      "Description": "검 장비 시 명중 +10, 회피 +20, 필살 회피 +10.",
+      "Acquisition": "검술 A+"
     },
     {
       "Name": "검술 Lv 1",
@@ -8575,10 +8575,16 @@
       "Acquisition": "검술 B+"
     },
     {
-      "Name": "검술 Lv 5",
-      "IconResId": 222,
-      "Description": "검 장비 시 명중 +10, 회피 +20, 필살 회피 +10.",
-      "Acquisition": "검술 A+"
+      "Name": "검 필살 +10",
+      "IconResId": 33,
+      "Description": "검 장비 시 필살 +10.",
+      "Acquisition": "Raise Sword skill level to S, Class: Swordmaster"
+    },
+    {
+      "Name": "검 회피 +20",
+      "IconResId": 41,
+      "Description": "검 장비 시 회피 +20.",
+      "Acquisition": null
     },
     {
       "Name": "검의 달인",
@@ -8587,22 +8593,22 @@
       "Acquisition": "Raise Sword skill level to S+, Class: Hero, Swordmaster, Assassin, Enlightened One, Mortal Savant"
     },
     {
-      "Name": "격투 킬러",
-      "IconResId": 110,
-      "Description": "자신이 활을 장비하고 격투를 장비한 적과 싸울 때 명중/회피 +20.",
-      "Acquisition": "Raise Bow skill level to B"
+      "Name": "도끼 킬러",
+      "IconResId": 108,
+      "Description": "검 장비를 착용하고 도끼를 든 적을 상대할 때 명중/회피 +20.",
+      "Acquisition": "Raise Sword skill level to B"
     },
     {
-      "Name": "격투 필살 +10",
-      "IconResId": 37,
-      "Description": "격투 장비 시 필살 +10.",
-      "Acquisition": "Raise Brawling skill level to S"
+      "Name": "거대한 방패",
+      "IconResId": 129,
+      "Description": "검/창/도끼/격투 대미지를 아래 확률로 반감시킨다. (기술%)",
+      "Acquisition": "마스터 스킬: Fortress Knight"
     },
     {
-      "Name": "격투 회피 +20",
-      "IconResId": 45,
-      "Description": "격투 장비 시 회피 +20",
-      "Acquisition": null
+      "Name": "격투술 Lv 5",
+      "IconResId": 9,
+      "Description": "격투 장비 시 명중 +10, 회피 +20, 필살 회피 +10.",
+      "Acquisition": "Raise Brawling skill level to A+"
     },
     {
       "Name": "격투술 Lv 1",
@@ -8629,10 +8635,16 @@
       "Acquisition": "Raise Brawling skill level to B+"
     },
     {
-      "Name": "격투술 Lv 5",
-      "IconResId": 9,
-      "Description": "격투 장비 시 명중 +10, 회피 +20, 필살 회피 +10.",
-      "Acquisition": "Raise Brawling skill level to A+"
+      "Name": "격투 필살 +10",
+      "IconResId": 37,
+      "Description": "격투 장비 시 필살 +10.",
+      "Acquisition": "Raise Brawling skill level to S"
+    },
+    {
+      "Name": "격투 회피 +20",
+      "IconResId": 45,
+      "Description": "격투 장비 시 회피 +20",
+      "Acquisition": null
     },
     {
       "Name": "격투의 달인",
@@ -8641,838 +8653,16 @@
       "Acquisition": "Raise Brawling skill level to S+, Class: Grappler, War Master"
     },
     {
-      "Name": "경계태세",
-      "IconResId": 212,
-      "Description": "행동하지 않고 대기하면 회피 +15. (1턴)",
-      "Acquisition": "Raise Flying skill level to B"
-    },
-    {
-      "Name": "경계태세+",
-      "IconResId": 213,
-      "Description": "행동하지 않고 대기하면 회피 +30. (1턴)",
-      "Acquisition": "Raise Flying skill level to A+"
-    },
-    {
-      "Name": "고대용의 분노",
-      "IconResId": 191,
-      "Description": "Calculates damage using the lower of foe’s Prt or Rsl.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "고대용의 비늘",
-      "IconResId": 190,
-      "Description": "Halves all damage taken, negates some abilities and combat arts, and prevents unit from being moved.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "고정",
-      "IconResId": 187,
-      "Description": "Prevents unit from being moved.",
-      "Acquisition": null
-    },
-    {
-      "Name": "공격 진형",
-      "IconResId": 114,
-      "Description": "계략의 위력 +5, 명중 +20.",
-      "Acquisition": "Raise Authority skill level to S+"
-    },
-    {
-      "Name": "과보호",
-      "IconResId": 83,
-      "Description": "인접한 여성 아군 전투 시 아군이 적에게 입히는 대미지 +3.",
-      "Acquisition": "세테스"
-    },
-    {
-      "Name": "관찰안",
-      "IconResId": 58,
-      "Description": "명중 +20",
-      "Acquisition": "이그나츠"
-    },
-    {
-      "Name": "귀신의 일격",
-      "IconResId": 72,
-      "Description": "공격을 개시할 때 힘 +6.",
-      "Acquisition": "마스터 스킬: Brigand"
-    },
-    {
-      "Name": "근거리 반격",
-      "IconResId": 214,
-      "Description": "1칸 떨어진 곳에서 공격받았을 때 반격할 수 있다.",
-      "Acquisition": "Raise Bow skill level to C"
-    },
-    {
-      "Name": "금강의 일격",
-      "IconResId": 75,
-      "Description": "공격을 개시할 때 수비 +6.",
-      "Acquisition": "마스터 스킬: Armored Knight"
-    },
-    {
-      "Name": "기도",
-      "IconResId": 131,
-      "Description": "HP가 2 이상일 때, HP가 0이 되는 대미지를 받아도 아래 확률로 죽지 않고 HP를 1남긴다. (행운%)",
-      "Acquisition": "마스터 스킬: Priest"
-    },
-    {
-      "Name": "기마 특효 무효",
-      "IconResId": 173,
-      "Description": "기마 특효를 무효화한다.",
-      "Acquisition": "Raise Riding skill level to S+"
-    },
-    {
-      "Name": "기술 +4",
-      "IconResId": 52,
-      "Description": "기술이 4 상승한다.",
-      "Acquisition": "Raise Riding skill level to C"
-    },
-    {
-      "Name": "기술의 응원",
-      "IconResId": 96,
-      "Description": "아군에게 응원 커맨드를 사용하면 기술 +8.",
-      "Acquisition": "Raise Authority skill level for Ferdinand (D) or Ignatz (C+)"
-    },
-    {
-      "Name": "노력가",
-      "IconResId": 90,
-      "Description": "아군에게 응원 커맨드를 사용하면 힘 +4",
-      "Acquisition": "아네트"
-    },
-    {
-      "Name": "대마법 갑옷",
-      "IconResId": -1,
-      "Description": "마법 공격을 무효화한다.",
-      "Acquisition": "마수"
-    },
-    {
-      "Name": "대장성",
-      "IconResId": 168,
-      "Description": "즉사 효과, 상태 이상, 이동 효과를 무효화하고 계략에 의한 대미지를 크게 감소시킨다.",
-      "Acquisition": "정예 적군"
-    },
-    {
-      "Name": "도끼 킬러",
-      "IconResId": 108,
-      "Description": "검 장비를 착용하고 도끼를 든 적을 상대할 때 명중/회피 +20.",
-      "Acquisition": "Raise Sword skill level to B"
-    },
-    {
-      "Name": "도끼 킬러+",
-      "IconResId": 108,
-      "Description": "자신이 검을 장비하고 도끼를 든 적과 싸울 때 명중/회피 +30.",
-      "Acquisition": null
-    },
-    {
-      "Name": "도끼 필살 +10",
-      "IconResId": 35,
-      "Description": "도끼 장비 시 필살 +10",
-      "Acquisition": "Raise Axe skill level to S, Class: Warrior"
-    },
-    {
-      "Name": "도끼 회피 +20",
-      "IconResId": 43,
-      "Description": "도끼 장비 시 회피 +20",
-      "Acquisition": null
-    },
-    {
-      "Name": "도끼술 Lv 1",
-      "IconResId": 228,
-      "Description": "도끼 장비 시 명중 +7, 회피 +5, 필살 회피 +5.",
-      "Acquisition": "Raise Axe skill level to E+"
-    },
-    {
-      "Name": "도끼술 Lv 2",
-      "IconResId": 229,
-      "Description": "도끼 장비 시 명중 +10, 회피 +6, 필살 회피 +6.",
-      "Acquisition": "Raise Axe skill level to D+"
-    },
-    {
-      "Name": "도끼술 Lv 3",
-      "IconResId": 230,
-      "Description": "도끼 장비 시 명중 +13, 회피 +7, 필살 회피 +7.",
-      "Acquisition": "Raise Axe skill level to C+"
-    },
-    {
-      "Name": "도끼술 Lv 4",
-      "IconResId": 244,
-      "Description": "도끼 장비 시 명중 +16, 회피 +8, 필살 회피 +8.",
-      "Acquisition": "Raise Axe skill level to B+"
-    },
-    {
-      "Name": "도끼술 Lv 5",
-      "IconResId": 245,
-      "Description": "도끼 장비 시 명중 +20, 회피 +10, 필살 회피 +10.",
-      "Acquisition": "Raise Axe skill level to A+"
-    },
-    {
-      "Name": "도끼의 달인",
-      "IconResId": 27,
-      "Description": "도끼 장비 시 Atk +5.",
-      "Acquisition": "Raise Axe skill level to S+, Class: Armored Lord, Fortress Knight, Wyvern Rider, Warrior, Emperor, Wyvern Lord, Great Knight, War Master"
-    },
-    {
-      "Name": "도라 Δ",
-      "IconResId": 116,
-      "Description": "도라 Δ를 사용할 수 있게 된다. 이미 습득했을 경우 사용 횟수가 2배로 증가한다.",
-      "Acquisition": "클래스: 다크 메이지, 다크 비숍"
-    },
-    {
-      "Name": "동물사랑",
-      "IconResId": 118,
-      "Description": "기마 및 비행인 아군과 인접 중일 때 턴 개시와 동시에 자신의 최대 HP의 20%만큼 회복한다.",
-      "Acquisition": "마리안"
-    },
-    {
-      "Name": "라이브",
-      "IconResId": 117,
-      "Description": "라이브를 사용할 수 있게 된다. 이미 습득했을 경우 사용 횟수가 2배로 증가한다.",
-      "Acquisition": "Class: Priest"
-    },
-    {
-      "Name": "마력 +2",
-      "IconResId": 51,
-      "Description": "마력이 2 상승한다.",
-      "Acquisition": "마스터 스킬: Monk"
-    },
-    {
-      "Name": "마력 봉인",
-      "IconResId": 100,
-      "Description": "대미지를 입힌 적의 전투 후 마력 -6. (1턴)",
-      "Acquisition": "재능개화 흐렌"
-    },
-    {
-      "Name": "마력의 각성",
-      "IconResId": 62,
-      "Description": "HP가 25% 이하일 때 마력 +8.",
-      "Acquisition": "마스터 스킬: Gremory"
-    },
-    {
-      "Name": "마력의 응원",
-      "IconResId": 91,
-      "Description": "아군에게 응원 커맨드를 사용하면 마력 +4.",
-      "Acquisition": "Raise Authority skill level to D for Hubert or Ingrid"
-    },
-    {
-      "Name": "마방 +2",
-      "IconResId": 56,
-      "Description": "마방이 2 상승한다.",
-      "Acquisition": "마스터 스킬: Lord"
-    },
-    {
-      "Name": "마방 봉인",
-      "IconResId": 103,
-      "Description": "대미지를 입힌 적의 전투 후 Res -6. (1턴)",
-      "Acquisition": "마스터 스킬: Dark Knight"
-    },
-    {
-      "Name": "마방의 각성",
-      "IconResId": 65,
-      "Description": "HP가 25% 이하일 때 마방 +8.",
-      "Acquisition": "마스터 스킬: Holy Knight"
-    },
-    {
-      "Name": "마방의 응원",
-      "IconResId": 94,
-      "Description": "아군에게 응원 커맨드를 사용하면 마방 +4.",
-      "Acquisition": "Raise Authority skill level for Hubert (C+), Annette (D) or Seteth (S)"
-    },
-    {
-      "Name": "마법 봉인",
-      "IconResId": 170,
-      "Description": "공격이 명중하면 대상은 1턴간 마법을 사용할 수 없다.",
-      "Acquisition": null
-    },
-    {
       "Name": "마법 킬러",
       "IconResId": 111,
       "Description": "격투 장비를 착용하고 마법을 든 적을 상대할 때 명중/회피 +20.",
       "Acquisition": "Raise Brawling skill level to B"
     },
     {
-      "Name": "마신의 일격",
-      "IconResId": 73,
-      "Description": "공격을 개시할 때 마력 +6.",
-      "Acquisition": "Class: Dark Bishop, Class mastered: Mage"
-    },
-    {
-      "Name": "매력의 응원",
-      "IconResId": 98,
-      "Description": "아군에게 응원 커맨드를 사용하면 매력 +8.",
-      "Acquisition": "Raise Authority skill level for Edelgard (S), Dorothea (D), Dimitri (S), Claude (S) or Manuela (D)"
-    },
-    {
-      "Name": "매복",
-      "IconResId": 138,
-      "Description": "HP가 50% 이하인 상태에서 적에게 공격받았을 때 선제공격한다.",
-      "Acquisition": "마스터 스킬: Mercenary, Class: Hero"
-    },
-    {
-      "Name": "매복 진형",
-      "IconResId": 204,
-      "Description": "기사단 전력이 1/3 이하인 상태에서 적에게 공격을 받았을 때 선제공격한다.",
-      "Acquisition": "Raise Authority skill level to C for protagonist, Edelgard, Felix, Sylvain, Lorenz or Catherine. Raise to A for Dimitri or Ignatz."
-    },
-    {
-      "Name": "맨손 격투",
-      "IconResId": 156,
-      "Description": "무기를 장비하지 않아도 격투 공격을 할 수 있게 된다.",
-      "Acquisition": "Class: Brawler, Grappler, Class mastered: Brawler"
-    },
-    {
-      "Name": "맹주의 혈통",
-      "IconResId": 70,
-      "Description": "입수 EXP가 1.2배로 증가한다.",
-      "Acquisition": "클로드"
-    },
-    {
-      "Name": "맹주의 혈통+",
-      "IconResId": 218,
-      "Description": "적군을 통과하여 지나갈 수 있다. 입수 EXP가 1.2배가 된다.",
-      "Acquisition": "클로드 2부"
-    },
-    {
-      "Name": "멸살",
-      "IconResId": 127,
-      "Description": "적군에게 대미지를 주었을 때 0.25 * 기술% 확률로 즉사.",
-      "Acquisition": "마스터 스킬: Assassin"
-    },
-    {
-      "Name": "명경의 일격",
-      "IconResId": 76,
-      "Description": "공격을 개시할 때 마방 +6.",
-      "Acquisition": "마스터 스킬: Mortal Savant"
-    },
-    {
-      "Name": "명문 귀족",
-      "IconResId": 80,
-      "Description": "기사단을 장비 중일 때 입히는 대미지 +2",
-      "Acquisition": "로렌츠"
-    },
-    {
-      "Name": "명중 +20",
-      "IconResId": 58,
-      "Description": "명중이 20 상승한다.",
-      "Acquisition": "마스터 스킬: Archer"
-    },
-    {
-      "Name": "몬스터 특효 무효",
-      "IconResId": 176,
-      "Description": "몬스터 특효를 무효화한다.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "무게 -3",
-      "IconResId": 162,
-      "Description": "장비 무게의 합 -3",
-      "Acquisition": "Raise Heavy Armour skill level to C"
-    },
-    {
-      "Name": "무게 -5",
-      "IconResId": 163,
-      "Description": "장비 무게의 합 -5",
-      "Acquisition": "Raise Heavy Armour skill level to A+, Class: Fortress Knight"
-    },
-    {
-      "Name": "무한의 마법",
-      "IconResId": 169,
-      "Description": "마법 사용 횟수 제한이 없어진다.",
-      "Acquisition": "뮈손"
-    },
-    {
-      "Name": "문장 학자",
-      "IconResId": 91,
-      "Description": "아군에게 응원 커맨드를 사용하면 마력 +4",
-      "Acquisition": "한네만"
-    },
-    {
-      "Name": "받아치기",
-      "IconResId": 141,
-      "Description": "HP가 50% 이상일 때 반드시 추격이 발생한다.",
-      "Acquisition": "마스터 스킬: War Master"
-    },
-    {
-      "Name": "백마법 사정 +1",
-      "IconResId": 155,
-      "Description": "대미지를 주는 백마법의 사정거리가 1 상승한다.",
-      "Acquisition": "Raise Faith skill level to S"
-    },
-    {
-      "Name": "백마법 필살 +10",
-      "IconResId": 39,
-      "Description": "백마법 장비 시 필살 +10",
-      "Acquisition": null
-    },
-    {
-      "Name": "백마법 회복 +10",
-      "IconResId": 161,
-      "Description": "백마법의 회복량 +10.",
-      "Acquisition": "Class: Bishop"
-    },
-    {
-      "Name": "백마법 회복 +5",
-      "IconResId": 160,
-      "Description": "백마법의 회복량 +5.",
-      "Acquisition": "Class: Priest"
-    },
-    {
-      "Name": "백마법 회피 +20",
-      "IconResId": 47,
-      "Description": "백마법 장비 시 회피 +20.",
-      "Acquisition": "재능개화 도로테아"
-    },
-    {
-      "Name": "백마법 횟수 Up+",
-      "IconResId": 209,
-      "Description": "백마법 사용 횟수가 4배로 증가한다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "백마법 횟수 x2",
-      "IconResId": 159,
-      "Description": "백마법 사용 횟수가 2배로 증가한다.",
-      "Acquisition": "Class: Bishop, Gremory"
-    },
-    {
-      "Name": "백마법의 달인",
-      "IconResId": 31,
-      "Description": "백마법 장비 시 Atk +5.",
-      "Acquisition": "Raise Faith skill level to S+, Class: Holy Knight"
-    },
-    {
-      "Name": "뱀독",
-      "IconResId": 123,
-      "Description": "공격 명중 시 전투 후 대상은 최대 HP의 20%를 잃는다.",
-      "Acquisition": "마스터 스킬: Dark Mage"
-    },
-    {
-      "Name": "보병 특효 무효",
-      "IconResId": 171,
-      "Description": "보병 특효를 무효화한다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "봉사의 기쁨",
-      "IconResId": 124,
-      "Description": "자신이 백마법으로 아군의 HP를 회복시켰을 경우 자신의 HP도 같은 양을 회복한다.",
-      "Acquisition": "메르세데스"
-    },
-    {
-      "Name": "부탁",
-      "IconResId": 83,
-      "Description": "인접한 남성 아군 전투시 아군이 적에게 입히는 대미지 +3",
-      "Acquisition": "힐다"
-    },
-    {
-      "Name": "분노",
-      "IconResId": 142,
-      "Description": "HP가 50%이하일 때 공격을 받을 시 필살 +50.",
-      "Acquisition": "마스터 스킬: Warrior"
-    },
-    {
-      "Name": "분노의 진형",
-      "IconResId": 205,
-      "Description": "기사단 전력이 1/3이하일 때 공격을 받을 시 필살 +50.",
-      "Acquisition": "Raise Authority skill level to C for Hubert, Bernadetta, Caspar, Petra, Dimitri, Dedue, Hilda, Raphael, Seteth, Alois or Gibert. Raise to A for Annette or Claude."
-    },
-    {
-      "Name": "비연의 일격",
-      "IconResId": 74,
-      "Description": "공격을 개시할 때 속도 +6.",
-      "Acquisition": "마스터 스킬: Pegasus Knight"
-    },
-    {
-      "Name": "비행 특효 무효",
-      "IconResId": 174,
-      "Description": "비행 특효를 무효화한다.",
-      "Acquisition": "Raise Flying skill level to S+"
-    },
-    {
-      "Name": "사냥의 법칙",
-      "IconResId": 122,
-      "Description": "적의 HP가 50% 이하일 때 필살 +20",
-      "Acquisition": "페트라"
-    },
-    {
-      "Name": "상태 이상 무효",
-      "IconResId": 166,
-      "Description": "상태 이상 효과를 받지 않는다. (능력 저하 포함)",
-      "Acquisition": "뮈손"
-    },
-    {
-      "Name": "생명흡수",
-      "IconResId": 125,
-      "Description": "적에게 준 대미지의 50%만큼 회복한다.",
-      "Acquisition": "마스터 스킬: Dark Bishop"
-    },
-    {
-      "Name": "생존본능",
-      "IconResId": 122,
-      "Description": "자신이 공격을 걸어 적을 격파했을 경우 힘, 마력, 기술, 속도 +4 (1턴)",
-      "Acquisition": "샤미아"
-    },
-    {
-      "Name": "생활의 지혜",
-      "IconResId": 145,
-      "Description": "열쇠가 없어도 문이나 보물 상자를 열 수 있게 된다.",
-      "Acquisition": "애쉬"
-    },
-    {
-      "Name": "성스러운 방패",
-      "IconResId": 130,
-      "Description": "활/마법 대미지를 아래 확률로 반감시킨다. (기술%)",
-      "Acquisition": "마스터 스킬: Paladin"
-    },
-    {
-      "Name": "성스러운 힘",
-      "IconResId": 112,
-      "Description": "인접한 아군 전투 시 아군이 적에게 입히는 대미지 +3. 적에게 받는 대미지 -3.",
-      "Acquisition": "레아, 니르바나 마스터"
-    },
-    {
-      "Name": "속도 +2",
-      "IconResId": 53,
-      "Description": "속도가 2 상승한다.",
-      "Acquisition": "마스터 스킬: Myrmidon"
-    },
-    {
-      "Name": "속도 봉인",
-      "IconResId": 101,
-      "Description": "대미지를 입힌 적의 전투 후 Spd -6. (1턴)",
-      "Acquisition": "재능개화 페르디난트"
-    },
-    {
-      "Name": "속도의 각성",
-      "IconResId": 63,
-      "Description": "HP가 25% 이하일 때 속도 +8.",
-      "Acquisition": "마스터 스킬: Bow Knight"
-    },
-    {
-      "Name": "속도의 응원",
-      "IconResId": 92,
-      "Description": "아군에게 응원 커맨드를 사용하면 속도 +4.",
-      "Acquisition": "Raise Authority skill level for Hubert (S), Annette (C+) or Ignatz (D)"
-    },
-    {
-      "Name": "수비 +2",
-      "IconResId": 55,
-      "Description": "수비가 2 상승한다.",
-      "Acquisition": "마스터 스킬: Soldier"
-    },
-    {
-      "Name": "수비 봉인",
-      "IconResId": 102,
-      "Description": "대미지를 입힌 적의 전투 후 Def -6. (1턴)",
-      "Acquisition": "마스터 스킬: Wyvern Rider"
-    },
-    {
-      "Name": "수비의 각성",
-      "IconResId": 64,
-      "Description": "HP가 25% 이하일 때 수비 +8.",
-      "Acquisition": "마스터 스킬: Great Knight"
-    },
-    {
-      "Name": "수비의 용병술",
-      "IconResId": 113,
-      "Description": "기사단이 적에게 받는 전력 대미지를 반감시킨다.",
-      "Acquisition": "Raise Authority skill level to B"
-    },
-    {
-      "Name": "수비의 응원",
-      "IconResId": 93,
-      "Description": "아군에게 응원 커맨드를 사용하면 수비 +4.",
-      "Acquisition": "Raise Authority skill level to D for Seteth or Gilbert"
-    },
-    {
-      "Name": "스승의 인도",
-      "IconResId": 135,
-      "Description": "자신 및 자신과 인접한 아군의 입수 EXP가 1.2배로 증가한다.",
-      "Acquisition": "주인공"
-    },
-    {
-      "Name": "스승의 인도+",
-      "IconResId": 215,
-      "Description": "전투 중 상대에게 입히는 대미지 +2. 자신 및 자신과 인접한 아군의 입수 EXP가 1.2배로 증가한다.",
-      "Acquisition": "주인공 2부"
-    },
-    {
-      "Name": "신앙 Lv 1",
-      "IconResId": 15,
-      "Description": "백마법 장비 시 명중 +5, 회피 +7, 필살 회피 +5.",
-      "Acquisition": "Raise Faith skill level to E+"
-    },
-    {
-      "Name": "신앙 Lv 2",
-      "IconResId": 16,
-      "Description": "백마법 장비 시 명중 +6, 회피 +10, 필살 회피 +6.",
-      "Acquisition": "Raise Faith skill level to D+"
-    },
-    {
-      "Name": "신앙 Lv 3",
-      "IconResId": 17,
-      "Description": "백마법 장비 시 명중 +7, 회피 +13, 필살 회피 +7.",
-      "Acquisition": "Raise Faith skill level to C+"
-    },
-    {
-      "Name": "신앙 Lv 4",
-      "IconResId": 18,
-      "Description": "백마법 장비 시 명중 +8, 회피 +16, 필살 회피 +8.",
-      "Acquisition": "Raise Faith skill level to B+"
-    },
-    {
-      "Name": "신앙 Lv 5",
-      "IconResId": 19,
-      "Description": "백마법 장비 시 명중 +10, 회피 +20, 필살 회피 +10.",
-      "Acquisition": "Raise Faith skill level to A+"
-    },
-    {
-      "Name": "싸움꾼",
-      "IconResId": 105,
-      "Description": "인접한 적은 전투 중 회피 -10",
-      "Acquisition": "카스파르"
-    },
-    {
-      "Name": "쌍문장",
-      "IconResId": 189,
-      "Description": "1턴에 2회 행동한다.",
-      "Acquisition": "패해 에델가르트"
-    },
-    {
-      "Name": "아가르타의 주술",
-      "IconResId": 116,
-      "Description": "인접한 적은 전투 중 입히는 대미지 -3.",
-      "Acquisition": "뮈손"
-    },
-    {
-      "Name": "암흑마법 사정 +1",
-      "IconResId": 154,
-      "Description": "암흑마법의 사정거리가 1 늘어난다.",
-      "Acquisition": "Raise Reason skill level to S for Edelgard, Hubert or Lysithea"
-    },
-    {
-      "Name": "암흑마법 필살 +10",
-      "IconResId": 40,
-      "Description": "암흑마법 장비 시 필살 +10.",
-      "Acquisition": null
-    },
-    {
-      "Name": "암흑마법 회피 +20",
-      "IconResId": 48,
-      "Description": "암흑마법 장비 시 회피 +20.",
-      "Acquisition": null
-    },
-    {
-      "Name": "암흑마법 횟수 x2",
-      "IconResId": 158,
-      "Description": "암흑마법 사용 횟수가 2배로 증가한다.",
-      "Acquisition": "Class: Gremory"
-    },
-    {
-      "Name": "암흑마법 횟수 x4",
-      "IconResId": 208,
-      "Description": "암흑마법 사용 횟수가 4배로 증가한다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "암흑마법의 달인",
-      "IconResId": 32,
-      "Description": "암흑마법 장비 시 Atk +5.",
-      "Acquisition": "Raise Reason skill level to S+ for Edelgard, Hubert or Lysithea, Class: Dark Knight"
-    },
-    {
-      "Name": "여기사",
-      "IconResId": 77,
-      "Description": "계략의 위력 +3, 계략의 명중 +5",
-      "Acquisition": "잉그리트"
-    },
-    {
-      "Name": "여성 친화",
-      "IconResId": 87,
-      "Description": "여성 아군과 인접 중일 때 자신이 적에게 입히는 대미지 +2. 적에게 받는 대미지 -2",
-      "Acquisition": "실뱅"
-    },
-    {
-      "Name": "역전의 기사",
-      "IconResId": 82,
-      "Description": "기사단을 장비 중일 때 입는 대미지 -2.",
-      "Acquisition": "길베르트"
-    },
-    {
-      "Name": "연속 공격 진형",
-      "IconResId": 185,
-      "Description": "기사단 전력이 1/3 이하인 상태에서 공격했을 때, 적의 반격보다 먼저 추격한다. (추격 발생 시 가능)",
-      "Acquisition": "Raise Authority skill level to C for Dorothea, Ferdinand, Ashe, Ingrid, Claude, Lysithea, Ignatz, Leonie, Hanneman, Cyril or Shamir. Raise to A for protagonist, Hubert or Seteth."
-    },
-    {
-      "Name": "연속공격",
-      "IconResId": 130,
-      "Description": "HP가 50% 이하이고 공격을 개시할 때 적군의 반격보다 먼저 추격한다. (가능할 시)",
-      "Acquisition": "마스터 스킬: Cavalier"
-    },
-    {
-      "Name": "예민한 감각",
-      "IconResId": 193,
-      "Description": "2칸 이상 떨어진 상대와의 전투 시 회피 +30.",
-      "Acquisition": null
-    },
-    {
-      "Name": "왕의 혈통",
-      "IconResId": 69,
-      "Description": "입수 EXP가 1.2배로 증가한다.",
-      "Acquisition": "디미트리"
-    },
-    {
-      "Name": "왕의 혈통+",
-      "IconResId": 217,
-      "Description": "입수 EXP가 1.2배로 증가한다. HP가 최대치일 때 회피 +20.",
-      "Acquisition": "디미트리 2부"
-    },
-    {
-      "Name": "용 특효 무효",
-      "IconResId": 175,
-      "Description": "용 특효를 무효화한다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "위풍당당",
-      "IconResId": 54,
-      "Description": "행운/매력이 4 상승한다.",
-      "Acquisition": "마스터 스킬: Armored Lord, High Lord or Wyvern Master"
-    },
-    {
-      "Name": "응격",
-      "IconResId": 188,
-      "Description": "거리와 상관없이 반격한다.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "의무실의 주인",
-      "IconResId": 83,
-      "Description": "인접한 아군 전투 시 아군의 필살 회피 +10",
-      "Acquisition": "마누엘라"
-    },
-    {
-      "Name": "이동 +1",
-      "IconResId": 57,
-      "Description": "이동이 1 상승한다.",
-      "Acquisition": "Raise Riding skill level to A+"
-    },
-    {
-      "Name": "이동 봉인",
-      "IconResId": 104,
-      "Description": "대미지를 입힌 적의 전투 후 이동 -1. (1턴)",
-      "Acquisition": "재능개화 디미트리"
-    },
-    {
-      "Name": "이동의 응원",
-      "IconResId": 95,
-      "Description": "아군에게 응원 커맨드를 사용하면 이동 +1.",
-      "Acquisition": "Raise Authority skill level to S for protagonist or Annette"
-    },
-    {
-      "Name": "이론학 Lv 1",
-      "IconResId": 10,
-      "Description": "흑마법이나 암흑마법 장비 시 명중 +7, 회피 +5, 필살 회피 +5.",
-      "Acquisition": "Raise Reason skill level to E+"
-    },
-    {
-      "Name": "이론학 Lv 2",
-      "IconResId": 11,
-      "Description": "흑마법이나 암흑마법 장비 시 명중 +10, 회피 +6, 필살 회피 +6.",
-      "Acquisition": "Raise Reason skill level to D+"
-    },
-    {
-      "Name": "이론학 Lv 3",
-      "IconResId": 12,
-      "Description": "흑마법이나 암흑마법 장비 시 명중 +13, 회피 +7, 필살 회피 +7.",
-      "Acquisition": "Raise Reason skill level to C+"
-    },
-    {
-      "Name": "이론학 Lv 4",
-      "IconResId": 13,
-      "Description": "흑마법이나 암흑마법 장비 시 명중 +16, 회피 +8, 필살 회피 +8.",
-      "Acquisition": "Raise Reason skill level to B+"
-    },
-    {
-      "Name": "이론학 Lv 5",
-      "IconResId": 14,
-      "Description": "흑마법이나 암흑마법 장비 시 명중 +20, 회피 +10, 필살 회피 +10.",
-      "Acquisition": "Raise Reason skill level to A+"
-    },
-    {
-      "Name": "자물쇠 열기",
-      "IconResId": 145,
-      "Description": "열쇠가 없어도 문이나 보물 상자를 열 수 있게 된다.",
-      "Acquisition": "Class: Thief, Assassin"
-    },
-    {
-      "Name": "자신감",
-      "IconResId": 122,
-      "Description": "HP가 최대치일 때 명중 및 회피 +15",
-      "Acquisition": "페르디난트 폰 에기르"
-    },
-    {
-      "Name": "재이동",
-      "IconResId": 147,
-      "Description": "이동력이 남아 있을 경우 행동 후 그만큼 이동할 수 있다.",
-      "Acquisition": "Class: Cavalier, Pegasus Knight, Wyvern Master, Paladin, Wyvern Lord, Barbarossa, Falcon Knight, Wyvern Lord, Great Knight, Bow Knight, Holy Knight, Dark Knight"
-    },
-    {
-      "Name": "전체 특효 무효",
-      "IconResId": 177,
-      "Description": "전체 특효를 무효화한다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "조용한 걸음",
-      "IconResId": 146,
-      "Description": "적의 목표가 될 확률이 줄어든다.",
-      "Acquisition": "Class: Assassin"
-    },
-    {
-      "Name": "졸기",
-      "IconResId": 118,
-      "Description": "행동하지 않고 대기하면 최대 HP의 10%를 회복한다.",
-      "Acquisition": "린하르트"
-    },
-    {
-      "Name": "좋은 성장",
-      "IconResId": 137,
-      "Description": "레벨 업 시 모든 성장 판정 +20%",
-      "Acquisition": "시릴"
-    },
-    {
-      "Name": "주군의 방패",
-      "IconResId": 122,
-      "Description": "행동하지 않고 대기하면 수비 +4. (1턴)",
-      "Acquisition": "두두"
-    },
-    {
-      "Name": "주박",
-      "IconResId": 105,
-      "Description": "인접한 적은 전투 중 회피 -20",
-      "Acquisition": "Class: Dark Mage, Dark Bishop"
-    },
-    {
-      "Name": "주워 먹기",
-      "IconResId": 118,
-      "Description": "턴 개시 시 아래 확률로 최대 HP의 10%를 회복한다. (행운%)",
-      "Acquisition": "라파엘"
-    },
-    {
-      "Name": "중갑 특효 무효",
-      "IconResId": 172,
-      "Description": "중갑 특효를 무효화한다.",
-      "Acquisition": "Raise Heavy Armour skill level to S+"
-    },
-    {
-      "Name": "지도자의 귀감",
-      "IconResId": 112,
-      "Description": "기사단이 입수하는 경험치가 2배로 증가한다.",
-      "Acquisition": "Raise Authority skill level to C+ for protagonist, Edelgard, Dimitri, Claude or Seteth"
-    },
-    {
-      "Name": "지형 내성",
-      "IconResId": 132,
-      "Description": "지형 대미지를 받지 않는다.",
-      "Acquisition": "Class: Paladin, Bishop, Enlightened One, Holy Knight"
+      "Name": "지휘 Lv 5",
+      "IconResId": 24,
+      "Description": "계략 사용 시 위력 +10.",
+      "Acquisition": "Raise Authority skill level to A+"
     },
     {
       "Name": "지휘 Lv 1",
@@ -9499,10 +8689,16 @@
       "Acquisition": "Raise Authority skill level to B+"
     },
     {
-      "Name": "지휘 Lv 5",
-      "IconResId": 24,
-      "Description": "계략 사용 시 위력 +10.",
-      "Acquisition": "Raise Authority skill level to A+"
+      "Name": "여기사",
+      "IconResId": 77,
+      "Description": "계략의 위력 +3, 계략의 명중 +5",
+      "Acquisition": "잉그리트"
+    },
+    {
+      "Name": "공격 진형",
+      "IconResId": 114,
+      "Description": "계략의 위력 +5, 명중 +20.",
+      "Acquisition": "Raise Authority skill level to S+"
     },
     {
       "Name": "참모역",
@@ -9511,10 +8707,688 @@
       "Acquisition": "휴베르트"
     },
     {
+      "Name": "뱀독",
+      "IconResId": 123,
+      "Description": "공격 명중 시 전투 후 대상은 최대 HP의 20%를 잃는다.",
+      "Acquisition": "마스터 스킬: Dark Mage"
+    },
+    {
+      "Name": "마신의 일격",
+      "IconResId": 73,
+      "Description": "공격을 개시할 때 마력 +6.",
+      "Acquisition": "Class: Dark Bishop, Class mastered: Mage"
+    },
+    {
+      "Name": "명경의 일격",
+      "IconResId": 76,
+      "Description": "공격을 개시할 때 마방 +6.",
+      "Acquisition": "마스터 스킬: Mortal Savant"
+    },
+    {
+      "Name": "Murderous Intent",
+      "IconResId": 105,
+      "Description": "공격을 개시할 때 명중 +20.",
+      "Acquisition": null
+    },
+    {
+      "Name": "비연의 일격",
+      "IconResId": 74,
+      "Description": "공격을 개시할 때 속도 +6.",
+      "Acquisition": "마스터 스킬: Pegasus Knight"
+    },
+    {
+      "Name": "금강의 일격",
+      "IconResId": 75,
+      "Description": "공격을 개시할 때 수비 +6.",
+      "Acquisition": "마스터 스킬: Armored Knight"
+    },
+    {
+      "Name": "귀신의 일격",
+      "IconResId": 72,
+      "Description": "공격을 개시할 때 힘 +6.",
+      "Acquisition": "마스터 스킬: Brigand"
+    },
+    {
+      "Name": "마법 봉인",
+      "IconResId": 170,
+      "Description": "공격이 명중하면 대상은 1턴간 마법을 사용할 수 없다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "동물사랑",
+      "IconResId": 118,
+      "Description": "기마 및 비행인 아군과 인접 중일 때 턴 개시와 동시에 자신의 최대 HP의 20%만큼 회복한다.",
+      "Acquisition": "마리안"
+    },
+    {
+      "Name": "기마 특효 무효",
+      "IconResId": 173,
+      "Description": "기마 특효를 무효화한다.",
+      "Acquisition": "Raise Riding skill level to S+"
+    },
+    {
+      "Name": "연속 공격 진형",
+      "IconResId": 185,
+      "Description": "기사단 전력이 1/3 이하인 상태에서 공격했을 때, 적의 반격보다 먼저 추격한다. (추격 발생 시 가능)",
+      "Acquisition": "Raise Authority skill level to C for Dorothea, Ferdinand, Ashe, Ingrid, Claude, Lysithea, Ignatz, Leonie, Hanneman, Cyril or Shamir. Raise to A for protagonist, Hubert or Seteth."
+    },
+    {
+      "Name": "매복 진형",
+      "IconResId": 204,
+      "Description": "기사단 전력이 1/3 이하인 상태에서 적에게 공격을 받았을 때 선제공격한다.",
+      "Acquisition": "Raise Authority skill level to C for protagonist, Edelgard, Felix, Sylvain, Lorenz or Catherine. Raise to A for Dimitri or Ignatz."
+    },
+    {
+      "Name": "분노의 진형",
+      "IconResId": 205,
+      "Description": "기사단 전력이 1/3이하일 때 공격을 받을 시 필살 +50.",
+      "Acquisition": "Raise Authority skill level to C for Hubert, Bernadetta, Caspar, Petra, Dimitri, Dedue, Hilda, Raphael, Seteth, Alois or Gibert. Raise to A for Annette or Claude."
+    },
+    {
+      "Name": "역전의 기사",
+      "IconResId": 82,
+      "Description": "기사단을 장비 중일 때 입는 대미지 -2.",
+      "Acquisition": "길베르트"
+    },
+    {
+      "Name": "명문 귀족",
+      "IconResId": 80,
+      "Description": "기사단을 장비 중일 때 입히는 대미지 +2",
+      "Acquisition": "로렌츠"
+    },
+    {
+      "Name": "한 마리 늑대",
+      "IconResId": 122,
+      "Description": "기사단을 장비하지 않았을 때 또는 기사단 전력이 0일 때 자신이 입히는 대미지 +5",
+      "Acquisition": "펠릭스"
+    },
+    {
+      "Name": "투혼",
+      "IconResId": 122,
+      "Description": "기사단을 장비하지 않았을 때 또는 기사단 전력이 0일 때 적에게 받는 대미지 -5",
+      "Acquisition": "카트린"
+    },
+    {
+      "Name": "회복의 진형",
+      "IconResId": 206,
+      "Description": "기사단의 전력이 1/3이하 일 때 턴 개시 시 최대 HP의 30%만큼 회복한다.",
+      "Acquisition": "Raise Authority skill level to C for Linhardt, Mercedes, Annette, Marianne, Manuela or Flayn. Raise to A for Edelgard."
+    },
+    {
+      "Name": "지도자의 귀감",
+      "IconResId": 112,
+      "Description": "기사단이 입수하는 경험치가 2배로 증가한다.",
+      "Acquisition": "Raise Authority skill level to C+ for protagonist, Edelgard, Dimitri, Claude or Seteth"
+    },
+    {
+      "Name": "수비의 용병술",
+      "IconResId": 113,
+      "Description": "기사단이 적에게 받는 전력 대미지를 반감시킨다.",
+      "Acquisition": "Raise Authority skill level to B"
+    },
+    {
+      "Name": "기술 +4",
+      "IconResId": 52,
+      "Description": "기술이 4 상승한다.",
+      "Acquisition": "Raise Riding skill level to C"
+    },
+    {
+      "Name": "호승심",
+      "IconResId": 87,
+      "Description": "남성 아군과 인접 중일 때 자신이 적에게 입히는 대미지 +2. 적에게 받는 대미지 -2",
+      "Acquisition": "레오니"
+    },
+    {
+      "Name": "마력 봉인",
+      "IconResId": 100,
+      "Description": "대미지를 입힌 적의 전투 후 마력 -6. (1턴)",
+      "Acquisition": "재능개화 흐렌"
+    },
+    {
+      "Name": "이동 봉인",
+      "IconResId": 104,
+      "Description": "대미지를 입힌 적의 전투 후 이동 -1. (1턴)",
+      "Acquisition": "재능개화 디미트리"
+    },
+    {
+      "Name": "힘 봉인",
+      "IconResId": 99,
+      "Description": "대미지를 입힌 적의 전투 후 힘 -6. (1턴)",
+      "Acquisition": "재능개화 이그나츠"
+    },
+    {
+      "Name": "파멸의 검",
+      "IconResId": 122,
+      "Description": "대미지를 입힌 적의 전투 후 힘/수비 -6. (1턴)",
+      "Acquisition": "제랄트"
+    },
+    {
+      "Name": "수비 봉인",
+      "IconResId": 102,
+      "Description": "대미지를 입힌 적의 전투 후 Def -6. (1턴)",
+      "Acquisition": "마스터 스킬: Wyvern Rider"
+    },
+    {
+      "Name": "마방 봉인",
+      "IconResId": 103,
+      "Description": "대미지를 입힌 적의 전투 후 Res -6. (1턴)",
+      "Acquisition": "마스터 스킬: Dark Knight"
+    },
+    {
+      "Name": "속도 봉인",
+      "IconResId": 101,
+      "Description": "대미지를 입힌 적의 전투 후 Spd -6. (1턴)",
+      "Acquisition": "재능개화 페르디난트"
+    },
+    {
+      "Name": "백마법 사정 +1",
+      "IconResId": 155,
+      "Description": "대미지를 주는 백마법의 사정거리가 1 상승한다.",
+      "Acquisition": "Raise Faith skill level to S"
+    },
+    {
+      "Name": "Noncombatant",
+      "IconResId": 184,
+      "Description": "대상이 될 수 없다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "도끼술 Lv 2",
+      "IconResId": 229,
+      "Description": "도끼 장비 시 명중 +10, 회피 +6, 필살 회피 +6.",
+      "Acquisition": "Raise Axe skill level to D+"
+    },
+    {
+      "Name": "도끼술 Lv 3",
+      "IconResId": 230,
+      "Description": "도끼 장비 시 명중 +13, 회피 +7, 필살 회피 +7.",
+      "Acquisition": "Raise Axe skill level to C+"
+    },
+    {
+      "Name": "도끼술 Lv 4",
+      "IconResId": 244,
+      "Description": "도끼 장비 시 명중 +16, 회피 +8, 필살 회피 +8.",
+      "Acquisition": "Raise Axe skill level to B+"
+    },
+    {
+      "Name": "도끼술 Lv 5",
+      "IconResId": 245,
+      "Description": "도끼 장비 시 명중 +20, 회피 +10, 필살 회피 +10.",
+      "Acquisition": "Raise Axe skill level to A+"
+    },
+    {
+      "Name": "도끼술 Lv 1",
+      "IconResId": 228,
+      "Description": "도끼 장비 시 명중 +7, 회피 +5, 필살 회피 +5.",
+      "Acquisition": "Raise Axe skill level to E+"
+    },
+    {
+      "Name": "도끼 필살 +10",
+      "IconResId": 35,
+      "Description": "도끼 장비 시 필살 +10",
+      "Acquisition": "Raise Axe skill level to S, Class: Warrior"
+    },
+    {
+      "Name": "도끼 회피 +20",
+      "IconResId": 43,
+      "Description": "도끼 장비 시 회피 +20",
+      "Acquisition": null
+    },
+    {
+      "Name": "도끼의 달인",
+      "IconResId": 27,
+      "Description": "도끼 장비 시 Atk +5.",
+      "Acquisition": "Raise Axe skill level to S+, Class: Armored Lord, Fortress Knight, Wyvern Rider, Warrior, Emperor, Wyvern Lord, Great Knight, War Master"
+    },
+    {
       "Name": "창 킬러",
       "IconResId": 107,
       "Description": "도끼 장비를 착용하고 창을 든 적을 상대할 때 명중/회피 +20.",
       "Acquisition": "Raise Axe skill level to B"
+    },
+    {
+      "Name": "도라 Δ",
+      "IconResId": 116,
+      "Description": "도라 Δ를 사용할 수 있게 된다. 이미 습득했을 경우 사용 횟수가 2배로 증가한다.",
+      "Acquisition": "클래스: 다크 메이지, 다크 비숍"
+    },
+    {
+      "Name": "라이브",
+      "IconResId": 117,
+      "Description": "라이브를 사용할 수 있게 된다. 이미 습득했을 경우 사용 횟수가 2배로 증가한다.",
+      "Acquisition": "Class: Priest"
+    },
+    {
+      "Name": "좋은 성장",
+      "IconResId": 137,
+      "Description": "레벨 업 시 모든 성장 판정 +20%",
+      "Acquisition": "시릴"
+    },
+    {
+      "Name": "마력 +2",
+      "IconResId": 51,
+      "Description": "마력이 2 상승한다.",
+      "Acquisition": "마스터 스킬: Monk"
+    },
+    {
+      "Name": "마방 +2",
+      "IconResId": 56,
+      "Description": "마방이 2 상승한다.",
+      "Acquisition": "마스터 스킬: Lord"
+    },
+    {
+      "Name": "대마법 갑옷",
+      "IconResId": -1,
+      "Description": "마법 공격을 무효화한다.",
+      "Acquisition": "마수"
+    },
+    {
+      "Name": "무한의 마법",
+      "IconResId": 169,
+      "Description": "마법 사용 횟수 제한이 없어진다.",
+      "Acquisition": "뮈손"
+    },
+    {
+      "Name": "활 킬러",
+      "IconResId": 109,
+      "Description": "마법을 장비하고 활을 든 적을 상대할 때 명중/회피 +20.",
+      "Acquisition": "Raise Reason skill level to B"
+    },
+    {
+      "Name": "관찰안",
+      "IconResId": 58,
+      "Description": "명중 +20",
+      "Acquisition": "이그나츠"
+    },
+    {
+      "Name": "명중 +20",
+      "IconResId": 58,
+      "Description": "명중이 20 상승한다.",
+      "Acquisition": "마스터 스킬: Archer"
+    },
+    {
+      "Name": "몬스터 특효 무효",
+      "IconResId": 176,
+      "Description": "몬스터 특효를 무효화한다.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "맨손 격투",
+      "IconResId": 156,
+      "Description": "무기를 장비하지 않아도 격투 공격을 할 수 있게 된다.",
+      "Acquisition": "Class: Brawler, Grappler, Class mastered: Brawler"
+    },
+    {
+      "Name": "백마법 횟수 x2",
+      "IconResId": 159,
+      "Description": "백마법 사용 횟수가 2배로 증가한다.",
+      "Acquisition": "Class: Bishop, Gremory"
+    },
+    {
+      "Name": "백마법 횟수 Up+",
+      "IconResId": 209,
+      "Description": "백마법 사용 횟수가 4배로 증가한다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "신앙 Lv 5",
+      "IconResId": 19,
+      "Description": "백마법 장비 시 명중 +10, 회피 +20, 필살 회피 +10.",
+      "Acquisition": "Raise Faith skill level to A+"
+    },
+    {
+      "Name": "신앙 Lv 1",
+      "IconResId": 15,
+      "Description": "백마법 장비 시 명중 +5, 회피 +7, 필살 회피 +5.",
+      "Acquisition": "Raise Faith skill level to E+"
+    },
+    {
+      "Name": "신앙 Lv 2",
+      "IconResId": 16,
+      "Description": "백마법 장비 시 명중 +6, 회피 +10, 필살 회피 +6.",
+      "Acquisition": "Raise Faith skill level to D+"
+    },
+    {
+      "Name": "신앙 Lv 3",
+      "IconResId": 17,
+      "Description": "백마법 장비 시 명중 +7, 회피 +13, 필살 회피 +7.",
+      "Acquisition": "Raise Faith skill level to C+"
+    },
+    {
+      "Name": "신앙 Lv 4",
+      "IconResId": 18,
+      "Description": "백마법 장비 시 명중 +8, 회피 +16, 필살 회피 +8.",
+      "Acquisition": "Raise Faith skill level to B+"
+    },
+    {
+      "Name": "백마법 필살 +10",
+      "IconResId": 39,
+      "Description": "백마법 장비 시 필살 +10",
+      "Acquisition": null
+    },
+    {
+      "Name": "백마법 회피 +20",
+      "IconResId": 47,
+      "Description": "백마법 장비 시 회피 +20.",
+      "Acquisition": "재능개화 도로테아"
+    },
+    {
+      "Name": "백마법의 달인",
+      "IconResId": 31,
+      "Description": "백마법 장비 시 Atk +5.",
+      "Acquisition": "Raise Faith skill level to S+, Class: Holy Knight"
+    },
+    {
+      "Name": "백마법 회복 +10",
+      "IconResId": 161,
+      "Description": "백마법의 회복량 +10.",
+      "Acquisition": "Class: Bishop"
+    },
+    {
+      "Name": "백마법 회복 +5",
+      "IconResId": 160,
+      "Description": "백마법의 회복량 +5.",
+      "Acquisition": "Class: Priest"
+    },
+    {
+      "Name": "보병 특효 무효",
+      "IconResId": 171,
+      "Description": "보병 특효를 무효화한다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "비행 특효 무효",
+      "IconResId": 174,
+      "Description": "비행 특효를 무효화한다.",
+      "Acquisition": "Raise Flying skill level to S+"
+    },
+    {
+      "Name": "상태 이상 무효",
+      "IconResId": 166,
+      "Description": "상태 이상 효과를 받지 않는다. (능력 저하 포함)",
+      "Acquisition": "뮈손"
+    },
+    {
+      "Name": "속도 +2",
+      "IconResId": 53,
+      "Description": "속도가 2 상승한다.",
+      "Acquisition": "마스터 스킬: Myrmidon"
+    },
+    {
+      "Name": "수비 +2",
+      "IconResId": 55,
+      "Description": "수비가 2 상승한다.",
+      "Acquisition": "마스터 스킬: Soldier"
+    },
+    {
+      "Name": "기술의 응원",
+      "IconResId": 96,
+      "Description": "아군에게 응원 커맨드를 사용하면 기술 +8.",
+      "Acquisition": "Raise Authority skill level for Ferdinand (D) or Ignatz (C+)"
+    },
+    {
+      "Name": "문장 학자",
+      "IconResId": 91,
+      "Description": "아군에게 응원 커맨드를 사용하면 마력 +4",
+      "Acquisition": "한네만"
+    },
+    {
+      "Name": "마력의 응원",
+      "IconResId": 91,
+      "Description": "아군에게 응원 커맨드를 사용하면 마력 +4.",
+      "Acquisition": "Raise Authority skill level to D for Hubert or Ingrid"
+    },
+    {
+      "Name": "마방의 응원",
+      "IconResId": 94,
+      "Description": "아군에게 응원 커맨드를 사용하면 마방 +4.",
+      "Acquisition": "Raise Authority skill level for Hubert (C+), Annette (D) or Seteth (S)"
+    },
+    {
+      "Name": "매력의 응원",
+      "IconResId": 98,
+      "Description": "아군에게 응원 커맨드를 사용하면 매력 +8.",
+      "Acquisition": "Raise Authority skill level for Edelgard (S), Dorothea (D), Dimitri (S), Claude (S) or Manuela (D)"
+    },
+    {
+      "Name": "속도의 응원",
+      "IconResId": 92,
+      "Description": "아군에게 응원 커맨드를 사용하면 속도 +4.",
+      "Acquisition": "Raise Authority skill level for Hubert (S), Annette (C+) or Ignatz (D)"
+    },
+    {
+      "Name": "수비의 응원",
+      "IconResId": 93,
+      "Description": "아군에게 응원 커맨드를 사용하면 수비 +4.",
+      "Acquisition": "Raise Authority skill level to D for Seteth or Gilbert"
+    },
+    {
+      "Name": "이동의 응원",
+      "IconResId": 95,
+      "Description": "아군에게 응원 커맨드를 사용하면 이동 +1.",
+      "Acquisition": "Raise Authority skill level to S for protagonist or Annette"
+    },
+    {
+      "Name": "행운의 응원",
+      "IconResId": 97,
+      "Description": "아군에게 응원 커맨드를 사용하면 행운 +8.",
+      "Acquisition": "Raise Authority skill level to D for Flayn"
+    },
+    {
+      "Name": "호인",
+      "IconResId": 97,
+      "Description": "아군에게 응원 커맨드를 사용하면 행운 +8.",
+      "Acquisition": "알로이스"
+    },
+    {
+      "Name": "노력가",
+      "IconResId": 90,
+      "Description": "아군에게 응원 커맨드를 사용하면 힘 +4",
+      "Acquisition": "아네트"
+    },
+    {
+      "Name": "힘의 응원",
+      "IconResId": 90,
+      "Description": "아군에게 응원 커맨드를 사용하면 힘 +4.",
+      "Acquisition": "Raise Authority skill level for Raphael (C), Ignatz (S) or Alois (D)"
+    },
+    {
+      "Name": "춤추기",
+      "IconResId": 143,
+      "Description": "아군을 재행동시킨다.",
+      "Acquisition": "Class: Dancer"
+    },
+    {
+      "Name": "봉사의 기쁨",
+      "IconResId": 124,
+      "Description": "아군의 HP를 회복시켰을 경우 자신의 HP도 같은 양을 회복한다.",
+      "Acquisition": "메르세데스"
+    },
+    {
+      "Name": "암흑마법 횟수 x2",
+      "IconResId": 158,
+      "Description": "암흑마법 사용 횟수가 2배로 증가한다.",
+      "Acquisition": "Class: Gremory"
+    },
+    {
+      "Name": "암흑마법 횟수 x4",
+      "IconResId": 208,
+      "Description": "암흑마법 사용 횟수가 4배로 증가한다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "암흑마법 필살 +10",
+      "IconResId": 40,
+      "Description": "암흑마법 장비 시 필살 +10.",
+      "Acquisition": null
+    },
+    {
+      "Name": "암흑마법 회피 +20",
+      "IconResId": 48,
+      "Description": "암흑마법 장비 시 회피 +20.",
+      "Acquisition": null
+    },
+    {
+      "Name": "암흑마법의 달인",
+      "IconResId": 32,
+      "Description": "암흑마법 장비 시 Atk +5.",
+      "Acquisition": "Raise Reason skill level to S+ for Edelgard, Hubert or Lysithea, Class: Dark Knight"
+    },
+    {
+      "Name": "암흑마법 사정 +1",
+      "IconResId": 154,
+      "Description": "암흑마법의 사정거리가 1 늘어난다.",
+      "Acquisition": "Raise Reason skill level to S for Edelgard, Hubert or Lysithea"
+    },
+    {
+      "Name": "여성 친화",
+      "IconResId": 87,
+      "Description": "여성 아군과 인접 중일 때 자신이 적에게 입히는 대미지 +2. 적에게 받는 대미지 -2",
+      "Acquisition": "실뱅"
+    },
+    {
+      "Name": "생활의 지혜",
+      "IconResId": 145,
+      "Description": "열쇠가 없어도 문이나 보물 상자를 열 수 있게 된다.",
+      "Acquisition": "애쉬"
+    },
+    {
+      "Name": "자물쇠 열기",
+      "IconResId": 145,
+      "Description": "열쇠가 없어도 문이나 보물 상자를 열 수 있게 된다.",
+      "Acquisition": "Class: Thief, Assassin"
+    },
+    {
+      "Name": "용 특효 무효",
+      "IconResId": 175,
+      "Description": "용 특효를 무효화한다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "재이동",
+      "IconResId": 147,
+      "Description": "이동력이 남아 있을 경우 행동 후 그만큼 이동할 수 있다.",
+      "Acquisition": "Class: Cavalier, Pegasus Knight, Wyvern Master, Paladin, Wyvern Lord, Barbarossa, Falcon Knight, Wyvern Lord, Great Knight, Bow Knight, Holy Knight, Dark Knight"
+    },
+    {
+      "Name": "이동 +1",
+      "IconResId": 57,
+      "Description": "이동이 1 상승한다.",
+      "Acquisition": "Raise Riding skill level to A+"
+    },
+    {
+      "Name": "부탁",
+      "IconResId": 83,
+      "Description": "인접한 남성 아군 전투시 아군이 적에게 입히는 대미지 +3",
+      "Acquisition": "힐다"
+    },
+    {
+      "Name": "의무실의 주인",
+      "IconResId": 83,
+      "Description": "인접한 아군 전투 시 아군의 필살 회피 +10",
+      "Acquisition": "마누엘라"
+    },
+    {
+      "Name": "성스러운 힘",
+      "IconResId": 112,
+      "Description": "인접한 아군 전투 시 아군이 적에게 입히는 대미지 +3. 적에게 받는 대미지 -3.",
+      "Acquisition": "레아, 니르바나 마스터"
+    },
+    {
+      "Name": "카리스마",
+      "IconResId": 83,
+      "Description": "인접한 아군 전투시 아군이 적에게 입히는 대미지 +3.",
+      "Acquisition": "Class: Lord, Armored Lord, High Lord, Wyvern Master, Emperor, Great Lord, Barbarossa"
+    },
+    {
+      "Name": "가련한 꽃",
+      "IconResId": 83,
+      "Description": "인접한 아군 전투시 적에게 받는 대미지 -3",
+      "Acquisition": "흐렌"
+    },
+    {
+      "Name": "과보호",
+      "IconResId": 83,
+      "Description": "인접한 여성 아군 전투 시 아군이 적에게 입히는 대미지 +3.",
+      "Acquisition": "세테스"
+    },
+    {
+      "Name": "아가르타의 주술",
+      "IconResId": 116,
+      "Description": "인접한 적은 전투 중 입히는 대미지 -3.",
+      "Acquisition": "뮈손"
+    },
+    {
+      "Name": "싸움꾼",
+      "IconResId": 105,
+      "Description": "인접한 적은 전투 중 회피 -10",
+      "Acquisition": "카스파르"
+    },
+    {
+      "Name": "주박",
+      "IconResId": 105,
+      "Description": "인접한 적은 전투 중 회피 -20",
+      "Acquisition": "Class: Dark Mage, Dark Bishop"
+    },
+    {
+      "Name": "맹주의 혈통",
+      "IconResId": 70,
+      "Description": "입수 EXP가 1.2배로 증가한다.",
+      "Acquisition": "클로드"
+    },
+    {
+      "Name": "왕의 혈통",
+      "IconResId": 69,
+      "Description": "입수 EXP가 1.2배로 증가한다.",
+      "Acquisition": "디미트리"
+    },
+    {
+      "Name": "황제의 혈통",
+      "IconResId": 68,
+      "Description": "입수 EXP가 1.2배로 증가한다.",
+      "Acquisition": "에델가르트"
+    },
+    {
+      "Name": "황제의 혈통+",
+      "IconResId": 216,
+      "Description": "입수 EXP가 1.2배로 증가한다. 행동하지 않고 대긱하면 마방 +4. (1턴)",
+      "Acquisition": "에델가르트 2부"
+    },
+    {
+      "Name": "왕의 혈통+",
+      "IconResId": 217,
+      "Description": "입수 EXP가 1.2배로 증가한다. HP가 최대치일 때 회피 +20.",
+      "Acquisition": "디미트리 2부"
+    },
+    {
+      "Name": "Paragon",
+      "IconResId": 134,
+      "Description": "입수 EXP가 2배가 된다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "스승의 인도",
+      "IconResId": 135,
+      "Description": "자신 및 자신과 인접한 아군의 입수 EXP가 1.2배로 증가한다.",
+      "Acquisition": "주인공"
+    },
+    {
+      "Name": "훔치기",
+      "IconResId": 144,
+      "Description": "자신보다 속도가 낮은 적에게서 무기 외의 아이템을 훔친다.",
+      "Acquisition": "Class: Thief, Class mastered: Thief"
+    },
+    {
+      "Name": "도끼 킬러+",
+      "IconResId": 108,
+      "Description": "자신이 검을 장비하고 도끼를 든 적과 싸울 때 명중/회피 +30.",
+      "Acquisition": null
+    },
+    {
+      "Name": "생존본능",
+      "IconResId": 122,
+      "Description": "자신이 공격을 걸어 적을 격파했을 경우 힘/마력/기술/속도 +4 (1턴)",
+      "Acquisition": "샤미아"
     },
     {
       "Name": "창 킬러+",
@@ -9523,28 +9397,106 @@
       "Acquisition": null
     },
     {
-      "Name": "창 필살 +10",
-      "IconResId": 34,
-      "Description": "창 장비 시 필살 +10.",
-      "Acquisition": "Raise Lance skill level to S"
+      "Name": "검 킬러",
+      "IconResId": 106,
+      "Description": "자신이 창을 장비하고 검을 든 적과 싸울 때 명중/회피 +20.",
+      "Acquisition": "Raise Lance skill level to B"
     },
     {
-      "Name": "창 회피 +20",
-      "IconResId": 42,
-      "Description": "창 장비 시 회피 +20.",
+      "Name": "검 킬러+",
+      "IconResId": 106,
+      "Description": "자신이 창을 장비하고 검을 든 적과 싸울 때 명중/회피 +30.",
       "Acquisition": null
     },
     {
-      "Name": "창 Lv 1",
-      "IconResId": 223,
-      "Description": "창 장비 시 명중 +6, 회피 +6, 필살 회피 +5.",
-      "Acquisition": "Raise Lance skill level to E+"
+      "Name": "격투 킬러",
+      "IconResId": 110,
+      "Description": "자신이 활을 장비하고 격투를 장비한 적과 싸울 때 명중/회피 +20.",
+      "Acquisition": "Raise Bow skill level to B"
     },
     {
-      "Name": "창 Lv 2",
-      "IconResId": 224,
-      "Description": "창 장비 시 명중 +8, 회피 +8, 필살 회피 +6.",
-      "Acquisition": "Raise Lance skill level to D+"
+      "Name": "무게 -3",
+      "IconResId": 162,
+      "Description": "장비 무게의 합 -3",
+      "Acquisition": "Raise Heavy Armour skill level to C"
+    },
+    {
+      "Name": "무게 -5",
+      "IconResId": 163,
+      "Description": "장비 무게의 합 -5",
+      "Acquisition": "Raise Heavy Armour skill level to A+, Class: Fortress Knight"
+    },
+    {
+      "Name": "멸살",
+      "IconResId": 127,
+      "Description": "적군에게 대미지를 주었을 때 0.25 * 기술% 확률로 즉사.",
+      "Acquisition": "마스터 스킬: Assassin"
+    },
+    {
+      "Name": "통과",
+      "IconResId": 148,
+      "Description": "적군을 통과하여 지나갈 수 있다.",
+      "Acquisition": "재능개화 베르나테타"
+    },
+    {
+      "Name": "맹주의 혈통+",
+      "IconResId": 218,
+      "Description": "적군을 통과하여 지나갈 수 있다. 입수 EXP가 1.2배가 된다.",
+      "Acquisition": "클로드 2부"
+    },
+    {
+      "Name": "생명흡수",
+      "IconResId": 125,
+      "Description": "적에게 준 대미지의 50%만큼 회복한다.",
+      "Acquisition": "마스터 스킬: Dark Bishop"
+    },
+    {
+      "Name": "조용한 걸음",
+      "IconResId": 146,
+      "Description": "적의 목표가 될 확률이 줄어든다.",
+      "Acquisition": "Class: Assassin"
+    },
+    {
+      "Name": "사냥의 법칙",
+      "IconResId": 122,
+      "Description": "적의 HP가 50% 이하일 때 필살 +20",
+      "Acquisition": "페트라"
+    },
+    {
+      "Name": "전체 특효 무효",
+      "IconResId": 177,
+      "Description": "전체 특효를 무효화한다.",
+      "Acquisition": null
+    },
+    {
+      "Name": "스승의 인도+",
+      "IconResId": 215,
+      "Description": "전투 중 상대에게 입히는 대미지 +2. 자신 및 자신과 인접한 아군의 입수 EXP가 1.2배로 증가한다.",
+      "Acquisition": "주인공 2부"
+    },
+    {
+      "Name": "천재",
+      "IconResId": 136,
+      "Description": "전투에서 입수하는 기술 능력 EXP가 2배로 증가한다.",
+      "Acquisition": "리시테아"
+    },
+    {
+      "Name": "중갑 특효 무효",
+      "IconResId": 172,
+      "Description": "중갑 특효를 무효화한다.",
+      "Acquisition": "Raise Heavy Armour skill level to S+"
+    },
+    {
+      "Name": "대장성",
+      "IconResId": 168,
+      "Description": "즉사 효과, 상태 이상, 이동 효과를 무효화하고 계략에 의한 대미지를 크게 감소시킨다.",
+      "Acquisition": "정예 적군"
+    },
+    {
+      "Name": "지형 내성",
+      "IconResId": 132,
+      "Description": "지형 대미지를 받지 않는다.",
+      "Acquisition": "Class: Paladin, Bishop, Enlightened One, Holy Knight"
     },
     {
       "Name": "창 Lv 3",
@@ -9565,16 +9517,34 @@
       "Acquisition": "Raise Lance skill level to A+"
     },
     {
+      "Name": "창 Lv 1",
+      "IconResId": 223,
+      "Description": "창 장비 시 명중 +6, 회피 +6, 필살 회피 +5.",
+      "Acquisition": "Raise Lance skill level to E+"
+    },
+    {
+      "Name": "창 Lv 2",
+      "IconResId": 224,
+      "Description": "창 장비 시 명중 +8, 회피 +8, 필살 회피 +6.",
+      "Acquisition": "Raise Lance skill level to D+"
+    },
+    {
+      "Name": "창 필살 +10",
+      "IconResId": 34,
+      "Description": "창 장비 시 필살 +10.",
+      "Acquisition": "Raise Lance skill level to S"
+    },
+    {
+      "Name": "창 회피 +20",
+      "IconResId": 42,
+      "Description": "창 장비 시 회피 +20.",
+      "Acquisition": null
+    },
+    {
       "Name": "창의 달인",
       "IconResId": 26,
       "Description": "창 장비 시 Atk +5.",
       "Acquisition": "Raise Lance skill level to S+, Class: High Lord, Paladin, Great Lord, Falcon Knight, Great Knight"
-    },
-    {
-      "Name": "천재",
-      "IconResId": 136,
-      "Description": "전투에서 입수하는 기술 능력 EXP가 2배로 증가한다.",
-      "Acquisition": "리시테아"
     },
     {
       "Name": "최대 HP +5",
@@ -9583,40 +9553,28 @@
       "Acquisition": "마스터 스킬: Noble or Commoner"
     },
     {
-      "Name": "춤추기",
-      "IconResId": 143,
-      "Description": "아군을 재행동시킨다.",
-      "Acquisition": "Class: Dancer"
-    },
-    {
-      "Name": "카리스마",
-      "IconResId": 83,
-      "Description": "인접한 아군 전투시 아군이 적에게 입히는 대미지 +3.",
-      "Acquisition": "Class: Lord, Armored Lord, High Lord, Wyvern Master, Emperor, Great Lord, Barbarossa"
-    },
-    {
-      "Name": "통과",
-      "IconResId": 148,
-      "Description": "적군을 통과하여 지나갈 수 있다.",
-      "Acquisition": "재능개화 베르나테타"
-    },
-    {
-      "Name": "투혼",
-      "IconResId": 122,
-      "Description": "기사단을 장비하지 않았을 때 또는 기사단 전력이 0일 때 적에게 받는 대미지 -5",
-      "Acquisition": "카트린"
-    },
-    {
       "Name": "특별한 춤",
       "IconResId": 133,
       "Description": "춤추기를 사용한 아군의 기술/속도/행운 +4. (1턴)",
       "Acquisition": "마스터 스킬: Dancer"
     },
     {
-      "Name": "파멸의 검",
-      "IconResId": 122,
-      "Description": "대미지를 입힌 적의 전투 후 힘/수비 -6. (1턴)",
-      "Acquisition": "제랄트"
+      "Name": "주워 먹기",
+      "IconResId": 118,
+      "Description": "턴 개시 시 아래 확률로 최대 HP의 10%를 회복한다. (행운%)",
+      "Acquisition": "라파엘"
+    },
+    {
+      "Name": "가희",
+      "IconResId": 121,
+      "Description": "턴 개시시 인접한 아군을 최대 HP의 10%만큼 회복시킨다.",
+      "Acquisition": "도로테아"
+    },
+    {
+      "Name": "회복",
+      "IconResId": 118,
+      "Description": "턴 개시와 동시에 최대 HP의 20%를 회복한다.",
+      "Acquisition": "마스터 스킬: Bishop"
     },
     {
       "Name": "파이어",
@@ -9625,88 +9583,40 @@
       "Acquisition": "Class: Mage"
     },
     {
-      "Name": "피해망상",
-      "IconResId": 122,
-      "Description": "HP가 최대치가 아닐 때 공격 +5",
-      "Acquisition": "베르나데타"
-    },
-    {
       "Name": "필살 +20",
       "IconResId": 60,
       "Description": "필살이 20 상승한다.",
       "Acquisition": "Class: War Master"
     },
     {
-      "Name": "필살의 각성",
-      "IconResId": 67,
-      "Description": "HP가 25% 이하일 때 필살 +50.",
-      "Acquisition": "마스터 스킬: Wyvern Lord"
-    },
-    {
-      "Name": "한 마리 늑대",
+      "Name": "주군의 방패",
       "IconResId": 122,
-      "Description": "기사단을 장비하지 않았을 때 또는 기사단 전력이 0일 때 자신이 입히는 대미지 +5",
-      "Acquisition": "펠릭스"
+      "Description": "행동하지 않고 대기하면 수비 +4. (1턴)",
+      "Acquisition": "두두"
     },
     {
-      "Name": "행운의 응원",
-      "IconResId": 97,
-      "Description": "아군에게 응원 커맨드를 사용하면 행운 +8.",
-      "Acquisition": "Raise Authority skill level to D for Flayn"
+      "Name": "졸기",
+      "IconResId": 118,
+      "Description": "행동하지 않고 대기하면 최대 HP의 10%를 회복한다.",
+      "Acquisition": "린하르트"
     },
     {
-      "Name": "호승심",
-      "IconResId": 87,
-      "Description": "남성 아군과 인접 중일 때 자신이 적에게 입히는 대미지 +2. 적에게 받는 대미지 -2",
-      "Acquisition": "레오니"
+      "Name": "경계태세",
+      "IconResId": 212,
+      "Description": "행동하지 않고 대기하면 회피 +15. (1턴)",
+      "Acquisition": "Raise Flying skill level to B"
     },
     {
-      "Name": "호인",
-      "IconResId": 97,
-      "Description": "아군에게 응원 커맨드를 사용하면 행운 +8.",
-      "Acquisition": "알로이스"
+      "Name": "경계태세+",
+      "IconResId": 213,
+      "Description": "행동하지 않고 대기하면 회피 +30. (1턴)",
+      "Acquisition": "Raise Flying skill level to A+"
     },
     {
-      "Name": "활 사정 +1",
-      "IconResId": 151,
-      "Description": "활의 사정거리가 1 늘어난다.",
-      "Acquisition": "Class: Archer, Sniper"
-    },
-    {
-      "Name": "활 사정 +2",
-      "IconResId": 152,
-      "Description": "활의 사정거리가 2 늘어난다.",
-      "Acquisition": "Class: Bow Knight"
-    },
-    {
-      "Name": "활 킬러",
-      "IconResId": 109,
-      "Description": "마법을 장비하고 활을 든 적을 상대할 때 명중/회피 +20.",
-      "Acquisition": "Raise Reason skill level to B"
-    },
-    {
-      "Name": "활 필살 +10",
-      "IconResId": 36,
-      "Description": "활 장비 시 필살 +10.",
-      "Acquisition": "Raise Bow skill level to S"
-    },
-    {
-      "Name": "활 회피 +20",
-      "IconResId": 44,
-      "Description": "활 장비 시 회피 +20.",
-      "Acquisition": null
-    },
-    {
-      "Name": "활 Lv 1",
-      "IconResId": 0,
-      "Description": "활 장비 시 명중 +6, 회피 +6, 필살 회피 +5.",
-      "Acquisition": "Raise Bow skill level to E+"
-    },
-    {
-      "Name": "활 Lv 2",
-      "IconResId": 1,
-      "Description": "활 장비 시 명중 +8, 회피 +8, 필살 회피 +6.",
-      "Acquisition": "Raise Bow skill level to D+"
+      "Name": "위풍당당",
+      "IconResId": 54,
+      "Description": "행운/매력이 4 상승한다.",
+      "Acquisition": "마스터 스킬: Armored Lord, High Lord or Wyvern Master"
     },
     {
       "Name": "활 Lv 3",
@@ -9727,34 +9637,52 @@
       "Acquisition": "Raise Bow skill level to A+"
     },
     {
+      "Name": "활 Lv 1",
+      "IconResId": 0,
+      "Description": "활 장비 시 명중 +6, 회피 +6, 필살 회피 +5.",
+      "Acquisition": "Raise Bow skill level to E+"
+    },
+    {
+      "Name": "활 Lv 2",
+      "IconResId": 1,
+      "Description": "활 장비 시 명중 +8, 회피 +8, 필살 회피 +6.",
+      "Acquisition": "Raise Bow skill level to D+"
+    },
+    {
+      "Name": "활 필살 +10",
+      "IconResId": 36,
+      "Description": "활 장비 시 필살 +10.",
+      "Acquisition": "Raise Bow skill level to S"
+    },
+    {
+      "Name": "활 회피 +20",
+      "IconResId": 44,
+      "Description": "활 장비 시 회피 +20.",
+      "Acquisition": null
+    },
+    {
       "Name": "활의 달인",
       "IconResId": 28,
       "Description": "활 장비 시 Atk +5.",
       "Acquisition": "Raise Bow skill level to S+, Class: Wyvern Master, Sniper, Barbarossa, Bow Knight"
     },
     {
-      "Name": "황제의 혈통",
-      "IconResId": 68,
-      "Description": "입수 EXP가 1.2배로 증가한다.",
-      "Acquisition": "에델가르트"
+      "Name": "성스러운 방패",
+      "IconResId": 130,
+      "Description": "활/마법 대미지를 아래 확률로 반감시킨다. (기술%)",
+      "Acquisition": "마스터 스킬: Paladin"
     },
     {
-      "Name": "황제의 혈통+",
-      "IconResId": 216,
-      "Description": "입수 EXP가 1.2배로 증가한다. 행동하지 않고 대긱하면 마방 +4. (1턴)",
-      "Acquisition": "에델가르트 2부"
+      "Name": "활 사정 +1",
+      "IconResId": 151,
+      "Description": "활의 사정거리가 1 늘어난다.",
+      "Acquisition": "Class: Archer, Sniper"
     },
     {
-      "Name": "회복",
-      "IconResId": 118,
-      "Description": "턴 개시와 동시에 최대 HP의 20%를 회복한다.",
-      "Acquisition": "마스터 스킬: Bishop"
-    },
-    {
-      "Name": "회복의 진형",
-      "IconResId": 206,
-      "Description": "기사단의 전력이 1/3이하 일 때 턴 개시 시 최대 HP의 30%만큼 회복한다.",
-      "Acquisition": "Raise Authority skill level to C for Linhardt, Mercedes, Annette, Marianne, Manuela or Flayn. Raise to A for Edelgard."
+      "Name": "활 사정 +2",
+      "IconResId": 152,
+      "Description": "활의 사정거리가 2 늘어난다.",
+      "Acquisition": "Class: Bow Knight"
     },
     {
       "Name": "회피 +10",
@@ -9763,22 +9691,16 @@
       "Acquisition": "Class: Pegasus Knight, Falcon Knight, Wyvern Lord"
     },
     {
-      "Name": "회피의 각성",
-      "IconResId": 66,
-      "Description": "HP가 25% 이하일 때 회피 +30.",
-      "Acquisition": "마스터 스킬: Falcon Knight"
+      "Name": "흑마법 횟수 x2",
+      "IconResId": 157,
+      "Description": "흑마법 사용 횟수가 2배로 증가한다.",
+      "Acquisition": "Class: Warlock, Gremory"
     },
     {
-      "Name": "훔치기",
-      "IconResId": 144,
-      "Description": "자신보다 속도가 낮은 적에게서 무기 외의 아이템을 훔친다.",
-      "Acquisition": "Class: Thief, Class mastered: Thief"
-    },
-    {
-      "Name": "흑마법 사정 +1",
-      "IconResId": 153,
-      "Description": "흑마법의 사정거리가 1 늘어난다.",
-      "Acquisition": "Raise Reason skill level to S (except for Edelgard, Hubert and Lysithea)"
+      "Name": "흑마법 횟수 Up+",
+      "IconResId": 207,
+      "Description": "흑마법 사용 횟수가 4배로 증가한다.",
+      "Acquisition": null
     },
     {
       "Name": "흑마법 필살 +10",
@@ -9793,22 +9715,46 @@
       "Acquisition": "재능개화 실뱅"
     },
     {
-      "Name": "흑마법 횟수 Up+",
-      "IconResId": 207,
-      "Description": "흑마법 사용 횟수가 4배로 증가한다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "흑마법 횟수 x2",
-      "IconResId": 157,
-      "Description": "흑마법 사용 횟수가 2배로 증가한다.",
-      "Acquisition": "Class: Warlock, Gremory"
-    },
-    {
       "Name": "흑마법의 달인",
       "IconResId": 30,
       "Description": "흑마법 장비 시 Atk +5.",
       "Acquisition": "Raise Reason skill level to S+ (except Edelgard, Hubert and Lysithea), Class: Warlock, Mortal Savant, Dark Knight"
+    },
+    {
+      "Name": "흑마법 사정 +1",
+      "IconResId": 153,
+      "Description": "흑마법의 사정거리가 1 늘어난다.",
+      "Acquisition": "Raise Reason skill level to S (except for Edelgard, Hubert and Lysithea)"
+    },
+    {
+      "Name": "이론학 Lv 2",
+      "IconResId": 11,
+      "Description": "흑마법이나 암흑마법 장비 시 명중 +10, 회피 +6, 필살 회피 +6.",
+      "Acquisition": "Raise Reason skill level to D+"
+    },
+    {
+      "Name": "이론학 Lv 3",
+      "IconResId": 12,
+      "Description": "흑마법이나 암흑마법 장비 시 명중 +13, 회피 +7, 필살 회피 +7.",
+      "Acquisition": "Raise Reason skill level to C+"
+    },
+    {
+      "Name": "이론학 Lv 4",
+      "IconResId": 13,
+      "Description": "흑마법이나 암흑마법 장비 시 명중 +16, 회피 +8, 필살 회피 +8.",
+      "Acquisition": "Raise Reason skill level to B+"
+    },
+    {
+      "Name": "이론학 Lv 5",
+      "IconResId": 14,
+      "Description": "흑마법이나 암흑마법 장비 시 명중 +20, 회피 +10, 필살 회피 +10.",
+      "Acquisition": "Raise Reason skill level to A+"
+    },
+    {
+      "Name": "이론학 Lv 1",
+      "IconResId": 10,
+      "Description": "흑마법이나 암흑마법 장비 시 명중 +7, 회피 +5, 필살 회피 +5.",
+      "Acquisition": "Raise Reason skill level to E+"
     },
     {
       "Name": "힘 +2",
@@ -9817,10 +9763,76 @@
       "Acquisition": "마스터 스킬: Fighter"
     },
     {
-      "Name": "힘 봉인",
-      "IconResId": 99,
-      "Description": "대미지를 입힌 적의 전투 후 힘 -6. (1턴)",
-      "Acquisition": "재능개화 이그나츠"
+      "Name": "고대용의 분노",
+      "IconResId": 191,
+      "Description": "Calculates damage using the lower of foe’s Prt or Rsl.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "Poison",
+      "IconResId": 128,
+      "Description": "Chance to inflict poison on foe when dealing damage. Trigger % = 기술 stat.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "거대한 날개",
+      "IconResId": -1,
+      "Description": "Grants 회피 +30 against sword, lance, or axe users.",
+      "Acquisition": "마수"
+    },
+    {
+      "Name": "10걸",
+      "IconResId": 211,
+      "Description": "Grants power to the Mighty King of Legend.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "고대용의 비늘",
+      "IconResId": 190,
+      "Description": "Halves all damage taken, negates some abilities and combat arts, and prevents unit from being moved.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "기도",
+      "IconResId": 131,
+      "Description": "HP가 2 이상일 때, HP가 0이 되는 대미지를 받아도 아래 확률로 죽지 않고 HP를 1남긴다. (행운%)",
+      "Acquisition": "마스터 스킬: Priest"
+    },
+    {
+      "Name": "마력의 각성",
+      "IconResId": 62,
+      "Description": "HP가 25% 이하일 때 마력 +8.",
+      "Acquisition": "마스터 스킬: Gremory"
+    },
+    {
+      "Name": "마방의 각성",
+      "IconResId": 65,
+      "Description": "HP가 25% 이하일 때 마방 +8.",
+      "Acquisition": "마스터 스킬: Holy Knight"
+    },
+    {
+      "Name": "속도의 각성",
+      "IconResId": 63,
+      "Description": "HP가 25% 이하일 때 속도 +8.",
+      "Acquisition": "마스터 스킬: Bow Knight"
+    },
+    {
+      "Name": "수비의 각성",
+      "IconResId": 64,
+      "Description": "HP가 25% 이하일 때 수비 +8.",
+      "Acquisition": "마스터 스킬: Great Knight"
+    },
+    {
+      "Name": "필살의 각성",
+      "IconResId": 67,
+      "Description": "HP가 25% 이하일 때 필살 +50.",
+      "Acquisition": "마스터 스킬: Wyvern Lord"
+    },
+    {
+      "Name": "회피의 각성",
+      "IconResId": 66,
+      "Description": "HP가 25% 이하일 때 회피 +30.",
+      "Acquisition": "마스터 스킬: Falcon Knight"
     },
     {
       "Name": "힘의 각성",
@@ -9829,10 +9841,64 @@
       "Acquisition": "마스터 스킬: Hero"
     },
     {
-      "Name": "힘의 응원",
-      "IconResId": 90,
-      "Description": "아군에게 응원 커맨드를 사용하면 힘 +4.",
-      "Acquisition": "Raise Authority skill level for Raphael (C), Ignatz (S) or Alois (D)"
+      "Name": "받아치기",
+      "IconResId": 141,
+      "Description": "HP가 50% 이상일 때 반드시 추격이 발생한다.",
+      "Acquisition": "마스터 스킬: War Master"
+    },
+    {
+      "Name": "연속공격",
+      "IconResId": 130,
+      "Description": "HP가 50% 이하이고 공격을 개시할 때 적군의 반격보다 먼저 추격한다. (가능할 시)",
+      "Acquisition": "마스터 스킬: Cavalier"
+    },
+    {
+      "Name": "매복",
+      "IconResId": 138,
+      "Description": "HP가 50% 이하인 상태에서 적에게 공격받았을 때 선제공격한다.",
+      "Acquisition": "마스터 스킬: Mercenary, Class: Hero"
+    },
+    {
+      "Name": "분노",
+      "IconResId": 142,
+      "Description": "HP가 50%이하일 때 공격을 받을 시 필살 +50.",
+      "Acquisition": "마스터 스킬: Warrior"
+    },
+    {
+      "Name": "피해망상",
+      "IconResId": 122,
+      "Description": "HP가 최대치가 아닐 때 공격 +5",
+      "Acquisition": "베르나데타"
+    },
+    {
+      "Name": "자신감",
+      "IconResId": 122,
+      "Description": "HP가 최대치일 때 명중 및 회피 +15",
+      "Acquisition": "페르디난트 폰 에기르"
+    },
+    {
+      "Name": "Vital Defense",
+      "IconResId": -1,
+      "Description": "Makes critical hits against this unit impossible.",
+      "Acquisition": "마수"
+    },
+    {
+      "Name": "Missing Number",
+      "IconResId": 139,
+      "Description": "Missing Number",
+      "Acquisition": null
+    },
+    {
+      "Name": "Mighty King of Legend",
+      "IconResId": 210,
+      "Description": "Negates 1 attack per turn and strengthens stats while the 10 Elites are present.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "General",
+      "IconResId": 167,
+      "Description": "Nullifies instant death effects and halves damage from enemy gambits.",
+      "Acquisition": "Enemy/NPC"
     },
     {
       "Name": "Air of Intimidation",
@@ -9841,9 +9907,27 @@
       "Acquisition": "Unused?"
     },
     {
-      "Name": "Cursed Power",
-      "IconResId": 186,
-      "Description": "Unit recovers HP on swamp terrain.",
+      "Name": "Path of the Conqueror",
+      "IconResId": -1,
+      "Description": "On Hold",
+      "Acquisition": "Unused?"
+    },
+    {
+      "Name": "Surging Light",
+      "IconResId": -1,
+      "Description": "Performs Staggering Blow immediately.",
+      "Acquisition": "적군"
+    },
+    {
+      "Name": "고정",
+      "IconResId": 187,
+      "Description": "Prevents unit from being moved.",
+      "Acquisition": null
+    },
+    {
+      "Name": "Unsealable Magic",
+      "IconResId": 165,
+      "Description": "Prevents unit from being silenced.",
       "Acquisition": null
     },
     {
@@ -9853,70 +9937,10 @@
       "Acquisition": null
     },
     {
-      "Name": "General",
-      "IconResId": 167,
-      "Description": "Nullifies instant death effects and halves damage from enemy gambits.",
-      "Acquisition": "Enemy/NPC"
-    },
-    {
-      "Name": "Mighty King of Legend",
-      "IconResId": 210,
-      "Description": "Negates 1 attack per turn and strengthens stats while the 10 Elites are present.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "Missing Number",
-      "IconResId": 139,
-      "Description": "Missing Number",
+      "Name": "Cursed Power",
+      "IconResId": 186,
+      "Description": "Unit recovers HP on swamp terrain.",
       "Acquisition": null
-    },
-    {
-      "Name": "Murderous Intent",
-      "IconResId": 105,
-      "Description": "공격을 개시할 때 명중 +20.",
-      "Acquisition": null
-    },
-    {
-      "Name": "Noncombatant",
-      "IconResId": 184,
-      "Description": "대상이 될 수 없다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "Paragon",
-      "IconResId": 134,
-      "Description": "입수 EXP가 2배가 된다.",
-      "Acquisition": null
-    },
-    {
-      "Name": "Path of the Conqueror",
-      "IconResId": -1,
-      "Description": "On Hold",
-      "Acquisition": "Unused?"
-    },
-    {
-      "Name": "Poison",
-      "IconResId": 128,
-      "Description": "Chance to inflict poison on foe when dealing damage. Trigger % = 기술 stat.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "Surging Light",
-      "IconResId": -1,
-      "Description": "Performs Staggering Blow immediately.",
-      "Acquisition": "적군"
-    },
-    {
-      "Name": "Unsealable Magic",
-      "IconResId": 165,
-      "Description": "Prevents unit from being silenced.",
-      "Acquisition": null
-    },
-    {
-      "Name": "Vital Defense",
-      "IconResId": -1,
-      "Description": "Makes critical hits against this unit impossible.",
-      "Acquisition": "마수"
     }
   ],
   "CombatArts": [
@@ -13134,411 +13158,386 @@
   "SideStory": [
     {
       "Name": "약자들의 싸움",
-      "Participants": "두두",
-      "Section": "1부",
-      "StartTime": "10월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "두두"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "10월",
+      "RewardKnights": [],
+      "ClearRewards": [],
+      "MissionRewards": []
     },
     {
       "Name": "가지지 못한 자",
-      "Participants": "실뱅",
-      "Section": "1부",
-      "StartTime": "10월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "실뱅"
       ],
-      "RecLevel": 13,
-      "ClearRewards": "고티에 기사단/파열의 창",
-      "MissionRewards": "거대한 금괴/롱보우/부적",
-      "DropItems": "힘의 물방울/마도의 지팡이/질풍의 깃털/쇼트 스피어/여신의 반지/상급 시험 패스",
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "10월",
+      "RewardKnights": [
+        "고티에 기사단"
+      ],
+      "ClearRewards": [
+        "파열의 창"
+      ],
+      "MissionRewards": [
+        "거대한 금괴",
+        "롱보우",
+        "부적"
+      ]
     },
     {
       "Name": "금사슴이 지키는 땅",
-      "Participants": "로렌츠",
-      "Section": "1부",
-      "StartTime": "10월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "로렌츠"
       ],
-      "RecLevel": 13,
-      "ClearRewards": "글로스터 기병/튀르소스의 지팡이",
-      "MissionRewards": null,
-      "DropItems": "상급 시험 패스/데빌 소드",
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "10월",
+      "RewardKnights": [
+        "글로스터 기병"
+      ],
+      "ClearRewards": [
+        "튀르소스의 지팡이"
+      ],
+      "MissionRewards": []
     },
     {
       "Name": "왕국 귀족의 혼담",
-      "Participants": "도르테아/잉그리트",
-      "Section": "1부",
-      "StartTime": "10월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "도로테아",
+        "잉그리트"
       ],
-      "RecLevel": 13,
-      "ClearRewards": "갈라테아 천마대/룬/여신의 반지",
-      "MissionRewards": null,
-      "DropItems": "기도의 반지/데빌 액스/해독제",
-      "ChestItems": "킬러 액스/치유의 지팡이"
+      "Section": 0,
+      "StartTime": "10월",
+      "RewardKnights": [
+        "갈라테아 천마대"
+      ],
+      "ClearRewards": [
+        "룬",
+        "여신의 반지"
+      ],
+      "MissionRewards": []
     },
     {
       "Name": "검이자 방패인 기사단",
-      "Participants": "알로이스/샤미아",
-      "Section": "1부",
-      "StartTime": "10월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "알로이스",
+        "샤미아"
       ],
-      "RecLevel": 13,
-      "ClearRewards": "세이로스 궁병대",
-      "MissionRewards": "커다란 금괴/천사의 옷",
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "10월",
+      "RewardKnights": [
+        "세이로스 궁병대"
+      ],
+      "ClearRewards": [],
+      "MissionRewards": [
+        "커다란 금괴",
+        "천사의 옷"
+      ]
     },
     {
       "Name": "얼음과 숯의 불협화음",
-      "Participants": "한네만/마누엘라",
-      "Section": "1부",
-      "StartTime": "11월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "한네만",
+        "마누엘라"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "11월",
+      "RewardKnights": [
+        "마쿠일 파사대",
+        "인데히 검극대"
+      ],
+      "ClearRewards": [],
+      "MissionRewards": []
     },
     {
       "Name": "붉은 계곡의 모험담",
-      "Participants": "소티스",
-      "Section": "1부",
-      "StartTime": "11월",
-      "ExpireTime": [
-        "1월 25일",
-        "1월 25일",
-        "1월 25일",
-        "1월 25일"
+      "Participants": [
+        "소티스"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "천각의 박동 횟수 증가",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "11월",
+      "RewardKnights": [],
+      "ClearRewards": [
+        "천각의 박동 횟수 증가"
+      ],
+      "MissionRewards": []
     },
     {
       "Name": "불온한 죽음의 연쇄",
-      "Participants": "라파엘/이그나츠",
-      "Section": "1부",
-      "StartTime": "11월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "라파엘",
+        "이그나츠"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "11월",
+      "RewardKnights": [
+        "레스터 용병단",
+        "빅터 사병단"
+      ],
+      "ClearRewards": [],
+      "MissionRewards": []
     },
     {
       "Name": "진정한 기사도",
-      "Participants": "펠릭스",
-      "Section": "1부",
-      "StartTime": "11월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "펠릭스"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": "아이기스의 방패",
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "11월",
+      "RewardKnights": [
+        "프랄다리우스병"
+      ],
+      "ClearRewards": [],
+      "MissionRewards": [
+        "아이기스의 방패"
+      ]
     },
     {
       "Name": "바다가 보이는 곳",
-      "Participants": "세테스/흐렌",
-      "Section": "1부",
-      "StartTime": "12월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "Participants": [
+        "세테스",
+        "흐렌"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "아살의 창/카두케우스의 지팡이",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 0,
+      "StartTime": "12월",
+      "RewardKnights": [
+        "키홀 용기병단",
+        "세스린 신관대"
+      ],
+      "ClearRewards": [
+        "아살의 창",
+        "카두케우스의 지팡이"
+      ],
+      "MissionRewards": []
     },
     {
       "Name": "공존할 수 없는 하늘",
-      "Participants": "애쉬/카트린",
-      "Section": "1부",
+      "Participants": [
+        "애쉬",
+        "카트린"
+      ],
+      "Section": 0,
       "StartTime": "12월",
-      "ExpireTime": [
-        "2월 22일",
-        "2월 22일",
-        "2월 22일",
-        "2월 22일"
+      "RewardKnights": [
+        "가스파르 기사단"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "ClearRewards": [],
+      "MissionRewards": [
+        "바람의 부츠",
+        "필살의 반지"
+      ]
     },
     {
       "Name": "세상을 나누는 벽",
-      "Participants": "힐다/시릴",
-      "Section": "1부",
-      "StartTime": "1월",
-      "ExpireTime": [
-        "5월 24일",
-        "5월 24일",
-        "5월 24일",
-        "5월 24일"
+      "Participants": [
+        "힐다",
+        "시릴"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "프라이쿠겔",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
-    },
-    {
-      "Name": "세상을 나누는 벽",
-      "Participants": "힐다/시릴",
-      "Section": "2부",
+      "Section": 0,
       "StartTime": "1월",
-      "ExpireTime": [
-        "-",
-        "-",
-        "-",
-        "6월 28일"
+      "RewardKnights": [
+        "고네릴 전희병",
+        "팔미라 용병단"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "프라이쿠겔",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "ClearRewards": [
+        "프라이쿠겔"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "포드라의 박쥐들",
-      "Participants": "아네트/길베르트",
-      "Section": "2부",
-      "StartTime": "2월",
-      "ExpireTime": [
-        "5월 24일",
-        "-",
-        "-",
-        "-"
+      "Participants": [
+        "아네트",
+        "길베르트"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "분쇄하는 자",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "2월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "분쇄하는 자"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "Insurmountable",
-      "Participants": "에델가르트",
-      "Section": "2부",
-      "StartTime": "2월",
-      "ExpireTime": [
-        "4월 26일",
-        "-",
-        "-",
-        "-"
+      "Participants": [
+        "에델가르트"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "2월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "제보바람"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "Darkness beneath the Earth",
-      "Participants": "휴베르트",
-      "Section": "2부",
-      "StartTime": "2월",
-      "ExpireTime": [
-        "4월 26일",
-        "-",
-        "-",
-        "-"
+      "Participants": [
+        "휴베르트"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "2월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "제보바람"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "이국과 하늘의 땅",
-      "Participants": "베르나데타/페트라",
-      "Section": "2부",
-      "StartTime": "3월",
-      "ExpireTime": [
-        "4월 26일",
-        "6월 28일",
-        "8월 30일",
-        "5월 26일"
+      "Participants": [
+        "베르나데타",
+        "페트라"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "3월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "제보바람"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "감춰진 얼굴",
-      "Participants": "메르세데스/카스파르",
-      "Section": "2부",
-      "StartTime": "4월",
-      "ExpireTime": [
-        "-",
-        "6월 28일",
-        "4월 26일",
-        "3월 29일"
+      "Participants": [
+        "메르세데스",
+        "카스파르"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "4월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "제보바람"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "호수의 전설",
-      "Participants": "레오니/린하르트",
-      "Section": "2부",
-      "StartTime": "5월",
-      "ExpireTime": [
-        "4월 26일",
-        "6월 28일",
-        "8월 30일",
-        "8월 30일"
+      "Participants": [
+        "린하르트",
+        "레오니"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "영속하는 자",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "5월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "영속하는 자"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "말소된 영웅",
-      "Participants": "마리안",
-      "Section": "2부",
-      "StartTime": "6월",
-      "ExpireTime": [
-        "4월 26일",
-        "6월 28일",
-        "8월 23일",
-        "8월 30일"
+      "Participants": [
+        "마리안"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "불트강",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "6월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "불트강"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "불후의 수호자",
-      "Participants": "레아",
-      "Section": "2부",
-      "StartTime": "3월",
-      "ExpireTime": [
-        "6월 28일",
-        "-",
-        "-",
-        "-"
+      "Participants": [
+        "레아"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "세이로스의 방패",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "3월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "세이로스의 방패"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "모래 속에 잠든 신화",
-      "Participants": "클로드",
-      "Section": "2부",
-      "StartTime": "4월",
-      "ExpireTime": [
-        "-",
-        "-",
-        "8월 30일",
-        "-"
+      "Participants": [
+        "클로드"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "베갈타의 검",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "4월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "베갈타의 검"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "인과응보",
-      "Participants": "페르디난트/리시테아",
-      "Section": "2부",
-      "StartTime": "4월",
-      "ExpireTime": [
-        "-",
-        "6월 28일",
-        "7월 26일",
-        "7월 26일"
+      "Participants": [
+        "페르디난트 폰 에기르",
+        "리시테아"
       ],
-      "RecLevel": -1,
-      "ClearRewards": "오한의 방패",
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "4월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "오한의 방패"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     },
     {
       "Name": "백은의 도시",
-      "Participants": "디미트리",
-      "Section": "2부",
-      "StartTime": "6월",
-      "ExpireTime": [
-        "-",
-        "8월 23일",
-        "-",
-        "-"
+      "Participants": [
+        "디미트리"
       ],
-      "RecLevel": -1,
-      "ClearRewards": null,
-      "MissionRewards": null,
-      "DropItems": null,
-      "ChestItems": null
+      "Section": 1,
+      "StartTime": "6월",
+      "RewardKnights": [
+        "제보바람"
+      ],
+      "ClearRewards": [
+        "제보바람"
+      ],
+      "MissionRewards": [
+        "제보바람"
+      ]
     }
   ]
 }

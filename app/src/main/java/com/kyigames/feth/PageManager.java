@@ -18,6 +18,7 @@ import com.kyigames.feth.model.Character;
 import com.kyigames.feth.model.ClassCategory;
 import com.kyigames.feth.model.Database;
 import com.kyigames.feth.model.Loss;
+import com.kyigames.feth.model.SideStory;
 import com.kyigames.feth.model.UnitClass;
 import com.kyigames.feth.view.CharacterContent;
 import com.kyigames.feth.view.CharacterHeader;
@@ -27,6 +28,9 @@ import com.kyigames.feth.view.ClassHeader;
 import com.kyigames.feth.view.FactionHeader;
 import com.kyigames.feth.view.LicenseItem;
 import com.kyigames.feth.view.LossContent;
+import com.kyigames.feth.view.SideStoryContent;
+import com.kyigames.feth.view.SideStoryHeader;
+import com.kyigames.feth.view.SideStorySectionHeader;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -125,11 +129,15 @@ class PageManager extends PagerAdapter
         {
             page = m_inflater.inflate(R.layout.page_class, null, false);
             initializeClassPage(page);
-        } else if (position == 2) // Loss
+        } else if (position == 2) // Side story
+        {
+            page = m_inflater.inflate(R.layout.page_side_story, null, false);
+            initializeSideStoryPage(page);
+        } else if (position == 3) // Loss
         {
             page = m_inflater.inflate(R.layout.page_loss, null, false);
             initializeLossPage(page);
-        } else if (position == 3) // License
+        } else if (position == 4) // License
         {
             page = m_inflater.inflate(R.layout.page_license, null, false);
             initializeLicensePage(page);
@@ -140,6 +148,7 @@ class PageManager extends PagerAdapter
 
         return page;
     }
+
 
     private void initializeCharacterPage(View view)
     {
@@ -182,6 +191,42 @@ class PageManager extends PagerAdapter
             characterHeader.addSubItem(characterContent);
             factionHeader.addSubItem(characterHeader);
         }
+    }
+
+    private void initializeSideStoryPage(View page)
+    {
+        final String[] sideStorySections = m_context.getResources().getStringArray(R.array.side_story_sections);
+        final String[] sideStorySectionColors = m_context.getResources().getStringArray(R.array.side_story_section_colors);
+
+        List<IFlexible> sideStorySectionHeaders = new ArrayList<>();
+
+        for (int i = 0; i < sideStorySections.length; ++i)
+        {
+            String sectionName = sideStorySections[i];
+            String sectionColor = sideStorySectionColors[i];
+            SideStorySectionHeader sectionHeader = new SideStorySectionHeader(sectionName, sectionColor);
+
+            sideStorySectionHeaders.add(sectionHeader);
+        }
+
+        for (SideStory sideStory : Database.getTable(SideStory.class))
+        {
+            SideStorySectionHeader sideStorySectionHeader = (SideStorySectionHeader) sideStorySectionHeaders.get(sideStory.Section);
+
+            SideStoryHeader sideStoryHeader = new SideStoryHeader(sideStorySectionHeader, sideStory);
+            sideStorySectionHeader.addSubItem(sideStoryHeader);
+
+            SideStoryContent sideStoryContent = new SideStoryContent(sideStory);
+            sideStoryHeader.addSubItem(sideStoryContent);
+        }
+
+        FlexibleAdapter<IFlexible> adapter = new FlexibleAdapter<>(sideStorySectionHeaders);
+        adapter.setDisplayHeadersAtStartUp(true);
+        adapter.setStickyHeaders(true);
+        adapter.expandItemsAtStartUp();
+
+        RecyclerView page_class = page.findViewById(R.id.side_story_list_view);
+        page_class.setAdapter(adapter);
     }
 
     private void initializeClassPage(View view)

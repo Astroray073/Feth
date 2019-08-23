@@ -45,7 +45,7 @@ public class ResourceUtils
 
     public static String getListItemText(List<String> list, String delimiter)
     {
-        if (list == null)
+        if (list == null || list.size() == 0)
         {
             return m_resources.getString(R.string.none);
         }
