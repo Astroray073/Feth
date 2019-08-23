@@ -43,7 +43,22 @@ import eu.davidea.flexibleadapter.items.IFlexible;
 
 class PageManager extends PagerAdapter
 {
+    interface IPageInitializer
+    {
+        View createPage();
+    }
+
     private static String TAG = PageManager.class.getSimpleName();
+    private final IPageInitializer[] PAGE_CREATORS =
+            {
+                    this::createCharacterPage,
+                    this::createClassPage,
+                    this::createSideStoryPage,
+                    this::createLossPage,
+                    this::createLicensePage
+            };
+
+
     private Context m_context;
     private LayoutInflater m_inflater;
 
@@ -93,7 +108,7 @@ class PageManager extends PagerAdapter
     @Override
     public int getCount()
     {
-        return 4;
+        return PAGE_CREATORS.length;
     }
 
     @Override
@@ -118,34 +133,42 @@ class PageManager extends PagerAdapter
 
     private View createPage(int position)
     {
-        View page;
         Log.d(TAG, "Create page view " + position);
+        return PAGE_CREATORS[position].createPage();
+    }
 
-        if (position == 0) // Character
-        {
-            page = m_inflater.inflate(R.layout.page_character, null, false);
-            initializeCharacterPage(page);
-        } else if (position == 1) // Class
-        {
-            page = m_inflater.inflate(R.layout.page_class, null, false);
-            initializeClassPage(page);
-        } else if (position == 2) // Side story
-        {
-            page = m_inflater.inflate(R.layout.page_side_story, null, false);
-            initializeSideStoryPage(page);
-        } else if (position == 3) // Loss
-        {
-            page = m_inflater.inflate(R.layout.page_loss, null, false);
-            initializeLossPage(page);
-        } else if (position == 4) // License
-        {
-            page = m_inflater.inflate(R.layout.page_license, null, false);
-            initializeLicensePage(page);
-        } else
-        {
-            page = m_inflater.inflate(R.layout.page_wip, null, false);
-        }
+    private View createCharacterPage()
+    {
+        View page = m_inflater.inflate(R.layout.page_character, null, false);
+        initializeCharacterPage(page);
+        return page;
+    }
 
+    private View createClassPage()
+    {
+        View page = m_inflater.inflate(R.layout.page_class, null, false);
+        initializeClassPage(page);
+        return page;
+    }
+
+    private View createSideStoryPage()
+    {
+        View page = m_inflater.inflate(R.layout.page_side_story, null, false);
+        initializeSideStoryPage(page);
+        return page;
+    }
+
+    private View createLossPage()
+    {
+        View page = m_inflater.inflate(R.layout.page_loss, null, false);
+        initializeLossPage(page);
+        return page;
+    }
+
+    private View createLicensePage()
+    {
+        View page = m_inflater.inflate(R.layout.page_license, null, false);
+        initializeLicensePage(page);
         return page;
     }
 
