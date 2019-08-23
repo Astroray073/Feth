@@ -172,7 +172,6 @@ class PageManager extends PagerAdapter
         return page;
     }
 
-
     private void initializeCharacterPage(View view)
     {
         FactionHeader none = new FactionHeader(m_context.getString(R.string.faction_none), R.color.colorFactionNone, R.drawable.ic_character);

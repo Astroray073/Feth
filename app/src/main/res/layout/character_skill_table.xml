@@ -10,7 +10,9 @@
         android:layout_height="wrap_content"
         app:text="@string/skill" />
 
-    <TableLayout style="@style/Table">
+    <TableLayout
+        style="@style/Table"
+        android:weightSum="3">
 
         <TableRow
             android:id="@+id/skill_table_header"
@@ -163,8 +165,8 @@
     </TableLayout>
 
     <LinearLayout
-        android:orientation="vertical"
-        style="@style/EndListItem">
+        style="@style/EndListItem"
+        android:orientation="vertical">
 
         <com.kyigames.feth.view.LabelWithBar
             android:layout_width="match_parent"
