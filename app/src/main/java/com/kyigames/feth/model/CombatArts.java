@@ -6,7 +6,7 @@ import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.List;
 
-public class CombatArts implements IDbEntity
+public class CombatArts implements IDbEntity, ISkillInfo
 {
     public String Name;
     public String Weapon;
@@ -27,8 +27,20 @@ public class CombatArts implements IDbEntity
         return Name;
     }
 
+    @Override
+    public String getName()
+    {
+        return Name;
+    }
+
     public int getIcon()
     {
         return ResourceUtils.getIconRes("ic_arts_" + Weapon);
+    }
+
+    @Override
+    public String getDescription()
+    {
+        return Description;
     }
 }

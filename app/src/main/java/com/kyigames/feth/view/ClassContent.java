@@ -145,14 +145,14 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
 
                     if (ability == null)
                     {
-                        holder.ClassAbilities[i].setAbilityName(abilityName);
-                        holder.ClassAbilities[i].setAbilityIcon(R.drawable.ic_missing_content);
-                        holder.ClassAbilities[i].setAbilityDescription("missing");
+                        holder.ClassAbilities[i].setName(abilityName);
+                        holder.ClassAbilities[i].setIcon(R.drawable.ic_missing_content);
+                        holder.ClassAbilities[i].setDescription("missing");
                     } else
                     {
-                        holder.ClassAbilities[i].setAbilityName(ability.Name);
-                        holder.ClassAbilities[i].setAbilityIcon(ability.getIcon());
-                        holder.ClassAbilities[i].setAbilityDescription(ability.Description);
+                        holder.ClassAbilities[i].setName(ability.Name);
+                        holder.ClassAbilities[i].setIcon(ability.getIcon());
+                        holder.ClassAbilities[i].setDescription(ability.Description);
                     }
 
                 } else
@@ -183,9 +183,9 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
             } else
             {
                 holder.ClassMasterSkills[0].setVisibility(View.VISIBLE);
-                holder.ClassMasterSkills[0].setAbilityName(m_masterAbility.Name);
-                holder.ClassMasterSkills[0].setAbilityIcon(m_masterAbility.getIcon());
-                holder.ClassMasterSkills[0].setAbilityDescription(m_masterAbility.Description);
+                holder.ClassMasterSkills[0].setName(m_masterAbility.Name);
+                holder.ClassMasterSkills[0].setIcon(m_masterAbility.getIcon());
+                holder.ClassMasterSkills[0].setDescription(m_masterAbility.Description);
             }
 
             // Master arts
@@ -195,9 +195,9 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
             } else
             {
                 holder.ClassMasterSkills[1].setVisibility(View.VISIBLE);
-                holder.ClassMasterSkills[1].setAbilityName(m_masterArts.Name);
-                holder.ClassMasterSkills[1].setAbilityIcon(m_masterArts.getIcon());
-                holder.ClassMasterSkills[1].setAbilityDescription(m_masterArts.Description);
+                holder.ClassMasterSkills[1].setName(m_masterArts.Name);
+                holder.ClassMasterSkills[1].setIcon(m_masterArts.getIcon());
+                holder.ClassMasterSkills[1].setDescription(m_masterArts.Description);
             }
         }
     }

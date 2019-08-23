@@ -11,6 +11,7 @@ import androidx.annotation.DrawableRes;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.kyigames.feth.R;
+import com.kyigames.feth.model.ISkillInfo;
 
 public class SkillInfoView extends ConstraintLayout
 {
@@ -47,17 +48,24 @@ public class SkillInfoView extends ConstraintLayout
         m_desc = view.findViewById(R.id.class_ability_desc);
     }
 
-    public void setAbilityIcon(@DrawableRes int iconRes)
+    public void setInfo(ISkillInfo skillInfo)
+    {
+        setIcon(skillInfo.getIcon());
+        setName(skillInfo.getName());
+        setDescription(skillInfo.getDescription());
+    }
+
+    public void setIcon(@DrawableRes int iconRes)
     {
         m_icon.setImageResource(iconRes);
     }
 
-    public void setAbilityName(String name)
+    public void setName(String name)
     {
         m_name.setText(name);
     }
 
-    public void setAbilityDescription(String description)
+    public void setDescription(String description)
     {
         m_desc.setText(description);
         m_desc.invalidate();

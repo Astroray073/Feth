@@ -202,9 +202,9 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
                     holder.Crests[i].setVisibility(View.VISIBLE);
 
                     Crest crest = m_crests.get(i);
-                    holder.Crests[i].setAbilityName(crest.Name);
-                    holder.Crests[i].setAbilityIcon(crest.getIcon());
-                    holder.Crests[i].setAbilityDescription(crest.Effect);
+                    holder.Crests[i].setName(crest.Name);
+                    holder.Crests[i].setIcon(crest.getIcon());
+                    holder.Crests[i].setDescription(crest.Effect);
                 } else
                 {
                     holder.Crests[i].setVisibility(View.GONE);
@@ -216,9 +216,9 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
         bindPreference(holder);
 
-        holder.UniqueAbility.setAbilityIcon(m_uniqueAbility.getIcon());
-        holder.UniqueAbility.setAbilityName(m_uniqueAbility.Name);
-        holder.UniqueAbility.setAbilityDescription(m_uniqueAbility.Description);
+        holder.UniqueAbility.setIcon(m_uniqueAbility.getIcon());
+        holder.UniqueAbility.setName(m_uniqueAbility.Name);
+        holder.UniqueAbility.setDescription(m_uniqueAbility.Description);
     }
 
     private void bindCharacterSkill(ViewHolder holder)
@@ -244,9 +244,9 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         } else
         {
             holder.BuddingTalentNoneText.setVisibility(View.GONE);
-            holder.BuddingTalent.setAbilityName(m_buddingTalent.Name);
-            holder.BuddingTalent.setAbilityIcon(m_buddingTalent.getIcon());
-            holder.BuddingTalent.setAbilityDescription(m_buddingTalent.Description);
+            holder.BuddingTalent.setName(m_buddingTalent.Name);
+            holder.BuddingTalent.setIcon(m_buddingTalent.getIcon());
+            holder.BuddingTalent.setDescription(m_buddingTalent.Description);
         }
     }
 
