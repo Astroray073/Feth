@@ -102,11 +102,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.kyigames.feth.view.ClassAbilityListItem
+                <com.kyigames.feth.view.SkillInfoView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <com.kyigames.feth.view.ClassAbilityListItem
+                <com.kyigames.feth.view.SkillInfoView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -119,9 +119,9 @@
         android:padding="0dp"
         app:text="@string/class_info_unique_ability" />
 
-    <com.kyigames.feth.view.ClassAbilityListItem
+    <com.kyigames.feth.view.SkillInfoView
         android:id="@+id/character_info_unique_ability"
         android:layout_width="match_parent"
-        android:layout_height="?android:listPreferredItemHeightSmall"
+        android:layout_height="wrap_content"
         android:paddingTop="4dp" />
 </LinearLayout>

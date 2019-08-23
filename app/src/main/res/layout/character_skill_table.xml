@@ -179,7 +179,7 @@
             android:padding="8dp"
             android:text="@string/none" />
 
-        <com.kyigames.feth.view.ClassAbilityListItem
+        <com.kyigames.feth.view.SkillInfoView
             android:id="@+id/character_budding_talent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

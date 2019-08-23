@@ -5,15 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <com.kyigames.feth.view.SquaredImageView
         android:id="@+id/class_ability_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/ic_missing_content"
+        app:criteria="height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--<ImageView-->
+    <!--android:id="@+id/class_ability_icon"-->
+    <!--android:layout_width="40dp"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:src="@drawable/ic_missing_content"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
     <LinearLayout
         android:layout_width="0dp"
@@ -42,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start"
+            android:singleLine="false"
             android:text="class_ability_desc"
             android:textSize="12sp" />
 

@@ -58,18 +58,18 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
     {
         // Character info
         TextView CrestNoneText;
-        ClassAbilityListItem[] Crests = new ClassAbilityListItem[MAX_CREST_COUNT];
+        SkillInfoView[] Crests = new SkillInfoView[MAX_CREST_COUNT];
         TextView InitialClass;
         TextView PreferredGifts;
         TextView NonPreferredGifts;
         TextView PreferredTeas;
-        ClassAbilityListItem UniqueAbility;
+        SkillInfoView UniqueAbility;
 
         // Skill
         TableRow SkillLevel;
         TableRow SkillProficiency;
         TextView BuddingTalentNoneText;
-        ClassAbilityListItem BuddingTalent;
+        SkillInfoView BuddingTalent;
 
         // Growth
         TableRow GrowthRate;
@@ -86,7 +86,7 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
             ViewGroup crestList = view.findViewById(R.id.character_crest_list);
             for (int i = 0; i < MAX_CREST_COUNT; ++i)
             {
-                Crests[i] = (ClassAbilityListItem) crestList.getChildAt(i);
+                Crests[i] = (SkillInfoView) crestList.getChildAt(i);
             }
 
             InitialClass = view.findViewById(R.id.character_initial_class);

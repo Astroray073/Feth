@@ -26,12 +26,12 @@
         android:orientation="vertical"
         android:paddingEnd="8dp">
 
-        <com.kyigames.feth.view.ClassAbilityListItem
+        <com.kyigames.feth.view.SkillInfoView
             android:layout_width="match_parent"
             android:layout_height="?android:listPreferredItemHeightSmall"
             android:paddingTop="4dp" />
 
-        <com.kyigames.feth.view.ClassAbilityListItem
+        <com.kyigames.feth.view.SkillInfoView
             android:layout_width="match_parent"
             android:layout_height="?android:listPreferredItemHeightSmall"
             android:paddingTop="4dp" />

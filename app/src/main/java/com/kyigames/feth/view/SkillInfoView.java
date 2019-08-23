@@ -12,25 +12,25 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.kyigames.feth.R;
 
-public class ClassAbilityListItem extends ConstraintLayout
+public class SkillInfoView extends ConstraintLayout
 {
     private ImageView m_icon;
     private TextView m_name;
     private TextView m_desc;
 
-    public ClassAbilityListItem(Context context)
+    public SkillInfoView(Context context)
     {
         super(context);
         initView();
     }
 
-    public ClassAbilityListItem(Context context, AttributeSet attrs)
+    public SkillInfoView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         initView();
     }
 
-    public ClassAbilityListItem(Context context, AttributeSet attrs, int defStyleAttr)
+    public SkillInfoView(Context context, AttributeSet attrs, int defStyleAttr)
     {
         super(context, attrs, defStyleAttr);
         initView();
@@ -39,7 +39,7 @@ public class ClassAbilityListItem extends ConstraintLayout
     private void initView()
     {
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View view = inflater.inflate(R.layout.class_ability_list_item, this, false);
+        View view = inflater.inflate(R.layout.skill_info_view, this, false);
         addView(view);
 
         m_icon = view.findViewById(R.id.class_ability_icon);
@@ -60,5 +60,6 @@ public class ClassAbilityListItem extends ConstraintLayout
     public void setAbilityDescription(String description)
     {
         m_desc.setText(description);
+        m_desc.invalidate();
     }
 }

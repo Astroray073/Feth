@@ -51,12 +51,12 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
         // Class abilities
         ViewGroup ClassAbilityList;
         TextView ClassAbilityNoneText;
-        ClassAbilityListItem[] ClassAbilities = new ClassAbilityListItem[MAX_ABILITY_COUNT];
+        SkillInfoView[] ClassAbilities = new SkillInfoView[MAX_ABILITY_COUNT];
 
         // Master skills
         ViewGroup ClassMasterSkillList;
         TextView ClassMasterSkillNoneText;
-        ClassAbilityListItem[] ClassMasterSkills = new ClassAbilityListItem[MAX_MASTER_SKILL_COUNT];
+        SkillInfoView[] ClassMasterSkills = new SkillInfoView[MAX_MASTER_SKILL_COUNT];
 
         // Growth
         TableRow GrowthRate;
@@ -73,7 +73,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
             ClassAbilityNoneText = view.findViewById(R.id.class_ability_none_text);
             for (int i = 0; i < MAX_ABILITY_COUNT; ++i)
             {
-                ClassAbilities[i] = (ClassAbilityListItem) ClassAbilityList.getChildAt(i);
+                ClassAbilities[i] = (SkillInfoView) ClassAbilityList.getChildAt(i);
             }
 
             // Master skills
@@ -81,7 +81,7 @@ public class ClassContent extends AbstractFlexibleItem<ClassContent.ViewHolder>
             ClassMasterSkillNoneText = view.findViewById(R.id.class_master_skill_none_text);
             for (int i = 0; i < MAX_MASTER_SKILL_COUNT; ++i)
             {
-                ClassMasterSkills[i] = (ClassAbilityListItem) ClassMasterSkillList.getChildAt(i);
+                ClassMasterSkills[i] = (SkillInfoView) ClassMasterSkillList.getChildAt(i);
             }
 
             // Growth
