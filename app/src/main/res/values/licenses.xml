@@ -3,7 +3,6 @@
     <string-array name="licenses">
         <item>Devlight Navigation Tab Bar</item>
         <item>Flexible Adapter</item>
-        <item>Daimajia Numberprogressbar</item>
         <item>Kimkevin Hangulparser:1.0.0</item>
         <item>Google Gson</item>
     </string-array>
@@ -12,14 +11,12 @@
         <item>Apache v2.0</item>
         <item>Apache v2.0</item>
         <item>MIT</item>
-        <item>MIT</item>
         <item>Apache v2.0</item>
     </string-array>
 
     <string-array name="license_agreement_url">
         <item>https://github.com/Devlight/NavigationTabBar/blob/master/LICENSE.txt</item>
         <item>https://github.com/davideas/FlexibleAdapter/blob/master/LICENSE</item>
-        <item>https://github.com/daimajia/NumberProgressBar/blob/master/LICENCE</item>
         <item>https://github.com/kimkevin/HangulParser/blob/master/README.md</item>
         <item>https://github.com/google/gson/blob/master/LICENSE</item>
     </string-array>

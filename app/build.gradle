@@ -7,8 +7,8 @@ android {
         applicationId "com.kyigames.feth"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 10
-        versionName '1.4.4'
+        versionCode 12
+        versionName '1.4.5'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -19,8 +19,7 @@ android {
             proguardFile 'proguard-debug.pro'
         }
         release {
-            shrinkResources true
-            minifyEnabled true
+            minifyEnabled false
             proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
             proguardFile 'proguard-rules.pro'
         }
@@ -54,5 +53,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 }
 
-// apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
+apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
 
