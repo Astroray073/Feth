@@ -31,6 +31,13 @@ public class Database
     private static final String TAG = Database.class.getSimpleName();
     private static final String CHAR_SET = "UTF-8";
 
+    static class DbTable
+    {
+        String Name;
+        Class RowType;
+        Object Rows;
+    }
+
     private static Map<String, DbTable> m_tables = new HashMap<>();
     private static Gson m_gson = new Gson();
 
@@ -57,11 +64,6 @@ public class Database
         table.Name = rowType.getSimpleName();
         table.RowType = rowType;
         m_tables.put(table.Name, table);
-    }
-
-    public static int tableCount()
-    {
-        return m_tables.size();
     }
 
     private static String readJsonString(Context context) throws IOException
@@ -172,10 +174,5 @@ public class Database
                 .orElse(null);
     }
 
-    static class DbTable
-    {
-        String Name;
-        Class RowType;
-        Object Rows;
-    }
+
 }

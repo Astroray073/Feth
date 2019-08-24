@@ -6,8 +6,12 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.kyigames.feth.model.Database;
 import com.kyigames.feth.utils.ResourceUtils;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.List;
 
 import devlight.io.library.ntb.NavigationTabBar;
@@ -26,6 +30,14 @@ public class MainActivity extends AppCompatActivity
         {
             ResourceUtils.initialize(this);
         } catch (PackageManager.NameNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        try
+        {
+            Database.loadAll(this, null);
+        } catch (IOException | JSONException e)
         {
             e.printStackTrace();
         }
