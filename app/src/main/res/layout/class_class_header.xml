@@ -53,6 +53,7 @@
         android:id="@+id/class_header_abilities"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -60,12 +61,14 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             style="@style/Label"
             android:layout_gravity="center"
-            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
             android:text="@string/class_master_skill"
             android:textAlignment="center"
             android:textSize="12sp" />

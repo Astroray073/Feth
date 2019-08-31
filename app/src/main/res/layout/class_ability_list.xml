@@ -28,17 +28,17 @@
 
         <com.kyigames.feth.view.SkillInfoView
             android:layout_width="match_parent"
-            android:layout_height="?android:listPreferredItemHeightSmall"
+            android:layout_height="wrap_content"
             android:paddingTop="4dp" />
 
         <com.kyigames.feth.view.SkillInfoView
             android:layout_width="match_parent"
-            android:layout_height="?android:listPreferredItemHeightSmall"
+            android:layout_height="wrap_content"
             android:paddingTop="4dp" />
 
         <com.kyigames.feth.view.SkillInfoView
             android:layout_width="match_parent"
-            android:layout_height="?android:listPreferredItemHeightSmall"
+            android:layout_height="wrap_content"
             android:paddingTop="4dp" />
     </LinearLayout>
 </LinearLayout>
