@@ -8591,7 +8591,7 @@
     {
       "Name": "검의 달인",
       "IconResId": 25,
-      "Description": "검 장비 시 Atk +5.",
+      "Description": "검 장비 시 공격 +5.",
       "Acquisition": "Raise Sword skill level to S+, Class: Hero, Swordmaster, Assassin, Enlightened One, Mortal Savant"
     },
     {
@@ -8651,7 +8651,7 @@
     {
       "Name": "격투의 달인",
       "IconResId": 29,
-      "Description": "격투 장비 시 Atk +5.",
+      "Description": "격투 장비 시 공격 +5.",
       "Acquisition": "Raise Brawling skill level to S+, Class: Grappler, War Master"
     },
     {
@@ -8945,7 +8945,7 @@
     {
       "Name": "도끼의 달인",
       "IconResId": 27,
-      "Description": "도끼 장비 시 Atk +5.",
+      "Description": "도끼 장비 시 공격 +5.",
       "Acquisition": "Raise Axe skill level to S+, Class: Armored Lord, Fortress Knight, Wyvern Rider, Warrior, Emperor, Wyvern Lord, Great Knight, War Master"
     },
     {
@@ -9083,7 +9083,7 @@
     {
       "Name": "백마법의 달인",
       "IconResId": 31,
-      "Description": "백마법 장비 시 Atk +5.",
+      "Description": "백마법 장비 시 공격 +5.",
       "Acquisition": "Raise Faith skill level to S+, Class: Holy Knight"
     },
     {
@@ -9239,7 +9239,7 @@
     {
       "Name": "암흑마법의 달인",
       "IconResId": 32,
-      "Description": "암흑마법 장비 시 Atk +5.",
+      "Description": "암흑마법 장비 시 공격 +5.",
       "Acquisition": "Raise Reason skill level to S+ for Edelgard, Hubert or Lysithea, Class: Dark Knight"
     },
     {
@@ -9557,7 +9557,7 @@
     {
       "Name": "창의 달인",
       "IconResId": 26,
-      "Description": "창 장비 시 Atk +5.",
+      "Description": "창 장비 시 공격 +5.",
       "Acquisition": "Raise Lance skill level to S+, Class: High Lord, Paladin, Great Lord, Falcon Knight, Great Knight"
     },
     {
@@ -9677,7 +9677,7 @@
     {
       "Name": "활의 달인",
       "IconResId": 28,
-      "Description": "활 장비 시 Atk +5.",
+      "Description": "활 장비 시 공격 +5.",
       "Acquisition": "Raise Bow skill level to S+, Class: Wyvern Master, Sniper, Barbarossa, Bow Knight"
     },
     {
@@ -9731,7 +9731,7 @@
     {
       "Name": "흑마법의 달인",
       "IconResId": 30,
-      "Description": "흑마법 장비 시 Atk +5.",
+      "Description": "흑마법 장비 시 공격 +5.",
       "Acquisition": "Raise Reason skill level to S+ (except Edelgard, Hubert and Lysithea), Class: Warlock, Mortal Savant, Dark Knight"
     },
     {
@@ -13163,8 +13163,8 @@
       "Participants": [
         "두두"
       ],
-      "RecLevel": 11,
       "Section": 0,
+      "RecLevel": 11,
       "StartTime": "10월",
       "RewardKnights": [
         "더스커 중갑병단"
@@ -13172,19 +13172,21 @@
       "ClearRewards": [
         "거대한 금괴"
       ],
-      "Misson": null,
+      "Mission": "더스커병 생존",
       "MissionRewards": [
-        "없음"
+        "보상 변화"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "가지지 못한 자",
       "Participants": [
         "실뱅"
       ],
-      "RecLevel": 13,
       "Section": 0,
+      "RecLevel": 13,
       "StartTime": "10월",
       "RewardKnights": [
         "고티에 기사단"
@@ -13192,21 +13194,23 @@
       "ClearRewards": [
         "파열의 창"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
+        "없음"
+      ],
+      "FieldItems": [
         "거대한 금괴",
         "롱보우",
         "부적"
-      ],
-      "MapRewards": []
+      ]
     },
     {
       "Name": "금사슴이 지키는 땅",
       "Participants": [
         "로렌츠"
       ],
-      "RecLevel": 13,
       "Section": 0,
+      "RecLevel": 13,
       "StartTime": "10월",
       "RewardKnights": [
         "글로스터 기병"
@@ -13214,11 +13218,13 @@
       "ClearRewards": [
         "튀르소스의 지팡이"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
         "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "왕국 귀족의 혼담",
@@ -13226,8 +13232,8 @@
         "도로테아",
         "잉그리트"
       ],
-      "RecLevel": 13,
       "Section": 0,
+      "RecLevel": 13,
       "StartTime": "10월",
       "RewardKnights": [
         "갈라테아 천마대"
@@ -13236,11 +13242,13 @@
         "룬",
         "여신의 반지"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
         "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "검이자 방패인 기사단",
@@ -13248,8 +13256,8 @@
         "알로이스",
         "샤미아"
       ],
-      "RecLevel": 13,
       "Section": 0,
+      "RecLevel": 13,
       "StartTime": "10월",
       "RewardKnights": [
         "세이로스 궁병대"
@@ -13257,12 +13265,14 @@
       "ClearRewards": [
         "없음"
       ],
-      "Misson": null,
+      "Mission": "마을 칩입자 제거",
       "MissionRewards": [
         "커다란 금괴",
         "천사의 옷"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "얼음과 숯의 불협화음",
@@ -13270,8 +13280,8 @@
         "한네만",
         "마누엘라"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 15,
       "StartTime": "11월",
       "RewardKnights": [
         "마쿠일 파사대",
@@ -13280,25 +13290,37 @@
       "ClearRewards": [
         "없음"
       ],
-      "Misson": null,
-      "MissionRewards": [],
-      "MapRewards": []
+      "Mission": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "FieldItems": [
+        "경험의 보주",
+        "레이피어"
+      ]
     },
     {
       "Name": "붉은 계곡의 모험담",
       "Participants": [
         "소티스"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 15,
       "StartTime": "11월",
-      "RewardKnights": [],
-      "ClearRewards": [
-        "천각의 박동 횟수 증가"
+      "RewardKnights": [
+        "없음"
       ],
-      "Misson": null,
-      "MissionRewards": [],
-      "MapRewards": []
+      "ClearRewards": [
+        "천각의 박동 횟수 증가",
+        "다크메탈"
+      ],
+      "Mission": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "FieldItems": [
+        "지식의 보주"
+      ]
     },
     {
       "Name": "불온한 죽음의 연쇄",
@@ -13306,35 +13328,45 @@
         "라파엘",
         "이그나츠"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 15,
       "StartTime": "11월",
       "RewardKnights": [
         "레스터 용병단",
         "빅터 사병단"
       ],
-      "ClearRewards": [],
-      "Misson": null,
-      "MissionRewards": [],
-      "MapRewards": []
+      "ClearRewards": [
+        "없음"
+      ],
+      "Mission": "주민 생존",
+      "MissionRewards": [
+        "보상 변화"
+      ],
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "진정한 기사도",
       "Participants": [
         "펠릭스"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 15,
       "StartTime": "11월",
       "RewardKnights": [
         "프랄다리우스병"
       ],
-      "ClearRewards": [],
-      "Misson": null,
+      "ClearRewards": [
+        "없음"
+      ],
+      "Mission": "주민 전원 생존",
       "MissionRewards": [
         "아이기스의 방패"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "바다가 보이는 곳",
@@ -13342,8 +13374,8 @@
         "세테스",
         "흐렌"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 17,
       "StartTime": "12월",
       "RewardKnights": [
         "키홀 용기병단",
@@ -13353,9 +13385,13 @@
         "아살의 창",
         "카두케우스의 지팡이"
       ],
-      "Misson": null,
-      "MissionRewards": [],
-      "MapRewards": []
+      "Mission": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "공존할 수 없는 하늘",
@@ -13363,19 +13399,24 @@
         "애쉬",
         "카트린"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 17,
       "StartTime": "12월",
       "RewardKnights": [
         "가스파르 기사단"
       ],
-      "ClearRewards": [],
-      "Misson": null,
-      "MissionRewards": [
+      "ClearRewards": [
         "바람의 부츠",
         "필살의 반지"
       ],
-      "MapRewards": []
+      "Mission": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "FieldItems": [
+        "비전서",
+        "강철의 방패"
+      ]
     },
     {
       "Name": "세상을 나누는 벽",
@@ -13383,8 +13424,8 @@
         "힐다",
         "시릴"
       ],
-      "RecLevel": null,
       "Section": 0,
+      "RecLevel": 19,
       "StartTime": "1월",
       "RewardKnights": [
         "고네릴 전희병",
@@ -13393,11 +13434,13 @@
       "ClearRewards": [
         "프라이쿠겔"
       ],
-      "Misson": null,
+      "Mission": "고네릴병 생존",
       "MissionRewards": [
-        "제보바람"
+        "보상 변화"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "포드라의 박쥐들",
@@ -13405,60 +13448,66 @@
         "아네트",
         "길베르트"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 27,
       "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "마도학원 의용 부대"
       ],
       "ClearRewards": [
         "분쇄하는 자"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
-        "제보바람"
+        "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "Insurmountable",
       "Participants": [
         "에델가르트"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 29,
       "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "홀스트 용사대"
       ],
       "ClearRewards": [
-        "제보바람"
+        "없음"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
-        "제보바람"
+        "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "Darkness beneath the Earth",
       "Participants": [
         "휴베르트"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 29,
       "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "없음"
       ],
       "ClearRewards": [
-        "제보바람"
+        "없음"
       ],
-      "Misson": null,
+      "Mission": "흑마법사 생존",
       "MissionRewards": [
-        "제보바람"
+        "인드라의 화살"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "이국과 하늘의 땅",
@@ -13466,20 +13515,24 @@
         "베르나데타",
         "페트라"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 29,
       "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "발리 궁병대",
+        "브리기트 사냥병",
+        "브리기트 용병단"
       ],
       "ClearRewards": [
-        "제보바람"
+        "없음"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
-        "제보바람"
+        "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "감춰진 얼굴",
@@ -13487,8 +13540,8 @@
         "메르세데스",
         "카스파르"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 29,
       "StartTime": "2월",
       "RewardKnights": [
         "성교회 의용단",
@@ -13497,11 +13550,13 @@
       "ClearRewards": [
         "라파일의 보주"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
         "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "호수의 전설",
@@ -13509,8 +13564,8 @@
         "린하르트",
         "레오니"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 29,
       "StartTime": "2월",
       "RewardKnights": [
         "헤브링 기도병",
@@ -13519,19 +13574,21 @@
       "ClearRewards": [
         "영속하는 자"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
         "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "말소된 영웅",
       "Participants": [
         "마리안"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 29,
       "StartTime": "2월",
       "RewardKnights": [
         "에드먼드 변경병"
@@ -13539,51 +13596,57 @@
       "ClearRewards": [
         "불트강"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
         "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "불후의 수호자",
       "Participants": [
         "레아"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 31,
       "StartTime": "3월",
       "RewardKnights": [
-        "제보바람"
+        "없음"
       ],
       "ClearRewards": [
         "세이로스의 방패"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
-        "제보바람"
+        "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "모래 속에 잠든 신화",
       "Participants": [
         "클로드"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 33,
       "StartTime": "4월",
       "RewardKnights": [
-        "제보바람"
+        "없음"
       ],
       "ClearRewards": [
         "베갈타의 검"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
-        "제보바람"
+        "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "인과응보",
@@ -13591,40 +13654,45 @@
         "페르디난트 폰 에기르",
         "리시테아"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 33,
       "StartTime": "4월",
       "RewardKnights": [
-        "제보바람"
+        "에기르 성기사단",
+        "코델리아 마도대"
       ],
       "ClearRewards": [
+        "졸탄의 창"
+      ],
+      "Mission": "주민 전원 생존",
+      "MissionRewards": [
         "오한의 방패"
       ],
-      "Misson": null,
-      "MissionRewards": [
-        "제보바람"
-      ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     },
     {
       "Name": "백은의 도시",
       "Participants": [
         "디미트리"
       ],
-      "RecLevel": null,
       "Section": 1,
+      "RecLevel": 37,
       "StartTime": "6월",
       "RewardKnights": [
-        "제보바람"
+        "청사자 기병대"
       ],
       "ClearRewards": [
-        "제보바람"
+        "없음"
       ],
-      "Misson": null,
+      "Mission": null,
       "MissionRewards": [
-        "제보바람"
+        "없음"
       ],
-      "MapRewards": []
+      "FieldItems": [
+        "없음"
+      ]
     }
   ]
 }
