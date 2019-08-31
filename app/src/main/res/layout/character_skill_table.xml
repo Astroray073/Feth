@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         app:text="@string/skill" />
 
-    <TableLayout
+    <com.kyigames.feth.view.SquaredTableLayout
         style="@style/Table"
         android:weightSum="3">
 
@@ -162,7 +162,7 @@
                 style="@style/TableImageItem"
                 android:src="@drawable/ic_flying" />
         </TableRow>
-    </TableLayout>
+    </com.kyigames.feth.view.SquaredTableLayout>
 
     <LinearLayout
         android:id="@+id/character_budding_talent_container"

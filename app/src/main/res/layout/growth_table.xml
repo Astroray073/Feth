@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         app:text="@string/growth" />
 
-    <TableLayout
+    <com.kyigames.feth.view.SquaredTableLayout
         style="@style/Table"
         android:weightSum="2">
 
@@ -22,48 +22,39 @@
             android:layout_weight="1">
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/hp" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/strength" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/magic" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/dex" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/speed" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/luck" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/defense" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/resist" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/charisma" />
 
         </TableRow>
@@ -74,49 +65,40 @@
             android:layout_width="match_parent">
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/hp" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/strength" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/magic" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/dex" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/speed" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/luck" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/defense" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/resist" />
 
             <TextView
-                style="@style/TableHeaderLabel"
-                android:background="@android:color/white"
+                style="@style/GrowthTableText"
                 android:text="@string/charisma" />
         </TableRow>
-    </TableLayout>
+    </com.kyigames.feth.view.SquaredTableLayout>
 </LinearLayout>
