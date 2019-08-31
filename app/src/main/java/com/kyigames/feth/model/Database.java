@@ -140,12 +140,12 @@ public class Database
         return (List<T>) table.Rows;
     }
 
-    public static DbTable getTable(String tableName)
+    private static DbTable getTable(String tableName)
     {
         return m_tables.get(tableName);
     }
 
-    public static <T> List<T> getTableRow(Class<T> rowType)
+    private static <T> List<T> getTableRow(Class<T> rowType)
     {
         if (!m_tables.containsKey(rowType.getSimpleName()))
         {
@@ -155,7 +155,7 @@ public class Database
         return (List<T>) m_tables.get(rowType.getSimpleName()).Rows;
     }
 
-    public static boolean tableExists(String tableName)
+    private static boolean tableExists(String tableName)
     {
         return m_tables.containsKey(tableName);
     }
@@ -173,6 +173,4 @@ public class Database
                 .findAny()
                 .orElse(null);
     }
-
-
 }

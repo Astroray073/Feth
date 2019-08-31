@@ -676,7 +676,9 @@
       "Name": "베르나데타",
       "PortraitResId": "bernadetta",
       "Faction": "흑수리",
-      "Crest": [],
+      "Crest": [
+        "인데히의 소문장"
+      ],
       "UniqueAbility": "피해망상",
       "InitialClass": "귀족",
       "Scout": [
@@ -1636,7 +1638,7 @@
         45,
         40
       ],
-      "BuddingTalent": "경고사격",
+      "BuddingTalent": "위크 샷",
       "ReasonSpells": [
         "파이어",
         "-선더",
@@ -5022,7 +5024,7 @@
     {
       "Name": "아머 나이트",
       "Category": "중급",
-      "Condition": "창술C, 기마술D",
+      "Condition": "도끼술C, 중갑D",
       "Abilities": [],
       "GrowthRate": [
         20,
@@ -5054,7 +5056,7 @@
     {
       "Name": "소셜 나이트",
       "Category": "중급",
-      "Condition": "도끼술C, 중갑D",
+      "Condition": "창술C, 기마술D",
       "Abilities": [
         "재이동"
       ],
@@ -7939,7 +7941,7 @@
       "Name": "인데히의 문장",
       "IconResId": 14,
       "Bearer": [
-        "The Immovable"
+        "부동하는 존재"
       ],
       "Memento": "수룡의 증표",
       "Description": "성자 인데히가 가졌다 여겨지는 문장. 지혜의 상징이며, 물을 관장한다.",
@@ -7960,10 +7962,10 @@
       "Name": "야수의 문장",
       "IconResId": 15,
       "Bearer": [
-        "Wandering Beast"
+        "방황하는 야수"
       ],
       "Memento": "남룡의 증표",
-      "Description": "역사속으로 사라진 영웅의 문장.",
+      "Description": "역사에서 이름을 지운 영웅의 문장. 소지한 자는 터부시된다고 한다.",
       "Effect": "무기 공격시, 간혹 위력이 상승한다."
     },
     {
@@ -7973,8 +7975,8 @@
         "마리안"
       ],
       "Memento": null,
-      "Description": "Missing",
-      "Effect": "Missing"
+      "Description": "역사에서 이름을 지운 영웅의 문장. 소지한 자는 터부시된다고 한다.",
+      "Effect": "무기 공격시, 간혹 위력이 상승한다."
     },
     {
       "Name": "카론의 문장",
@@ -8713,6 +8715,12 @@
       "Acquisition": "마스터 스킬: Dark Mage"
     },
     {
+      "Name": "독",
+      "IconResId": 128,
+      "Description": "공격시 명중한 적에게 기술%로 독을 건다.",
+      "Acquisition": "적군"
+    },
+    {
       "Name": "마신의 일격",
       "IconResId": 73,
       "Description": "공격을 개시할 때 마력 +6.",
@@ -8877,7 +8885,7 @@
     {
       "Name": "속도 봉인",
       "IconResId": 101,
-      "Description": "대미지를 입힌 적의 전투 후 Spd -6. (1턴)",
+      "Description": "대미지를 입힌 적의 전투 후 속도 -6. (1턴)",
       "Acquisition": "재능개화 페르디난트"
     },
     {
@@ -9275,6 +9283,12 @@
       "IconResId": 57,
       "Description": "이동이 1 상승한다.",
       "Acquisition": "Raise Riding skill level to A+"
+    },
+    {
+      "Name": "고정",
+      "IconResId": 187,
+      "Description": "이동효과를 무효화한다.",
+      "Acquisition": null
     },
     {
       "Name": "부탁",
@@ -9769,12 +9783,6 @@
       "Acquisition": "적군"
     },
     {
-      "Name": "Poison",
-      "IconResId": 128,
-      "Description": "Chance to inflict poison on foe when dealing damage. Trigger % = 기술 stat.",
-      "Acquisition": "적군"
-    },
-    {
       "Name": "거대한 날개",
       "IconResId": -1,
       "Description": "Grants 회피 +30 against sword, lance, or axe users.",
@@ -9917,12 +9925,6 @@
       "IconResId": -1,
       "Description": "Performs Staggering Blow immediately.",
       "Acquisition": "적군"
-    },
-    {
-      "Name": "고정",
-      "IconResId": 187,
-      "Description": "Prevents unit from being moved.",
-      "Acquisition": null
     },
     {
       "Name": "Unsealable Magic",
@@ -10961,7 +10963,7 @@
       "Name": "강철의 검",
       "IconResId": 0,
       "Category": "검",
-      "Power": 8,
+      "Power": 12,
       "Accuracy": 85,
       "Critical": 0,
       "Range": "1",
@@ -10974,7 +10976,7 @@
       "Name": "은의 검",
       "IconResId": 0,
       "Category": "검",
-      "Power": 12,
+      "Power": null,
       "Accuracy": 90,
       "Critical": 0,
       "Range": "1",
@@ -13161,17 +13163,27 @@
       "Participants": [
         "두두"
       ],
+      "RecLevel": 11,
       "Section": 0,
       "StartTime": "10월",
-      "RewardKnights": [],
-      "ClearRewards": [],
-      "MissionRewards": []
+      "RewardKnights": [
+        "더스커 중갑병단"
+      ],
+      "ClearRewards": [
+        "거대한 금괴"
+      ],
+      "Misson": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "MapRewards": []
     },
     {
       "Name": "가지지 못한 자",
       "Participants": [
         "실뱅"
       ],
+      "RecLevel": 13,
       "Section": 0,
       "StartTime": "10월",
       "RewardKnights": [
@@ -13180,17 +13192,20 @@
       "ClearRewards": [
         "파열의 창"
       ],
+      "Misson": null,
       "MissionRewards": [
         "거대한 금괴",
         "롱보우",
         "부적"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "금사슴이 지키는 땅",
       "Participants": [
         "로렌츠"
       ],
+      "RecLevel": 13,
       "Section": 0,
       "StartTime": "10월",
       "RewardKnights": [
@@ -13199,7 +13214,11 @@
       "ClearRewards": [
         "튀르소스의 지팡이"
       ],
-      "MissionRewards": []
+      "Misson": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "MapRewards": []
     },
     {
       "Name": "왕국 귀족의 혼담",
@@ -13207,6 +13226,7 @@
         "도로테아",
         "잉그리트"
       ],
+      "RecLevel": 13,
       "Section": 0,
       "StartTime": "10월",
       "RewardKnights": [
@@ -13216,7 +13236,11 @@
         "룬",
         "여신의 반지"
       ],
-      "MissionRewards": []
+      "Misson": null,
+      "MissionRewards": [
+        "없음"
+      ],
+      "MapRewards": []
     },
     {
       "Name": "검이자 방패인 기사단",
@@ -13224,16 +13248,21 @@
         "알로이스",
         "샤미아"
       ],
+      "RecLevel": 13,
       "Section": 0,
       "StartTime": "10월",
       "RewardKnights": [
         "세이로스 궁병대"
       ],
-      "ClearRewards": [],
+      "ClearRewards": [
+        "없음"
+      ],
+      "Misson": null,
       "MissionRewards": [
         "커다란 금괴",
         "천사의 옷"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "얼음과 숯의 불협화음",
@@ -13241,27 +13270,35 @@
         "한네만",
         "마누엘라"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "11월",
       "RewardKnights": [
         "마쿠일 파사대",
         "인데히 검극대"
       ],
-      "ClearRewards": [],
-      "MissionRewards": []
+      "ClearRewards": [
+        "없음"
+      ],
+      "Misson": null,
+      "MissionRewards": [],
+      "MapRewards": []
     },
     {
       "Name": "붉은 계곡의 모험담",
       "Participants": [
         "소티스"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "11월",
       "RewardKnights": [],
       "ClearRewards": [
         "천각의 박동 횟수 증가"
       ],
-      "MissionRewards": []
+      "Misson": null,
+      "MissionRewards": [],
+      "MapRewards": []
     },
     {
       "Name": "불온한 죽음의 연쇄",
@@ -13269,6 +13306,7 @@
         "라파엘",
         "이그나츠"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "11월",
       "RewardKnights": [
@@ -13276,22 +13314,27 @@
         "빅터 사병단"
       ],
       "ClearRewards": [],
-      "MissionRewards": []
+      "Misson": null,
+      "MissionRewards": [],
+      "MapRewards": []
     },
     {
       "Name": "진정한 기사도",
       "Participants": [
         "펠릭스"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "11월",
       "RewardKnights": [
         "프랄다리우스병"
       ],
       "ClearRewards": [],
+      "Misson": null,
       "MissionRewards": [
         "아이기스의 방패"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "바다가 보이는 곳",
@@ -13299,6 +13342,7 @@
         "세테스",
         "흐렌"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "12월",
       "RewardKnights": [
@@ -13309,7 +13353,9 @@
         "아살의 창",
         "카두케우스의 지팡이"
       ],
-      "MissionRewards": []
+      "Misson": null,
+      "MissionRewards": [],
+      "MapRewards": []
     },
     {
       "Name": "공존할 수 없는 하늘",
@@ -13317,16 +13363,19 @@
         "애쉬",
         "카트린"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "12월",
       "RewardKnights": [
         "가스파르 기사단"
       ],
       "ClearRewards": [],
+      "Misson": null,
       "MissionRewards": [
         "바람의 부츠",
         "필살의 반지"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "세상을 나누는 벽",
@@ -13334,6 +13383,7 @@
         "힐다",
         "시릴"
       ],
+      "RecLevel": null,
       "Section": 0,
       "StartTime": "1월",
       "RewardKnights": [
@@ -13343,9 +13393,11 @@
       "ClearRewards": [
         "프라이쿠겔"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "포드라의 박쥐들",
@@ -13353,6 +13405,7 @@
         "아네트",
         "길베르트"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "2월",
       "RewardKnights": [
@@ -13361,15 +13414,18 @@
       "ClearRewards": [
         "분쇄하는 자"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "Insurmountable",
       "Participants": [
         "에델가르트"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "2월",
       "RewardKnights": [
@@ -13378,15 +13434,18 @@
       "ClearRewards": [
         "제보바람"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "Darkness beneath the Earth",
       "Participants": [
         "휴베르트"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "2월",
       "RewardKnights": [
@@ -13395,9 +13454,11 @@
       "ClearRewards": [
         "제보바람"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "이국과 하늘의 땅",
@@ -13405,17 +13466,20 @@
         "베르나데타",
         "페트라"
       ],
+      "RecLevel": null,
       "Section": 1,
-      "StartTime": "3월",
+      "StartTime": "2월",
       "RewardKnights": [
         "제보바람"
       ],
       "ClearRewards": [
         "제보바람"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "감춰진 얼굴",
@@ -13423,17 +13487,21 @@
         "메르세데스",
         "카스파르"
       ],
+      "RecLevel": null,
       "Section": 1,
-      "StartTime": "4월",
+      "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "성교회 의용단",
+        "베르그리즈 전단"
       ],
       "ClearRewards": [
-        "제보바람"
+        "라파일의 보주"
       ],
+      "Misson": null,
       "MissionRewards": [
-        "제보바람"
-      ]
+        "없음"
+      ],
+      "MapRewards": []
     },
     {
       "Name": "호수의 전설",
@@ -13441,40 +13509,48 @@
         "린하르트",
         "레오니"
       ],
+      "RecLevel": null,
       "Section": 1,
-      "StartTime": "5월",
+      "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "헤브링 기도병",
+        "사윈 마을 자경단"
       ],
       "ClearRewards": [
         "영속하는 자"
       ],
+      "Misson": null,
       "MissionRewards": [
-        "제보바람"
-      ]
+        "없음"
+      ],
+      "MapRewards": []
     },
     {
       "Name": "말소된 영웅",
       "Participants": [
         "마리안"
       ],
+      "RecLevel": null,
       "Section": 1,
-      "StartTime": "6월",
+      "StartTime": "2월",
       "RewardKnights": [
-        "제보바람"
+        "에드먼드 변경병"
       ],
       "ClearRewards": [
         "불트강"
       ],
+      "Misson": null,
       "MissionRewards": [
-        "제보바람"
-      ]
+        "없음"
+      ],
+      "MapRewards": []
     },
     {
       "Name": "불후의 수호자",
       "Participants": [
         "레아"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "3월",
       "RewardKnights": [
@@ -13483,15 +13559,18 @@
       "ClearRewards": [
         "세이로스의 방패"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "모래 속에 잠든 신화",
       "Participants": [
         "클로드"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "4월",
       "RewardKnights": [
@@ -13500,9 +13579,11 @@
       "ClearRewards": [
         "베갈타의 검"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "인과응보",
@@ -13510,6 +13591,7 @@
         "페르디난트 폰 에기르",
         "리시테아"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "4월",
       "RewardKnights": [
@@ -13518,15 +13600,18 @@
       "ClearRewards": [
         "오한의 방패"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     },
     {
       "Name": "백은의 도시",
       "Participants": [
         "디미트리"
       ],
+      "RecLevel": null,
       "Section": 1,
       "StartTime": "6월",
       "RewardKnights": [
@@ -13535,9 +13620,11 @@
       "ClearRewards": [
         "제보바람"
       ],
+      "Misson": null,
       "MissionRewards": [
         "제보바람"
-      ]
+      ],
+      "MapRewards": []
     }
   ]
 }

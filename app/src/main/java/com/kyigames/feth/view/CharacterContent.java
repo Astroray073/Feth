@@ -10,15 +10,16 @@ import android.widget.TextView;
 import com.kyigames.feth.R;
 import com.kyigames.feth.model.Ability;
 import com.kyigames.feth.model.Character;
+import com.kyigames.feth.model.CombatArts;
 import com.kyigames.feth.model.Crest;
 import com.kyigames.feth.model.Database;
+import com.kyigames.feth.model.ISkillInfo;
 import com.kyigames.feth.model.Present;
 import com.kyigames.feth.model.TeaParty;
 import com.kyigames.feth.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
 
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractFlexibleItem;
@@ -32,7 +33,7 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
     private Character m_character;
     private List<Crest> m_crests = new ArrayList<>();
-    private Ability m_buddingTalent;
+    private ISkillInfo m_buddingTalent;
     private Present m_present;
     private TeaParty m_teaParty;
     private Ability m_uniqueAbility;
@@ -40,7 +41,13 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
     public CharacterContent(Character character)
     {
         m_character = character;
+
         m_buddingTalent = Database.findEntityByKey(Ability.class, character.BuddingTalent);
+        if (m_buddingTalent == null)
+        {
+            m_buddingTalent = Database.findEntityByKey(CombatArts.class, character.BuddingTalent);
+        }
+
         m_present = Database.findEntityByKey(Present.class, character.Name);
         m_teaParty = Database.findEntityByKey(TeaParty.class, character.Name);
         m_uniqueAbility = Database.findEntityByKey(Ability.class, character.UniqueAbility);
@@ -68,8 +75,8 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         // Skill
         TableRow SkillLevel;
         TableRow SkillProficiency;
-        TextView BuddingTalentNoneText;
-        SkillInfoView BuddingTalent;
+        ViewGroup BuddingTalentContainer;
+        SkillInfoView BuddingTalentContent;
 
         // Growth
         TableRow GrowthRate;
@@ -98,8 +105,8 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
             // Skill
             SkillLevel = view.findViewById(R.id.skill_table_level);
             SkillProficiency = view.findViewById(R.id.skill_table_proficiency);
-            BuddingTalentNoneText = view.findViewById(R.id.character_budding_talent_none_text);
-            BuddingTalent = view.findViewById(R.id.character_budding_talent);
+            BuddingTalentContainer = view.findViewById(R.id.character_budding_talent_container);
+            BuddingTalentContent = view.findViewById(R.id.character_budding_talent_content);
 
             // Growth
             GrowthRate = view.findViewById(R.id.growth_table_value);
@@ -168,20 +175,6 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
         bindSpellAcquisition(holder);
     }
 
-    private String getCrestText()
-    {
-        if (m_character.Crest == null)
-        {
-            return "없음";
-        }
-        StringJoiner joiner = new StringJoiner(", ");
-        for (String crest : m_character.Crest)
-        {
-            joiner.add(crest);
-        }
-        return joiner.toString();
-    }
-
     private void bindCharacterInfo(ViewHolder holder)
     {
         if (m_crests.size() == 0)
@@ -239,14 +232,11 @@ public class CharacterContent extends AbstractFlexibleItem<CharacterContent.View
 
         if (m_buddingTalent == null)
         {
-            holder.BuddingTalentNoneText.setVisibility(View.VISIBLE);
-            holder.BuddingTalent.setVisibility(View.GONE);
+            holder.BuddingTalentContainer.setVisibility(View.GONE);
         } else
         {
-            holder.BuddingTalentNoneText.setVisibility(View.GONE);
-            holder.BuddingTalent.setName(m_buddingTalent.Name);
-            holder.BuddingTalent.setIcon(m_buddingTalent.getIcon());
-            holder.BuddingTalent.setDescription(m_buddingTalent.Description);
+            holder.BuddingTalentContainer.setVisibility(View.VISIBLE);
+            holder.BuddingTalentContent.setInfo(m_buddingTalent);
         }
     }
 

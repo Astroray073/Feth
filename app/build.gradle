@@ -7,8 +7,8 @@ android {
         applicationId "com.kyigames.feth"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 12
-        versionName '1.4.5'
+        versionCode 13
+        versionName '1.4.6'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -44,13 +44,11 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    // External UI libs
-    implementation 'devlight.io:navigationtabbar:1.2.5'
-    implementation 'eu.davidea:flexible-adapter:5.1.0'
-
-    // Extra
-    implementation 'com.github.kimkevin:hangulparser:1.0.0'
-    implementation 'com.google.code.gson:gson:2.8.5'
+    // External libs
+    implementation 'devlight.io:navigationtabbar:1.2.5'         // Main tab bar
+    implementation 'eu.davidea:flexible-adapter:5.1.0'          // Overall UI
+    implementation 'com.github.kimkevin:hangulparser:1.0.0'     // Parse korean text for fast scroller
+    implementation 'com.google.code.gson:gson:2.8.5'            // Parse DB
 }
 
 apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin

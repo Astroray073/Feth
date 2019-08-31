@@ -96,9 +96,7 @@
     </style>
 
     <style name="TableTextItem" parent="@android:style/Widget.TextView">
-        <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
-        <item name="android:textAlignment">center</item>
     </style>
     <!-- Table -->
 
