@@ -20,13 +20,25 @@ public class SideStoryContent extends AbstractFlexibleItem<SideStoryContent.View
     private String m_clearRewards;
     private String m_missionRewards;
     private String m_knightsRewards;
+    private String m_fieldItems;
 
     public SideStoryContent(SideStory sideStory)
     {
         m_name = sideStory.Name;
         m_clearRewards = ResourceUtils.getListItemText(sideStory.ClearRewards);
-        m_missionRewards = ResourceUtils.getListItemText(sideStory.MissionRewards);
         m_knightsRewards = ResourceUtils.getListItemText(sideStory.RewardKnights);
+
+        if (sideStory.Mission == null)
+        {
+            m_missionRewards = "없음";
+        } else
+        {
+            m_missionRewards = sideStory.Mission
+                    + "에 따라 "
+                    + ResourceUtils.getListItemText(sideStory.MissionRewards);
+        }
+
+        m_fieldItems = ResourceUtils.getListItemText(sideStory.FieldItems);
     }
 
     @Override
@@ -58,6 +70,7 @@ public class SideStoryContent extends AbstractFlexibleItem<SideStoryContent.View
         TextView ClearRewards;
         TextView MissionRewards;
         TextView KnightsRewards;
+        TextView FieldItems;
 
         public ViewHolder(View view, FlexibleAdapter adapter)
         {
@@ -66,6 +79,7 @@ public class SideStoryContent extends AbstractFlexibleItem<SideStoryContent.View
             ClearRewards = view.findViewById(R.id.side_story_content_clear_reward);
             MissionRewards = view.findViewById(R.id.side_story_content_mission_reward);
             KnightsRewards = view.findViewById(R.id.side_story_content_knights_reward);
+            FieldItems = view.findViewById(R.id.side_story_content_field_items);
         }
     }
 
@@ -75,5 +89,6 @@ public class SideStoryContent extends AbstractFlexibleItem<SideStoryContent.View
         holder.ClearRewards.setText(m_clearRewards);
         holder.MissionRewards.setText(m_missionRewards);
         holder.KnightsRewards.setText(m_knightsRewards);
+        holder.FieldItems.setText(m_fieldItems);
     }
 }

@@ -68,5 +68,6 @@
     <string name="clear_reward">클리어 보상</string>
     <string name="knights_reward">획득 기사단</string>
     <string name="mission_reward">미션 보수</string>
+    <string name="field_items">필드 아이템</string>
 
 </resources>

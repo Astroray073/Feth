@@ -12,6 +12,7 @@ import com.kyigames.feth.model.SideStory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractExpandableItem;
@@ -27,6 +28,7 @@ public class SideStoryHeader extends AbstractExpandableItem<SideStoryHeader.View
     private SideStorySectionHeader m_header;
     private String m_name;
     private String m_startDate;
+    private int m_recLevel;
     private List<Integer> m_participants = new ArrayList<>();
 
     public SideStoryHeader(SideStorySectionHeader header, SideStory sideStory)
@@ -34,6 +36,7 @@ public class SideStoryHeader extends AbstractExpandableItem<SideStoryHeader.View
         setHeader(header);
         m_name = sideStory.Name;
         m_startDate = sideStory.StartTime;
+        m_recLevel = sideStory.RecLevel;
 
         for (String participant : sideStory.Participants)
         {
@@ -88,7 +91,7 @@ public class SideStoryHeader extends AbstractExpandableItem<SideStoryHeader.View
     {
         ViewGroup Container;
         TextView Name;
-        TextView StartDate;
+        TextView SubText;
         ViewGroup ParticipantsContainer;
         ImageView[] Participants = new ImageView[MAX_PARTICIPANT_COUNT];
 
@@ -97,7 +100,7 @@ public class SideStoryHeader extends AbstractExpandableItem<SideStoryHeader.View
             super(view, adapter, false);
             Container = view.findViewById(R.id.side_story_header_container);
             Name = view.findViewById(R.id.side_story_header_name);
-            StartDate = view.findViewById(R.id.side_story_header_date);
+            SubText = view.findViewById(R.id.side_story_header_date);
             ParticipantsContainer = view.findViewById(R.id.side_story_participants);
 
             for (int i = 0; i < Participants.length; ++i)
@@ -113,7 +116,7 @@ public class SideStoryHeader extends AbstractExpandableItem<SideStoryHeader.View
     public void bindViewHolder(FlexibleAdapter<IFlexible> adapter, ViewHolder holder, int position, List<Object> payloads)
     {
         holder.Name.setText(m_name);
-        holder.StartDate.setText(m_startDate);
+        holder.SubText.setText(String.format(Locale.KOREAN, "%s - 레벨 %d 이상", m_startDate, m_recLevel));
 
         for (int i = 0; i < MAX_PARTICIPANT_COUNT; ++i)
         {

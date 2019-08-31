@@ -76,4 +76,26 @@
             android:text="side_story_content_knights_reward"
             android:textSize="12sp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <com.kyigames.feth.view.LabelWithBar
+            style="@style/LabelWithBar"
+            android:padding="0dp"
+            app:text="@string/field_items" />
+
+        <TextView
+            android:id="@+id/side_story_content_field_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="start"
+            android:singleLine="false"
+            android:text="side_story_content_field_items"
+            android:textSize="12sp" />
+    </LinearLayout>
 </LinearLayout>
